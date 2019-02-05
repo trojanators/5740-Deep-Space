@@ -51,13 +51,15 @@ public abstract class ShuffleLayout{
   Driver1.addPersistent("power usage", OI.pdp)
    .withPosition(0, 3)
    .withSize(3, 2)
-   .withWidget(BuiltInWidgets.kPowerDistributionPanel);
+   .withWidget(BuiltInWidgets.kPowerDistributionPanel)
+   .getEntry();
 
    Driver2.addPersistent("power usage", OI.pdp)
    .withPosition(0, 3)
    .withSize(3, 2)
-   .withWidget(BuiltInWidgets.kPowerDistributionPanel);
-      
+   .withWidget(BuiltInWidgets.kPowerDistributionPanel)
+   .getEntry();
+
 // Hatch deliver 
 
    Driver1.addPersistent("Hatch Deliver", OI.hatchActuateSolenoid)
