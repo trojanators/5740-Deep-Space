@@ -8,6 +8,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 
 public class Robot extends IterativeRobot {
 
@@ -26,13 +27,16 @@ public class Robot extends IterativeRobot {
   @Override
   public void autonomousPeriodic() {
   }
+  
   @Override
   public void teleopInit(){
-    
+    ShuffleData.Init();
   }
+
   @Override
   public void teleopPeriodic() {
     Teleop.Periodic();
+    Shuffleboard.update();
   }
 
   @Override
