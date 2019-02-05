@@ -14,6 +14,7 @@ import frc.robot.subsystems.Hatch;
 
 public abstract class ShuffleLayout{
     public static void Init(){
+        //TODO add an RPM counter to shuffleboard
 // driver 1 tab 
      ShuffleboardTab Driver1 = Shuffleboard.getTab("Driver1 info");
 // driver 2 tab
