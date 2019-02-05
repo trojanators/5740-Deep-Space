@@ -41,6 +41,12 @@ public class Teleop {
          Cargo.stopArm();
      }
      //TODO: Fix logix for setting direction to "down"
+     if(OI.controller2.getRawAxis(RobotMap.rightStickX) != 0){
+         Cargo.actuateArm("down", OI.controller2.getRawAxis(1));
+     } else {
+         Cargo.stopArm();
+     }
+    //Fixed TODO; Needs Verification
      if(OI.controller2.getRawButton(RobotMap.leftBumper) == true) { //tilt hatch manipulator out
          Hatch.tilt("forward");
      }

@@ -52,8 +52,10 @@ public class OI {
   public static TalonSRX cargoArmActuate = new TalonSRX(RobotMap.cargoArmActuateCAN);
   public static TalonSRX cargoClawLeft = new TalonSRX(RobotMap.cargoClawLeftRotateCAN);
   public static TalonSRX cargoClawRight = new TalonSRX(RobotMap.cargoClawRightRotateCAN);
-  //TODO: SpeedControllerGroup for stilts and cargo claw
-
+  /*TODO: SpeedControllerGroup for stilts and cargo claw
+  public static SpeedControllerGroup cargoClawGroup = new SpeedControllerGroup(cargoClawLeft, cargoClawRight);
+  public static SpeedControllerGroup stiltGroup = new SpeedControllerGroup(leftStiltRotate, rightStiltRotate);
+Fixed TODO;Needs Verification*/
   public static Accelerometer accelerometer= new BuiltInAccelerometer();
 
 }

@@ -31,12 +31,12 @@ public class RobotMap {
   public static int hatchActuateTwo = 3;
   public static int hatchTiltOne = 4;
   public static int hatchTiltTwo = 5;
-
+/*Undefined?
   public static int stiltWheelsRotateLeftCAN = 6; //rotate the wheels
   public static int stiltWheelsRotateRightCAN = 7;
   public static int stiltWheelsActuateLeftCAN = 8; //spin the wheels (drive forward)
   public static int stiltWheelsActuateRightCAN = 9;
-  
+ */ 
   public static int cargoArmActuateCAN = 10;
   public static int cargoClawLeftRotateCAN = 11;
   public static int cargoClawRightRotateCAN = 12;
