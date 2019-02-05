@@ -9,6 +9,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
+import frc.robot.subsystems.Consolelog;
 
 public class Robot extends IterativeRobot {
 
@@ -31,7 +32,7 @@ public class Robot extends IterativeRobot {
 
   @Override
   public void teleopInit(){
-
+  Consolelog.log();
   }
 
   @Override
