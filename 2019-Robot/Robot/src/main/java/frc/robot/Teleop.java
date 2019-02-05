@@ -9,55 +9,42 @@ package frc.robot;
 
 import frc.robot.OI;
 import frc.robot.subsystems.*;
-
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
-
-import edu.wpi.first.wpilibj.DigitalInput;
-import edu.wpi.first.wpilibj.DoubleSolenoid;
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.PowerDistributionPanel;
-import edu.wpi.first.wpilibj.Relay;
-import edu.wpi.first.wpilibj.Spark;
-import edu.wpi.first.wpilibj.SpeedControllerGroup;
-import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import frc.robot.OI;
-import frc.robot.*;
+import frc.robot.RobotMap;
 
 public class Teleop {
     public static void Periodic(){
       Drivetrain.periodic();
-      if(OI.controller1.getRawAxis(3) != 0) { //shift up and down
+      if(OI.controller1.getRawAxis(RobotMap.rightTrigger) != 0) { // shift up and down
         Drivetrain.shift("up");
       } else {
         Drivetrain.shift("down");
      }
-     if(OI.controller2.getRawButton(1) == true) { //shoot ball
+     if(OI.controller2.getRawButton(RobotMap.aButton) == true) { //shoot ball
          Cargo.actuateClaw("out");
      } else {
          Cargo.stopClaw();
      }
-     if(OI.controller2.getRawButton(2) == true) { //intake ball
+     if(OI.controller2.getRawButton(RobotMap.bButton) == true) { //intake ball
         Cargo.actuateClaw("in");
      } else {
          Cargo.stopClaw();
      }
-     if(OI.controller2.getRawAxis(2) != 0) { //open hatch manipulator
+     if(OI.controller2.getRawAxis(RobotMap.leftTrigger) != 0) { //open hatch manipulator
          Hatch.actuate("open");
      }
-     if(OI.controller2.getRawAxis(3) != 0) { //close hatch manipulator
+     if(OI.controller2.getRawAxis(RobotMap.rightTrigger) != 0) { //close hatch manipulator
          Hatch.actuate("close");
      }
-     if(OI.controller2.getRawAxis(1) != 0) { //move cargo arm up and down
+     if(OI.controller2.getRawAxis(RobotMap.leftStickY) != 0) { //move cargo arm up and down
          Cargo.actuateArm("up", OI.controller2.getRawAxis(1));
      } else {
          Cargo.stopArm();
      }
-     if(OI.controller2.getRawButton(5) == true) { //tilt hatch manipulator out
+     //TODO: Fix logix for setting direction to "down"
+     if(OI.controller2.getRawButton(RobotMap.leftBumper) == true) { //tilt hatch manipulator out
          Hatch.tilt("forward");
      }
-     if(OI.controller2.getRawButton(6) == true) { //tilt hatch manipulator in
+     if(OI.controller2.getRawButton(RobotMap.rightBumper) == true) { //tilt hatch manipulator in
          Hatch.tilt("back");
      }
   }

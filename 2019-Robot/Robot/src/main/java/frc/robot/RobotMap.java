@@ -18,7 +18,7 @@ public class RobotMap {
   public static int controllerOnePort = 0;
   public static int controllerTwoPort = 1;
 
-  public static int leftFrontDrivePWM = 0;
+  public static int leftFrontDrivePWM = 0; //TODO: change PWM to CAN
   public static int leftCenterDrivePWM = 1;
   public static int leftBackDrivePWM = 2;
   public static int rightFrontDrivePWM = 3;
@@ -44,5 +44,13 @@ public class RobotMap {
   public static int PCMOneCAN = 13;
   public static int PCMTwoCAN = 14;
 
+  public static int rightStickX = 4;
+  public static int aButton = 1;
+  public static int bButton = 2;
+  public static int leftTrigger = 2;
+  public static int leftStickY = 1;
+  public static int rightTrigger = 3;
+  public static int leftBumper = 5;
+  public static int rightBumper = 6;
 }
 

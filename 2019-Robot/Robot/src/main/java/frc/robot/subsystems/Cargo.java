@@ -11,11 +11,11 @@ public class Cargo {
     switch(direction) {
       case "up":
         OI.cargoArmActuate.setInverted(false);
-        OI.cargoArmActuate.set(ControlMode.PercentOutput, speed);
+        OI.cargoArmActuate.set(ControlMode.PercentOutput, Math.abs(speed));
       break;
       case "down":
         OI.cargoArmActuate.setInverted(true);
-        OI.cargoArmActuate.set(ControlMode.PercentOutput, speed);
+        OI.cargoArmActuate.set(ControlMode.PercentOutput, Math.abs(speed));
       break;
     }
   }
@@ -24,7 +24,7 @@ public class Cargo {
   }
   public static void actuateClaw(String direction) {
     //TODO: Limit switch to stop motors when ball is in the claw
-    switch(direction) {
+    switch(direction) { //TODO: make motors spin opposite direction
       case "in":
         OI.cargoClawLeft.setInverted(false);
         OI.cargoClawRight.setInverted(false);
