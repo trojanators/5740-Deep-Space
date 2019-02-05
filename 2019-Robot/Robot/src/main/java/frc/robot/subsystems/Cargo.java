@@ -11,11 +11,11 @@ public class Cargo {
    /* switch(direction) {
       case "up":
         OI.cargoArmActuate.setInverted(false);
-        OI.cargoArmActuate.set(ControlMode.PercentOutput, speed);
+        OI.cargoArmActuate.set(ControlMode.PercentOutput, Math.abs(speed));
       break;
       case "down":
         OI.cargoArmActuate.setInverted(true);
-        OI.cargoArmActuate.set(ControlMode.PercentOutput, speed);
+        OI.cargoArmActuate.set(ControlMode.PercentOutput, Math.abs(speed));
       break;
     }*/
   }

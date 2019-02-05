@@ -11,7 +11,7 @@ public class Hatch {
         OI.hatchTiltSolenoid.set(DoubleSolenoid.Value.kForward);
       break;
       case "back":
-        OI.hatchTiltSolenoid.set(DoubleSolenoid.Value.kForward);
+        OI.hatchTiltSolenoid.set(DoubleSolenoid.Value.kReverse);
       break;
     }*/
   }
@@ -21,7 +21,7 @@ public class Hatch {
         OI.hatchActuateSolenoid.set(DoubleSolenoid.Value.kForward);
       break;
       case "close":
-        OI.hatchActuateSolenoid.set(DoubleSolenoid.Value.kForward);
+        OI.hatchActuateSolenoid.set(DoubleSolenoid.Value.kReverse);
       break;
     }*/
   } 
