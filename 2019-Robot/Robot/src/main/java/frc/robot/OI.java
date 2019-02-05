@@ -29,12 +29,12 @@ public class OI {
   public static Joystick controller1 = new Joystick(RobotMap.controllerOnePort);
   public static Joystick controller2 = new Joystick(RobotMap.controllerTwoPort);
 
-  public static WPI_TalonSRX leftFrontDriveMotor = new WPI_TalonSRX(RobotMap.leftFrontDrivePWM);
-  public static WPI_TalonSRX leftCenterDriveMotor = new WPI_TalonSRX(RobotMap.leftCenterDrivePWM);
-  public static WPI_VictorSPX leftBackDriveMotor = new WPI_VictorSPX(RobotMap.leftBackDrivePWM);
-  public static WPI_TalonSRX rightFrontDriveMotor = new WPI_TalonSRX(RobotMap.rightFrontDrivePWM);
-  public static WPI_TalonSRX rightCenterDriveMotor = new WPI_TalonSRX(RobotMap.rightCenterDrivePWM);
-  public static WPI_TalonSRX rightBackDriveMotor = new WPI_TalonSRX(RobotMap.rightBackDrivePWM);
+  public static WPI_TalonSRX leftFrontDriveMotor = new WPI_TalonSRX(RobotMap.leftFrontDriveCAN);
+  public static WPI_TalonSRX leftCenterDriveMotor = new WPI_TalonSRX(RobotMap.leftCenterDriveCAN);
+  public static WPI_VictorSPX leftBackDriveMotor = new WPI_VictorSPX(RobotMap.leftBackDriveCAN);
+  public static WPI_TalonSRX rightFrontDriveMotor = new WPI_TalonSRX(RobotMap.rightFrontDriveCAN);
+  public static WPI_TalonSRX rightCenterDriveMotor = new WPI_TalonSRX(RobotMap.rightCenterDriveCAN);
+  public static WPI_TalonSRX rightBackDriveMotor = new WPI_TalonSRX(RobotMap.rightBackDriveCAN);
 
   public static SpeedControllerGroup leftDriveGroup = new SpeedControllerGroup(leftFrontDriveMotor, leftCenterDriveMotor, leftBackDriveMotor);
   public static SpeedControllerGroup rightDriveGroup = new SpeedControllerGroup(rightFrontDriveMotor, rightCenterDriveMotor, rightBackDriveMotor);
@@ -44,18 +44,17 @@ public class OI {
   public static DoubleSolenoid hatchActuateSolenoid = new DoubleSolenoid(RobotMap.PCMOneCAN, RobotMap.hatchActuateOne,  RobotMap.hatchActuateTwo);
   public static DoubleSolenoid hatchTiltSolenoid = new DoubleSolenoid(RobotMap.PCMOneCAN, RobotMap.hatchTiltOne, RobotMap.hatchTiltTwo);
   
-  public static TalonSRX leftStiltRotate = new TalonSRX(RobotMap.stiltWheelsRotateLeftCAN); //spin stilt wheels (drive forward)
-  public static TalonSRX leftStiltActuate = new TalonSRX(RobotMap.stiltWheelsActuateLeftCAN);
-  public static TalonSRX rightStiltRotate = new TalonSRX(RobotMap.stiltWheelsRotateRightCAN);
-  public static TalonSRX rightStiltActuate = new TalonSRX(RobotMap.stiltWheelsActuateRightCAN);
+  public static WPI_TalonSRX leftStiltRotate = new WPI_TalonSRX(RobotMap.stiltWheelsRotateLeftCAN); //spin stilt wheels (drive forward)
+  public static WPI_TalonSRX leftStiltActuate = new WPI_TalonSRX(RobotMap.stiltWheelsActuateLeftCAN);
+  public static WPI_TalonSRX rightStiltRotate = new WPI_TalonSRX(RobotMap.stiltWheelsRotateRightCAN);
+  public static WPI_TalonSRX rightStiltActuate = new WPI_TalonSRX(RobotMap.stiltWheelsActuateRightCAN);
+  public static SpeedControllerGroup stiltRotateGroup = new SpeedControllerGroup(leftStiltRotate, rightStiltRotate);
+  public static SpeedControllerGroup stiltActuateGroup = new SpeedControllerGroup(leftStiltActuate, rightStiltActuate);
 
   public static TalonSRX cargoArmActuate = new TalonSRX(RobotMap.cargoArmActuateCAN);
   public static TalonSRX cargoClawLeft = new TalonSRX(RobotMap.cargoClawLeftRotateCAN);
   public static TalonSRX cargoClawRight = new TalonSRX(RobotMap.cargoClawRightRotateCAN);
-  /*TODO: SpeedControllerGroup for stilts and cargo claw
-  public static SpeedControllerGroup cargoClawGroup = new SpeedControllerGroup(cargoClawLeft, cargoClawRight);
-  public static SpeedControllerGroup stiltGroup = new SpeedControllerGroup(leftStiltRotate, rightStiltRotate);
-Fixed TODO;Needs Verification*/
+  
   public static Accelerometer accelerometer= new BuiltInAccelerometer();
 
 }

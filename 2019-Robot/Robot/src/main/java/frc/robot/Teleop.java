@@ -35,18 +35,14 @@ public class Teleop {
      if(OI.controller2.getRawAxis(RobotMap.rightTrigger) != 0) { //close hatch manipulator
          Hatch.actuate("close");
      }
-     if(OI.controller2.getRawAxis(RobotMap.leftStickY) != 0) { //move cargo arm up and down
+     if(OI.controller2.getRawAxis(RobotMap.leftStickY) > 0) { //move cargo arm up and down
          Cargo.actuateArm("up", OI.controller2.getRawAxis(1));
+     } 
+     else if(OI.controller2.getRawAxis(RobotMap.rightStickX) < 0) {
+        Cargo.actuateArm("down", OI.controller2.getRawAxis(1));
      } else {
-         Cargo.stopArm();
+        Cargo.stopArm();
      }
-     //TODO: Fix logix for setting direction to "down"
-     if(OI.controller2.getRawAxis(RobotMap.rightStickX) != 0){
-         Cargo.actuateArm("down", OI.controller2.getRawAxis(1));
-     } else {
-         Cargo.stopArm();
-     }
-    //Fixed TODO; Needs Verification
      if(OI.controller2.getRawButton(RobotMap.leftBumper) == true) { //tilt hatch manipulator out
          Hatch.tilt("forward");
      }
