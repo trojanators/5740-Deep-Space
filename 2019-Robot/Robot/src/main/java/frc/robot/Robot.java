@@ -16,6 +16,7 @@ public class Robot extends IterativeRobot {
   @Override
   public void robotInit() {
     ShuffleLayout.Init();
+   
   }
 
   @Override
@@ -32,7 +33,6 @@ public class Robot extends IterativeRobot {
 
   @Override
   public void teleopInit(){
-  Consolelog.log();
   }
 
   @Override
