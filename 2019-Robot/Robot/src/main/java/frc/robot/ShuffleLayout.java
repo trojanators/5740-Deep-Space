@@ -57,25 +57,20 @@ public abstract class ShuffleLayout{
    .withPosition(0, 3)
    .withSize(3, 2)
    .withWidget(BuiltInWidgets.kPowerDistributionPanel);
-// rpm with mag encoders 
-/*
-   Shuffleboard.getTab("Test")
-   .addPersistent("Drive train RPM",OI.rightFrontDriveMotor)
-   .withPosition(9,4)
-   .withSize(2,2)
-   .withWidget(BuiltInWidgets.kDial);
-   */
+      
 // Hatch deliver 
 
    Driver1.addPersistent("Hatch Deliver", OI.hatchActuateSolenoid)
    .withPosition(9, 3)
    .withSize(2, 1)
-   .withWidget(BuiltInWidgets.kBooleanBox);
+   .withWidget(BuiltInWidgets.kBooleanBox)
+   .getEntry();
 
    Driver2.addPersistent("Hatch Deliver", OI.hatchActuateSolenoid)
    .withPosition(9, 3)
    .withSize(2, 1)
-   .withWidget(BuiltInWidgets.kBooleanBox);
+   .withWidget(BuiltInWidgets.kBooleanBox)
+   .getEntry();
    
 // shifter is active
     
