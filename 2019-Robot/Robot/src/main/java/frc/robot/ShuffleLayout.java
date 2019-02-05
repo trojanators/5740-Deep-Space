@@ -14,10 +14,11 @@ import frc.robot.subsystems.Hatch;
 
 public abstract class ShuffleLayout{
     public static void Init(){
-        // driver 1 tab 
+// driver 1 tab 
      ShuffleboardTab Driver1 = Shuffleboard.getTab("Driver1 info");
+// driver 2 tab
      ShuffleboardTab Driver2 = Shuffleboard.getTab("Driver2 info");
-     
+// sets layout grid layout      
      Driver1.getLayout("grid",BuiltInLayouts.kGrid);
      Driver2.getLayout("grid2",BuiltInLayouts.kGrid);
 
