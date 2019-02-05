@@ -14,11 +14,11 @@ public class Robot extends IterativeRobot {
 
   @Override
   public void robotInit() {
+    ShuffleLayout.Init();
   }
 
   @Override
   public void robotPeriodic() {
-    Shuffleboard.update();
   }
 
   @Override
@@ -31,12 +31,14 @@ public class Robot extends IterativeRobot {
 
   @Override
   public void teleopInit(){
-    ShuffleLayout.Init();
+
   }
 
   @Override
   public void teleopPeriodic() {
     Teleop.Periodic();
+    Shuffleboard.update();
+
   }
 
   @Override
