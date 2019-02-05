@@ -10,6 +10,7 @@ import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.wpilibj.DriverStation;
 import frc.robot.OI;
+import frc.robot.subsystems.Hatch;
 
 public abstract class ShuffleLayout{
     public static void Init(){
@@ -64,13 +65,18 @@ public abstract class ShuffleLayout{
    .withSize(2,2)
    .withWidget(BuiltInWidgets.kDial);
    */
-/*// pressure switch
-   Shuffleboard.getTab("LiveWindow")
-   .addPersistent("Pressure Switch",OI.pressureSwitch)
+// Hatch deliver 
+
+   Driver1.addPersistent("Hatch Deliver", OI.hatchActuateSolenoid)
    .withPosition(9, 3)
    .withSize(2, 1)
    .withWidget(BuiltInWidgets.kBooleanBox);
-   */
+
+   Driver2.addPersistent("Hatch Deliver", OI.hatchActuateSolenoid)
+   .withPosition(9, 3)
+   .withSize(2, 1)
+   .withWidget(BuiltInWidgets.kBooleanBox);
+   
 // shifter is active
     
     Driver1.addPersistent("Shifting",OI.shiftSolenoid)
