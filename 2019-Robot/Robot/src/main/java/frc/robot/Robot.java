@@ -18,6 +18,7 @@ public class Robot extends IterativeRobot {
 
   @Override
   public void robotPeriodic() {
+    Shuffleboard.update();
   }
 
   @Override
@@ -27,16 +28,15 @@ public class Robot extends IterativeRobot {
   @Override
   public void autonomousPeriodic() {
   }
-  
+
   @Override
   public void teleopInit(){
-    ShuffleData.Init();
+    ShuffleLayout.Init();
   }
 
   @Override
   public void teleopPeriodic() {
     Teleop.Periodic();
-    Shuffleboard.update();
   }
 
   @Override
