@@ -8,7 +8,7 @@ public class Cargo {
   public Cargo() {}
   public static void actuateArm(String direction, double speed) {
   //TODO: Limit switches to stop arm at top and bottom
-    switch(direction) {
+   /* switch(direction) {
       case "up":
         OI.cargoArmActuate.setInverted(false);
         OI.cargoArmActuate.set(ControlMode.PercentOutput, speed);
@@ -17,14 +17,14 @@ public class Cargo {
         OI.cargoArmActuate.setInverted(true);
         OI.cargoArmActuate.set(ControlMode.PercentOutput, speed);
       break;
-    }
+    }*/
   }
   public static void stopArm() {
-    OI.cargoArmActuate.set(ControlMode.PercentOutput, 0);
+   // OI.cargoArmActuate.set(ControlMode.PercentOutput, 0);
   }
   public static void actuateClaw(String direction) {
     //TODO: Limit switch to stop motors when ball is in the claw
-    switch(direction) {
+   /* switch(direction) {
       case "in":
         OI.cargoClawLeft.setInverted(false);
         OI.cargoClawRight.setInverted(false);
@@ -37,10 +37,10 @@ public class Cargo {
         OI.cargoClawLeft.set(ControlMode.PercentOutput, 100);
         OI.cargoClawRight.set(ControlMode.PercentOutput, 100);
       break;
-    }
+    }*/
   }
   public static void stopClaw() {
-    OI.cargoClawLeft.set(ControlMode.PercentOutput, 0);
-    OI.cargoClawRight.set(ControlMode.PercentOutput, 0);
+   // OI.cargoClawLeft.set(ControlMode.PercentOutput, 0);
+   // OI.cargoClawRight.set(ControlMode.PercentOutput, 0);
   }
 }

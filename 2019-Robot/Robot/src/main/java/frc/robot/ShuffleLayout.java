@@ -14,7 +14,7 @@ import frc.robot.subsystems.Hatch;
 
 public abstract class ShuffleLayout{
     public static void Init(){
-        //TODO add an RPM counter to shuffleboard
+   /*     //TODO add an RPM counter to shuffleboard
 // driver 1 tab 
      ShuffleboardTab Driver1 = Shuffleboard.getTab("Driver1 info");
 // driver 2 tab
@@ -24,7 +24,7 @@ public abstract class ShuffleLayout{
      Driver2.getLayout("grid2",BuiltInLayouts.kGrid);
 
      Driver1.addPersistent("controller1 X value",OI.controller1.getRawAxis(1))
-    .withPosition(0, 1)
+    .withPosition(1, 1)
     .withSize(2, 1)
     .withWidget(BuiltInWidgets.kNumberBar)
     .getEntry();
@@ -44,7 +44,7 @@ public abstract class ShuffleLayout{
     .getEntry();
     
     Driver2.addPersistent("Controller 2, Y value",OI.controller2.getRawAxis(4))
-    .withPosition(0,2)
+    .withPosition(1,2)
     .withSize(2, 1)
     .withWidget(BuiltInWidgets.kNumberBar)
     .getEntry();
@@ -129,5 +129,6 @@ public abstract class ShuffleLayout{
     .withSize(4,3)
     .withWidget(BuiltInWidgets.kCameraStream)
     .getEntry();
+    */
     }
 }

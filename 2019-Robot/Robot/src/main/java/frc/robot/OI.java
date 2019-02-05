@@ -31,17 +31,17 @@ public class OI {
   public static Joystick controller1 = new Joystick(RobotMap.controllerOnePort);
   public static Joystick controller2 = new Joystick(RobotMap.controllerTwoPort);
 
-  public static WPI_TalonSRX leftFrontDriveMotor = new WPI_TalonSRX(RobotMap.leftFrontDrivePWM);
+  public static WPI_VictorSPX leftFrontDriveMotor = new WPI_VictorSPX(RobotMap.leftFrontDrivePWM);
   public static WPI_TalonSRX leftCenterDriveMotor = new WPI_TalonSRX(RobotMap.leftCenterDrivePWM);
   public static WPI_VictorSPX leftBackDriveMotor = new WPI_VictorSPX(RobotMap.leftBackDrivePWM);
-  public static WPI_TalonSRX rightFrontDriveMotor = new WPI_TalonSRX(RobotMap.rightFrontDrivePWM);
+  public static WPI_VictorSPX rightFrontDriveMotor = new WPI_VictorSPX(RobotMap.rightFrontDrivePWM);
   public static WPI_TalonSRX rightCenterDriveMotor = new WPI_TalonSRX(RobotMap.rightCenterDrivePWM);
-  public static WPI_TalonSRX rightBackDriveMotor = new WPI_TalonSRX(RobotMap.rightBackDrivePWM);
+  public static WPI_VictorSPX rightBackDriveMotor = new WPI_VictorSPX(RobotMap.rightBackDrivePWM);
 
   public static SpeedControllerGroup leftDriveGroup = new SpeedControllerGroup(leftFrontDriveMotor, leftCenterDriveMotor, leftBackDriveMotor);
   public static SpeedControllerGroup rightDriveGroup = new SpeedControllerGroup(rightFrontDriveMotor, rightCenterDriveMotor, rightBackDriveMotor);
   public static DifferentialDrive drive = new DifferentialDrive(leftDriveGroup, rightDriveGroup);
-
+/*
   public static DoubleSolenoid shiftSolenoid = new DoubleSolenoid(RobotMap.PCMOneCAN, RobotMap.shiftSolenoidOne, RobotMap.shiftSolenoidTwo);
   public static DoubleSolenoid hatchActuateSolenoid = new DoubleSolenoid(RobotMap.PCMOneCAN, RobotMap.hatchActuateOne,  RobotMap.hatchActuateTwo);
   public static DoubleSolenoid hatchTiltSolenoid = new DoubleSolenoid(RobotMap.PCMOneCAN, RobotMap.hatchTiltOne, RobotMap.hatchTiltTwo);
@@ -56,5 +56,5 @@ public class OI {
   public static TalonSRX cargoClawRight = new TalonSRX(RobotMap.cargoClawRightRotateCAN);
 
   public static Accelerometer accelerometer= new BuiltInAccelerometer();
-
+*/
 }
