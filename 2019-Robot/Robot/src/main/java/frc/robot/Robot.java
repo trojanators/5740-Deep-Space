@@ -26,7 +26,10 @@ public class Robot extends IterativeRobot {
   @Override
   public void autonomousPeriodic() {
   }
-
+  @Override
+  public void teleopInit(){
+    
+  }
   @Override
   public void teleopPeriodic() {
     Teleop.Periodic();
