@@ -65,7 +65,7 @@ import org.opencv.core.Mat;
  */
 
 public final class Main {
-  private static String configFile = "boot/frc.json";
+  private static String configFile = "/boot/frc.json";
 
   @SuppressWarnings("MemberName")
   public static class CameraConfig {
@@ -226,21 +226,15 @@ public final class Main {
     for (CameraConfig cameraConfig : cameraConfigs) {
       cameras.add(startCamera(cameraConfig));
     }
-    NetworkTable table;
-    table = NetworkTableInstance.getDefault().getTable("GRIP");
       VisionThread visionThread = new VisionThread(cameras.get(0),
-              new GripPipeline(), pipeline -> {
-        if(pipeline.filterContoursOutput().isEmpty()) {
-          System.out.println("No Contours Found!");
-          table.getEntry("Contours").setString("no");
-        } else {
-          System.out.println("Contours Found!");
-          table.getEntry("Contours").setString("yes");
-        }
+        new GripPipeline(), pipeline -> {
+          if(pipeline.filterContoursOutput().isEmpty()) {
+            System.out.println("No Contours Found!");
+          } else {
+            System.out.println("Contours Found!");
+          }
       });
       visionThread.start();
-      //}
-    // loop forever
     for (;;) {
       try {
         Thread.sleep(10000);
