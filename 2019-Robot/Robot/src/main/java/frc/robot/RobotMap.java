@@ -32,29 +32,6 @@ public class RobotMap {
   public static int hatchTiltOne = 4;
   public static int hatchTiltTwo = 5;
 
-  public static int backLeftStiltOne = 0;
-  public static int backLeftStiltTwo = 1;
-  public static int backRightStiltOne = 2;
-  public static int backRighStiltTwo = 3;
-  public static int frontLeftStiltOne = 4;
-  public static int frontLeftStiltTwo = 5;
-  public static int frontRightStiltOne = 6;
-  public static int frontRightStiltTwo = 7;
-
-  public static int backStiltUpOne = 0;
-  public static int backStiltUpTwo = 1;
-  public static int backStiltDownOne = 2;
-  public static int backStiltDownTwo = 3;
-  public static int frontStiltUpOne = 4;
-  public static int frontStiltUpTwo = 5;
-  public static int frontStiltDownOne = 6;
-  public static int frontStiltDownTwo = 7;
-
-  public static int leftRampOne = 0;
-  public static int leftRampTwo = 1;
-  public static int rightRampOne = 2;
-  public static int rightRampTwo = 3;
-
   public static int stiltWheelsRotateLeftCAN = 6; //rotate the wheels
   public static int stiltWheelsRotateRightCAN = 7;
   public static int stiltWheelsActuateLeftCAN = 8; //spin the wheels (drive forward)
@@ -70,8 +47,6 @@ public class RobotMap {
   public static int rightStickX = 4;
   public static int aButton = 1;
   public static int bButton = 2;
-  public static int xButton = 3;
-  public static int yButton = 4;
   public static int leftTrigger = 2;
   public static int leftStickY = 1;
   public static int rightTrigger = 3;

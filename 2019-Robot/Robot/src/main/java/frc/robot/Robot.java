@@ -8,11 +8,10 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import frc.robot.subsystems.*;
 import frc.robot.*;
-public class Robot extends TimedRobot {
+public class Robot extends IterativeRobot {
 
   @Override
   public void robotInit() {
@@ -46,10 +45,5 @@ public class Robot extends TimedRobot {
 
   @Override
   public void testPeriodic() {
-  }
-
-  @Override
-  public void disabledInit() {
-    Stilts.setDefault();
   }
 }
