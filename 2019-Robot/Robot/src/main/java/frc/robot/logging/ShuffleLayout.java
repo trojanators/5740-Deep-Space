@@ -3,6 +3,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInLayouts;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
+import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardContainer;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardLayout;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -13,10 +14,11 @@ import frc.robot.OI;
 import frc.robot.subsystems.Hatch;
 
 public abstract class ShuffleLayout{
-    public static void Init(){
+    /*public static void Init(){
        //TODO add an RPM counter to shuffleboard
 // driver 1 tab 
      ShuffleboardTab Driver1 = Shuffleboard.getTab("Driver1 info");
+     
 // driver 2 ta
 // sets layout grid layout      
      Driver1.getLayout("RoboLog",BuiltInLayouts.kGrid);
@@ -77,5 +79,5 @@ public abstract class ShuffleLayout{
     .withSize(4,3)
     .withWidget(BuiltInWidgets.kCameraStream)
     .getEntry();
+    */
     }
-}
