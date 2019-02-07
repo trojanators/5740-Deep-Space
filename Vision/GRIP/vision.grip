@@ -163,8 +163,8 @@
   <codeGenerationSettings>
     <language>Java</language>
     <className>GripPipeline</className>
-    <implementWpilibPipeline>false</implementWpilibPipeline>
-    <saveDir>C:\Users\robotics\GRIP</saveDir>
+    <implementWpilibPipeline>true</implementWpilibPipeline>
+    <saveDir>C:\Users\robotics\Desktop\5740-Deep-Space\Vision\java-multiCameraServer\src\main\java</saveDir>
     <packageName></packageName>
     <moduleName>grip</moduleName>
   </codeGenerationSettings>

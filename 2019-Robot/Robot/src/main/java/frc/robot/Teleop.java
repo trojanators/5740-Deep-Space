@@ -49,5 +49,15 @@ public class Teleop {
      if(OI.controller2.getRawButton(RobotMap.rightBumper) == true) { //tilt hatch manipulator in
          Hatch.tilt("back");
      }
+     if(OI.controller1.getRawButton(RobotMap.xButton) == true){ //deploy stilts
+        Stilts.actuate("front", "up");
+        Stilts.actuate("back", "up");
+        System.out.println("up");
+     }
+     if(OI.controller1.getRawButton(RobotMap.yButton) == true){ //retract pistons
+        Stilts.actuate("front", "down");
+        Stilts.actuate("back", "down");
+        System.out.println("down");
+    }
   }
 }
