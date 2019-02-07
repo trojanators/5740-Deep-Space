@@ -19,8 +19,7 @@ public abstract class ShuffleLayout{
      ShuffleboardTab Driver1 = Shuffleboard.getTab("Driver1 info");
 // driver 2 ta
 // sets layout grid layout      
-     Driver1.getLayout("grid",BuiltInLayouts.kGrid);
-
+     Driver1.getLayout("RoboLog",BuiltInLayouts.kGrid);
      Driver1.addPersistent("controller1 X value",OI.controller1.getRawAxis(1))
     .withPosition(1, 1)
     .withSize(2, 1)
