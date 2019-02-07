@@ -11,11 +11,12 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import frc.robot.subsystems.*;
 import frc.robot.*;
+import frc.robot.logging.ShuffleDash;
 public class Robot extends IterativeRobot {
 
   @Override
   public void robotInit() {
-    
+    ShuffleDash.init();
    
   }
 
@@ -34,11 +35,13 @@ public class Robot extends IterativeRobot {
   @Override
   public void teleopInit(){
    // ShuffleLayout.Init();
+   
   }
 
   @Override
   public void teleopPeriodic() {
     Teleop.Periodic();
+    ShuffleDash.perodic();
    // Shuffleboard.update();
 
   }
