@@ -13,8 +13,8 @@ import org.opencv.features2d.FeatureDetector;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.*;
 import org.opencv.objdetect.*;
-
 import edu.wpi.first.vision.VisionPipeline;
+
 /**
 * GripPipeline class.
 *
@@ -38,26 +38,26 @@ public class GripPipeline implements VisionPipeline {
 	/**
 	 * This is the primary method that runs the entire pipeline and updates the outputs.
 	 */
-	@Override	public void process(Mat source0) {
+	public void process(Mat source0) {
 		// Step Resize_Image0:
 		Mat resizeImageInput = source0;
-		double resizeImageWidth = 640.0;
-		double resizeImageHeight = 480.0;
-		int resizeImageInterpolation = Imgproc.INTER_CUBIC;
+		double resizeImageWidth = 160.0;
+		double resizeImageHeight = 120.0;
+		int resizeImageInterpolation = Imgproc.INTER_LINEAR;
 		resizeImage(resizeImageInput, resizeImageWidth, resizeImageHeight, resizeImageInterpolation, resizeImageOutput);
 
 		// Step HSV_Threshold0:
 		Mat hsvThresholdInput = resizeImageOutput;
-		double[] hsvThresholdHue = {0.0, 50.588236314090175};
-		double[] hsvThresholdSaturation = {0.0, 9.545459964058608};
-		double[] hsvThresholdValue = {100.06147624273461, 255.0};
+		double[] hsvThresholdHue = {36.15819478439072, 180.0};
+		double[] hsvThresholdSaturation = {0.0, 29.24242929978806};
+		double[] hsvThresholdValue = {187.28812986848044, 255.0};
 		hsvThreshold(hsvThresholdInput, hsvThresholdHue, hsvThresholdSaturation, hsvThresholdValue, hsvThresholdOutput);
 
 		// Step CV_erode0:
 		Mat cvErodeSrc = hsvThresholdOutput;
 		Mat cvErodeKernel = new Mat();
 		Point cvErodeAnchor = new Point(-1, -1);
-		double cvErodeIterations = 2.0;
+		double cvErodeIterations = 1.0;
 		int cvErodeBordertype = Core.BORDER_CONSTANT;
 		Scalar cvErodeBordervalue = new Scalar(-1);
 		cvErode(cvErodeSrc, cvErodeKernel, cvErodeAnchor, cvErodeIterations, cvErodeBordertype, cvErodeBordervalue, cvErodeOutput);
@@ -69,14 +69,14 @@ public class GripPipeline implements VisionPipeline {
 
 		// Step Filter_Contours0:
 		ArrayList<MatOfPoint> filterContoursContours = findContoursOutput;
-		double filterContoursMinArea = 500.0;
-		double filterContoursMinPerimeter = 100.0;
-		double filterContoursMinWidth = 50.0;
-		double filterContoursMaxWidth = 300.0;
+		double filterContoursMinArea = 50.0;
+		double filterContoursMinPerimeter = 0.0;
+		double filterContoursMinWidth = 0.0;
+		double filterContoursMaxWidth = 1000.0;
 		double filterContoursMinHeight = 0.0;
-		double filterContoursMaxHeight = 100000.0;
-		double[] filterContoursSolidity = {0.0, 100.0};
-		double filterContoursMaxVertices = 1000000.0;
+		double filterContoursMaxHeight = 1000.0;
+		double[] filterContoursSolidity = {79.09604295274407, 100};
+		double filterContoursMaxVertices = 20.0;
 		double filterContoursMinVertices = 0.0;
 		double filterContoursMinRatio = 0.0;
 		double filterContoursMaxRatio = 1000.0;

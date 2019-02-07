@@ -39,7 +39,6 @@ public class OI {
   public static SpeedControllerGroup leftDriveGroup = new SpeedControllerGroup(leftFrontDriveMotor, leftCenterDriveMotor, leftBackDriveMotor);
   public static SpeedControllerGroup rightDriveGroup = new SpeedControllerGroup(rightFrontDriveMotor, rightCenterDriveMotor, rightBackDriveMotor);
   public static DifferentialDrive drive = new DifferentialDrive(leftDriveGroup, rightDriveGroup);
-
   public static DoubleSolenoid shiftSolenoid = new DoubleSolenoid(RobotMap.PCMOneCAN, RobotMap.shiftSolenoidOne, RobotMap.shiftSolenoidTwo);
   public static DoubleSolenoid hatchActuateSolenoid = new DoubleSolenoid(RobotMap.PCMOneCAN, RobotMap.hatchActuateOne,  RobotMap.hatchActuateTwo);
   public static DoubleSolenoid hatchTiltSolenoid = new DoubleSolenoid(RobotMap.PCMOneCAN, RobotMap.hatchTiltOne, RobotMap.hatchTiltTwo);
@@ -56,5 +55,5 @@ public class OI {
   public static TalonSRX cargoClawRight = new TalonSRX(RobotMap.cargoClawRightRotateCAN);
   
   public static Accelerometer accelerometer= new BuiltInAccelerometer();
-*/
+
 }
