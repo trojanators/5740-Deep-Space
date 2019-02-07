@@ -1,4 +1,4 @@
-package frc.robot;
+package frc.robot.logging;
 
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInLayouts;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
