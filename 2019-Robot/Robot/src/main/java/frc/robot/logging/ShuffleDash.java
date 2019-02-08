@@ -3,7 +3,9 @@ package frc.robot.logging;
 import java.sql.Driver;
 
 import edu.wpi.first.networktables.NetworkTableEntry;
+import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.Sendable;
+import edu.wpi.first.wpilibj.networktables.NetworkTable;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInLayouts;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
@@ -21,8 +23,8 @@ public abstract class ShuffleDash {
         Shuffleboard.selectTab("Driver1 info");
         
         Driver1.getLayout("RoboLog",BuiltInLayouts.kGrid);
-      
-        NetworkTableEntry Driver= Shuffleboard.getTab("Driver1 info")
+       
+        NetworkTableEntry ButtonB =Driver1.getLayout("RoboLog")
         .add("test",test)
         .withSize(1, 2)
         .withWidget(BuiltInWidgets.kBooleanBox)
@@ -40,6 +42,5 @@ public abstract class ShuffleDash {
          System.out.println("false");
         }
         Shuffleboard.update();
-        NetworkTableEntry Driver= Shuffleboard.getTab("Driver1 info");
     }
 }
