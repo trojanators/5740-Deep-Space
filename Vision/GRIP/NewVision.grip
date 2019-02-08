@@ -11,6 +11,12 @@
     <grip:ImageFile>
       <property name="path" value="C:\Users\robotics\Desktop\5740-Deep-Space\Vision\GRIP\36.jpg"/>
     </grip:ImageFile>
+    <grip:Camera>
+      <property name="deviceNumber" value="1"/>
+    </grip:Camera>
+    <grip:ImageFile>
+      <property name="path" value="C:\Users\robotics\Desktop\5740-Deep-Space\Vision\GRIP\24.jpg"/>
+    </grip:ImageFile>
   </sources>
   <steps>
     <grip:Step name="HSV Threshold">
@@ -130,16 +136,16 @@
       <grip:Input step="1" socket="0"/>
     </grip:Connection>
     <grip:Connection>
+      <grip:Output source="3" socket="0" previewed="false"/>
+      <grip:Input step="0" socket="0"/>
+    </grip:Connection>
+    <grip:Connection>
       <grip:Output step="1" socket="0" previewed="true"/>
       <grip:Input step="2" socket="0"/>
     </grip:Connection>
     <grip:Connection>
       <grip:Output step="2" socket="0" previewed="true"/>
       <grip:Input step="3" socket="0"/>
-    </grip:Connection>
-    <grip:Connection>
-      <grip:Output source="1" socket="0" previewed="false"/>
-      <grip:Input step="0" socket="0"/>
     </grip:Connection>
   </connections>
   <settings>
