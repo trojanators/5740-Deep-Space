@@ -15,20 +15,20 @@ import frc.robot.OI;
 
 public abstract class ShuffleDash {
     static  ShuffleboardTab Driver1 = Shuffleboard.getTab("Driver1 info");
-    static Boolean test= new Boolean(true);
+    static Boolean test= new Boolean(false);
     
     // init button test
-    public static void init(){
+    public static  void init(){
     
         Shuffleboard.selectTab("Driver1 info");
         
         Driver1.getLayout("RoboLog",BuiltInLayouts.kGrid);
        
-        NetworkTableEntry ButtonB =Driver1.getLayout("RoboLog")
-        .add("test",test)
-        .withSize(1, 2)
-        .withWidget(BuiltInWidgets.kBooleanBox)
-        .getEntry();
+         NetworkTableEntry distanceEntry =
+      Driver1.add("Distance to target", test)
+         .getEntry();
+  
+
     }
     public static void perodic(){
     // if button 2 is pr
@@ -42,5 +42,6 @@ public abstract class ShuffleDash {
          System.out.println("false");
         }
         Shuffleboard.update();
+    
     }
 }
