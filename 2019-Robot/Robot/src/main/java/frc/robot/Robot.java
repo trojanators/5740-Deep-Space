@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import frc.robot.subsystems.*;
 import frc.robot.*;
 import frc.robot.logging.ShuffleDash;
+import frc.robot.logging.ShuffleNetworkTable;
 public class Robot extends IterativeRobot {
 
   @Override
@@ -22,6 +23,7 @@ public class Robot extends IterativeRobot {
 
   @Override
   public void robotPeriodic() {
+    ShuffleNetworkTable.run();
   }
 
   @Override

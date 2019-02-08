@@ -7,16 +7,14 @@ import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.networktables.NetworkTableInstance;
 
 public class ShuffleNetworkTable{
- public static void main(String[] args) {
-        new ShuffleNetworkTable().run();
-    }
-    public void run(){
+    public static void run(){
         NetworkTableInstance instance = NetworkTableInstance.getDefault();
-        NetworkTable table =instance.getTable("/ShuffleBoard");
+        NetworkTable table =instance.getTable("/SmartDashboard");
         instance.startClientTeam(5740);
-
-        table.getInstance();
+        instance.startDSClient();
+       
         table.getEntry("ButtonB");
+
      }
         
     }
