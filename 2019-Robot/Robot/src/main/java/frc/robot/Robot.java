@@ -11,20 +11,18 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import frc.robot.subsystems.*;
 import frc.robot.*;
-import frc.robot.logging.ShuffleDash;
-import frc.robot.logging.ShuffleNetworkTable;
-import frc.robot.logging.tes;
+import frc.robot.logging.SuperShuffle;
 public class Robot extends IterativeRobot {
 
   @Override
   public void robotInit() {
-    ShuffleDash.init();
+  
    
   }
 
   @Override
   public void robotPeriodic() {
-    ShuffleNetworkTable.run();
+    
   }
 
   @Override
@@ -44,7 +42,7 @@ public class Robot extends IterativeRobot {
   @Override
   public void teleopPeriodic() {
     Teleop.Periodic();
-   tes.calculate();
+    SuperShuffle.Periodic();
    // Shuffleboard.update();
 
   }

@@ -54,6 +54,6 @@ public class OI {
   public static TalonSRX cargoClawLeft = new TalonSRX(RobotMap.cargoClawLeftRotateCAN);
   public static TalonSRX cargoClawRight = new TalonSRX(RobotMap.cargoClawRightRotateCAN);
   
-  public static Accelerometer accelerometer= new BuiltInAccelerometer();
+  public static Accelerometer accelerometer= new BuiltInAccelerometer(Accelerometer.Range.k4G);
 
 }
