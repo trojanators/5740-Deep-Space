@@ -14,28 +14,28 @@ import frc.robot.RobotMap;
 public class Teleop {
     public static void Periodic(){
       Drivetrain.periodic();
-      if(OI.controller1.getRawAxis(RobotMap.rightTrigger) != 0) { // shift up and down
+      if(OI.controller2.getRawAxis(RobotMap.rightTrigger) != 0) { // shift up and down
         Drivetrain.shift("up");
       } else {
         Drivetrain.shift("down");
      }
-     if(OI.controller2.getRawButton(RobotMap.aButton) == true) { //shoot ball
+     if(OI.controller1.getRawButton(RobotMap.aButton) == true) { //shoot ball
          Cargo.actuateClaw("out");
      } else {
          Cargo.stopClaw();
      }
-     if(OI.controller2.getRawButton(RobotMap.bButton) == true) { //intake ball
+     if(OI.controller1.getRawButton(RobotMap.bButton) == true) { //intake ball
         Cargo.actuateClaw("in");
      } else {
          Cargo.stopClaw();
      }
-     if(OI.controller2.getRawAxis(RobotMap.leftTrigger) != 0) { //open hatch manipulator
+     if(OI.controller1.getRawAxis(RobotMap.leftTrigger) != 0) { //open hatch manipulator
          Hatch.actuate("open");
      }
-     if(OI.controller2.getRawAxis(RobotMap.rightTrigger) != 0) { //close hatch manipulator
+     if(OI.controller1.getRawAxis(RobotMap.rightTrigger) != 0) { //close hatch manipulator
          Hatch.actuate("close");
      }
-     if(OI.controller2.getRawAxis(RobotMap.leftStickY) > 0) { //move cargo arm up and down
+     if(OI.controller1.getRawAxis(RobotMap.leftStickY) > 0) { //move cargo arm up and down
          Cargo.actuateArm("up", OI.controller2.getRawAxis(1));
      } 
      else if(OI.controller2.getRawAxis(RobotMap.rightStickX) < 0) {
@@ -43,10 +43,10 @@ public class Teleop {
      } else {
         Cargo.stopArm();
      }
-     if(OI.controller2.getRawButton(RobotMap.leftBumper) == true) { //tilt hatch manipulator out
+     if(OI.controller1.getRawButton(RobotMap.leftBumper) == true) { //tilt hatch manipulator out
          Hatch.tilt("forward");
      }
-     if(OI.controller2.getRawButton(RobotMap.rightBumper) == true) { //tilt hatch manipulator in
+     if(OI.controller1.getRawButton(RobotMap.rightBumper) == true) { //tilt hatch manipulator in
          Hatch.tilt("back");
      }
      if(OI.controller1.getRawButton(RobotMap.xButton) == true){ //deploy stilts

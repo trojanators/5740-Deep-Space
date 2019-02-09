@@ -63,5 +63,7 @@ public class RobotMap {
   public static int frontStiltUpTwo = 5;
   public static int frontStiltDownOne = 6;
   public static int frontStiltDownTwo = 7;
+
+public static int pressureSwitch = 0;
 }
 

@@ -16,13 +16,11 @@ public class Robot extends IterativeRobot {
 
   @Override
   public void robotInit() {
-  
    
   }
 
   @Override
   public void robotPeriodic() {
-    
   }
 
   @Override
@@ -36,7 +34,7 @@ public class Robot extends IterativeRobot {
   @Override
   public void teleopInit(){
    // ShuffleLayout.Init();
-   
+
   }
 
   @Override
