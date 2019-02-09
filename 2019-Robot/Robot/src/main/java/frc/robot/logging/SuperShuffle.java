@@ -40,15 +40,15 @@ public class SuperShuffle {
    .withWidget(BuiltInWidgets.kBooleanBox)
    .getEntry();
     */
-    private static NetworkTableEntry speedEntry = 
+  /*  private static NetworkTableEntry speedEntry = 
     tab.add("axis acc",OI.accelerometer)
     .withPosition(9,1)
     .withSize(2,1)
     .withWidget(BuiltInWidgets.kAccelerometer)
     .getEntry();
-
+*/
     public static void Periodic() {
-      speedEntry.setDouble(xVal);
+     // speedEntry.setDouble(xVal);
        // pressureEntry.setBoolean();
         controller1XEntry.setDouble(OI.controller1.getRawAxis(4));
         controller1YEntry.setDouble(OI.controller1.getRawAxis(5));
