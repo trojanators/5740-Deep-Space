@@ -38,9 +38,9 @@ public class SuperShuffle {
     */
    private static NetworkTableEntry speedEntry = 
     tab.add("axis acc",OI.accelerometer.getX())
-    .withPosition(8,1)
-    .withSize(3,3)
-    .withWidget(BuiltInWidgets.kAccelerometer)
+    .withPosition(9,3)
+    .withSize(3, 2)
+    .withWidget(BuiltInWidgets.kGraph)
     .getEntry();
 
     public static void Periodic() {
