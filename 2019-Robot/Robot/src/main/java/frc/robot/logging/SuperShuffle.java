@@ -8,10 +8,6 @@ import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import frc.robot.*;
 
 public class SuperShuffle {
-    
-   static double xVal = OI.accelerometer.getX();
-    double yVal = OI.accelerometer.getY();
-    double zVal = OI.accelerometer.getZ();
 
     private static ShuffleboardTab tab = Shuffleboard.getTab("Driver Info");
     private static NetworkTableEntry controller1XEntry = tab.add("controller1 X value", OI.controller1.getRawAxis(1))
@@ -40,15 +36,15 @@ public class SuperShuffle {
    .withWidget(BuiltInWidgets.kBooleanBox)
    .getEntry();
     */
-  /*  private static NetworkTableEntry speedEntry = 
-    tab.add("axis acc",OI.accelerometer)
-    .withPosition(9,1)
-    .withSize(2,1)
+   private static NetworkTableEntry speedEntry = 
+    tab.add("axis acc",OI.accelerometer.getX())
+    .withPosition(8,1)
+    .withSize(3,3)
     .withWidget(BuiltInWidgets.kAccelerometer)
     .getEntry();
-*/
+
     public static void Periodic() {
-     // speedEntry.setDouble(xVal);
+     speedEntry.setDouble(OI.accelerometer.getX());
        // pressureEntry.setBoolean();
         controller1XEntry.setDouble(OI.controller1.getRawAxis(4));
         controller1YEntry.setDouble(OI.controller1.getRawAxis(5));
