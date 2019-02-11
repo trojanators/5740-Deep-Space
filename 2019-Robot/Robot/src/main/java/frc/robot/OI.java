@@ -14,7 +14,8 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
  */
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
-
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj.BuiltInAccelerometer;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Joystick;
@@ -51,7 +52,8 @@ public class OI {
   public static SpeedControllerGroup stiltRotateGroup = new SpeedControllerGroup(leftStiltRotate, rightStiltRotate);
   public static SpeedControllerGroup stiltActuateGroup = new SpeedControllerGroup(leftStiltActuate, rightStiltActuate);
 
-  public static TalonSRX cargoArmActuate = new TalonSRX(RobotMap.cargoArmActuateCAN);
+  public static CANSparkMax cargoArmActuateOne = new CANSparkMax(RobotMap.cargoArmActuateOneCAN, MotorType.kBrushless);
+  public static CANSparkMax cargoArmActuateTwo = new CANSparkMax(RobotMap.cargoArmActuateTwoCAN, MotorType.kBrushless);
   public static TalonSRX cargoClawLeft = new TalonSRX(RobotMap.cargoClawLeftRotateCAN);
   public static TalonSRX cargoClawRight = new TalonSRX(RobotMap.cargoClawRightRotateCAN);
   

@@ -35,11 +35,8 @@ public class Teleop {
      if(OI.controller2.getRawAxis(RobotMap.rightTrigger) != 0) { //close hatch manipulator
          Hatch.actuate("close");
      }
-     if(OI.controller2.getRawAxis(RobotMap.leftStickY) > 0) { //move cargo arm up and down
-         Cargo.actuateArm("up", OI.controller2.getRawAxis(1));
-     } 
-     else if(OI.controller2.getRawAxis(RobotMap.rightStickX) < 0) {
-        Cargo.actuateArm("down", OI.controller2.getRawAxis(1));
+     if(OI.controller2.getRawAxis(RobotMap.leftStickY) != 0) { //move cargo arm up and down
+        Cargo.actuateArm(OI.controller2.getRawAxis(RobotMap.leftStickY));
      } else {
         Cargo.stopArm();
      }
