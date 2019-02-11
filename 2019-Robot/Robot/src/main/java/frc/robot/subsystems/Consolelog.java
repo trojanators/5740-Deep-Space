@@ -1,27 +1,23 @@
 package frc.robot.subsystems;
 
-import java.lang.System.Logger;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.logging.Handler;
-import java.util.logging.Level;
-
-import edu.wpi.first.wpilibj.command.CommandGroup;
+import org.apache.log4j.Logger;
 
 public class Consolelog {
-  
-    public static void Init() {
+    Calendar cal = Calendar.getInstance();
+      public  java.util.Date date = cal.getTime();
+      public  DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
-        Calendar cal = Calendar.getInstance();
-        java.util.Date date = cal.getTime();
-        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-        String formattedDate = dateFormat.format(date);
+      public Logger logger = Logger.getLogger(Consolelog.class);
+
+      public void main(String[] args) {   
+      logger.info("===========================================");
+      logger.info(" |               Robo-Logger              |");
+      logger.info("===========================================");
       
-        System.out.println("=======================================================");
-        System.out.println("|                     Robo-logger                     |");
-        System.out.println("=======================================================");
-        System.out.println("Current time: " + formattedDate);
+      logger.info("Sorry communism faild reverting to Captializem");
     }
-
-    }
+    
+}
