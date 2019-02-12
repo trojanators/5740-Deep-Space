@@ -10,6 +10,7 @@ package frc.robot;
 import frc.robot.OI;
 import frc.robot.subsystems.*;
 import frc.robot.RobotMap;
+import frc.robot.logging.Consolelog;
 
 public class Teleop {
     public static void Periodic(){
@@ -17,6 +18,7 @@ public class Teleop {
       if(OI.controller2.getRawAxis(RobotMap.rightTrigger) != 0) { // shift up and down
         Drivetrain.shift("up");
       } else {
+        Consolelog.Robologger.info("Shift"+"down");
         Drivetrain.shift("down");
      }
      if(OI.controller1.getRawButton(RobotMap.aButton) == true) { //shoot ball
@@ -37,10 +39,9 @@ public class Teleop {
      }
      if(OI.controller1.getRawAxis(RobotMap.leftStickY) > 0) { //move cargo arm up and down
          Cargo.actuateArm("up", OI.controller2.getRawAxis(1));
+     
      } 
-     else if(OI.controller2.getRawAxis(RobotMap.rightStickX) < 0) {
-        Cargo.actuateArm("down", OI.controller2.getRawAxis(1));
-     } else {
+     else {
         Cargo.stopArm();
      }
      if(OI.controller1.getRawButton(RobotMap.leftBumper) == true) { //tilt hatch manipulator out

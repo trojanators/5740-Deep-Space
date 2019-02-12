@@ -7,11 +7,14 @@
 
 package frc.robot;
 
+import java.io.Console;
+
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import frc.robot.subsystems.*;
 import frc.robot.*;
 import frc.robot.logging.SuperShuffle;
+import frc.robot.logging.*;
 public class Robot extends IterativeRobot {
 
   @Override
