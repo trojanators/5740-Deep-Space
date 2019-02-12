@@ -10,13 +10,16 @@ package frc.robot;
 import frc.robot.OI;
 import frc.robot.subsystems.*;
 import frc.robot.RobotMap;
+import frc.robot.logging.Consolelog;
 
 public class Teleop {
     public static void Periodic(){
       Drivetrain.periodic();
       if(OI.controller1.getRawAxis(RobotMap.rightTrigger) != 0) { // shift up and down
+        Consolelog.Robologger.info("Shift"+"up");
         Drivetrain.shift("up");
       } else {
+        Consolelog.Robologger.info("Shift"+"down");
         Drivetrain.shift("down");
      }
      if(OI.controller2.getRawButton(RobotMap.aButton) == true) { //shoot ball
