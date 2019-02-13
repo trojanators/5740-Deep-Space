@@ -25,8 +25,8 @@ import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.vision.VisionPipeline;
-import edu.wpi.first.vision.VisionThread;
-
+import edu.wpi.first.vision.VisionRunner;
+import edu.wpi.first.wpilibj.vision.VisionThread;
 import org.opencv.core.Mat;
 
 /*
@@ -65,7 +65,8 @@ import org.opencv.core.Mat;
  */
 
 public final class Main {
-  private static String configFile = "boot/frc.json";
+  private static String configFile = "/boot/frc.json";
+  public static VisionThread visionThread;
 
   @SuppressWarnings("MemberName")
   public static class CameraConfig {
@@ -226,19 +227,20 @@ public final class Main {
     for (CameraConfig cameraConfig : cameraConfigs) {
       cameras.add(startCamera(cameraConfig));
     }
-    NetworkTable table;
-    table = NetworkTableInstance.getDefault().getTable("GRIP");
+  /*  visionThread = new VisionThread(cameras.get(1), new GripPipeline(), pipeline -> {
+      if(pipeline.filterContoursOutput().isEmpty()) {
+        System.out.println("No Contours Found!");
+      } else {
+        System.out.println("Contours Found!");
+      }
+      });
+      visionThread.start();*/
       VisionThread visionThread = new VisionThread(cameras.get(0),
-              new GripPipeline(), pipeline -> {
-        if(pipeline.filterContoursOutput().isEmpty()) {
-          System.out.println("No Contours Found!");
-          table.getEntry("Contours").setString("no");
-        } else {
-          System.out.println("Contours Found!");
-          table.getEntry("Contours").setString("yes");
-        }
+      new GripPipeline(), pipeline -> {
+
       });
       visionThread.start();
+      
       //}
     // loop forever
     for (;;) {

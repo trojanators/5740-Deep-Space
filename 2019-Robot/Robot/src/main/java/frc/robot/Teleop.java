@@ -20,13 +20,12 @@ public class Teleop {
         Drivetrain.shift("down");
      }
      if(OI.controller2.getRawButton(RobotMap.aButton) == true) { //shoot ball
-         Cargo.actuateClaw("out");
-     } else {
-         Cargo.stopClaw();
+         Cargo.actuateClaw(.5);
      }
      if(OI.controller2.getRawButton(RobotMap.bButton) == true) { //intake ball
-        Cargo.actuateClaw("in");
-     } else {
+        Cargo.actuateClaw(-.5);
+     } 
+     if(OI.controller2.getRawButton(RobotMap.aButton) == false && OI.controller2.getRawButton(RobotMap.bButton) == false) {
          Cargo.stopClaw();
      }
      if(OI.controller2.getRawAxis(RobotMap.leftTrigger) != 0) { //open hatch manipulator
