@@ -40,6 +40,6 @@ public abstract class ShuffleDash {
          System.out.println("false");
         }
         Shuffleboard.update();
-        NetworkTableEntry Driver= Shuffleboard.getTab("Driver1 info");
+     //   NetworkTableEntry Driver = Shuffleboard.getTab("Driver1 info");
     }
 }

@@ -44,6 +44,23 @@ public class RobotMap {
   public static int PCMOneCAN = 13;
   public static int PCMTwoCAN = 14;
 
+  public static int backStiltUpOne = 0;
+  public static int backStiltUpTwo = 1;
+  public static int backStiltDownOne = 2;
+  public static int backStiltDownTwo = 3;
+  public static int frontStiltUpOne = 4;
+  public static int frontStiltUpTwo = 5;
+  public static int frontStiltDownOne = 6;
+  public static int frontStiltDownTwo = 7;
+
+  public static int leftRampOne = 0;
+  public static int leftRampTwo = 1;
+  public static int rightRampOne = 2;
+  public static int rightRampTwo = 3;
+
+  public static int xButton = 3;
+  public static int yButton = 4;
+
   public static int rightStickX = 4;
   public static int aButton = 1;
   public static int bButton = 2;

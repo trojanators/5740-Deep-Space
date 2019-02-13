@@ -8,6 +8,7 @@
 package frc.robot;
 
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -36,6 +37,16 @@ public class OI {
   public static WPI_TalonSRX rightCenterDriveMotor = new WPI_TalonSRX(RobotMap.rightCenterDriveCAN);
   public static WPI_VictorSPX rightBackDriveMotor = new WPI_VictorSPX(RobotMap.rightBackDriveCAN);
 
+
+   // public static DoubleSolenoid leftRamp = new DoubleSolenoid(RobotMap.PCMTwoCAN, RobotMap.leftRampOne, RobotMap.leftRampTwo);
+ // public static DoubleSolenoid rightRamp = new DoubleSolenoid(RobotMap.PCMTwoCAN, RobotMap.rightRampOne, RobotMap.rightRampTwo);
+  
+ public static DoubleSolenoid frontStiltDown = new DoubleSolenoid(RobotMap.PCMTwoCAN, RobotMap.frontStiltDownOne, RobotMap.frontStiltDownTwo);
+ public static DoubleSolenoid frontStiltUp = new DoubleSolenoid(RobotMap.PCMTwoCAN,RobotMap.frontStiltUpOne, RobotMap.frontStiltUpTwo);
+ public static DoubleSolenoid backStiltDown = new DoubleSolenoid(RobotMap.PCMTwoCAN,RobotMap.backStiltDownOne, RobotMap.backStiltDownTwo);
+ public static DoubleSolenoid backStiltUp = new DoubleSolenoid(RobotMap.PCMTwoCAN, RobotMap.backStiltUpOne, RobotMap.backStiltUpTwo);
+ 
+
   public static SpeedControllerGroup leftDriveGroup = new SpeedControllerGroup(leftFrontDriveMotor, leftCenterDriveMotor, leftBackDriveMotor);
   public static SpeedControllerGroup rightDriveGroup = new SpeedControllerGroup(rightFrontDriveMotor, rightCenterDriveMotor, rightBackDriveMotor);
   public static DifferentialDrive drive = new DifferentialDrive(leftDriveGroup, rightDriveGroup);
@@ -52,7 +63,7 @@ public class OI {
 
   public static TalonSRX cargoArmActuate = new TalonSRX(RobotMap.cargoArmActuateCAN);
   public static TalonSRX cargoClawLeft = new TalonSRX(RobotMap.cargoClawLeftRotateCAN);
-  public static TalonSRX cargoClawRight = new TalonSRX(RobotMap.cargoClawRightRotateCAN);
+  public static VictorSPX cargoClawRight = new VictorSPX(RobotMap.cargoClawRightRotateCAN);
   
   public static Accelerometer accelerometer= new BuiltInAccelerometer();
 

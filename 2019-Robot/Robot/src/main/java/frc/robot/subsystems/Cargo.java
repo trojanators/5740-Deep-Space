@@ -24,23 +24,23 @@ public class Cargo {
   }
   public static void actuateClaw(String direction) {
     //TODO: Limit switch to stop motors when ball is in the claw
-   /* switch(direction) {
+    switch(direction) {
       case "in":
-        OI.cargoClawLeft.setInverted(false);
-        OI.cargoClawRight.setInverted(false);
-        OI.cargoClawLeft.set(ControlMode.PercentOutput, 100);
-        OI.cargoClawRight.set(ControlMode.PercentOutput, 100);
+      //  OI.cargoClawLeft.setInverted(false);
+      //  OI.cargoClawRight.setInverted(false);
+        OI.cargoClawLeft.set(ControlMode.PercentOutput, .5);
+        OI.cargoClawRight.set(ControlMode.PercentOutput, -.5);
       break;
       case "out":
-        OI.cargoClawLeft.setInverted(true);
-        OI.cargoClawRight.setInverted(true);
-        OI.cargoClawLeft.set(ControlMode.PercentOutput, 100);
-        OI.cargoClawRight.set(ControlMode.PercentOutput, 100);
+        //OI.cargoClawLeft.setInverted(true);
+        //OI.cargoClawRight.setInverted(true);
+        OI.cargoClawLeft.set(ControlMode.PercentOutput, -.5);
+        OI.cargoClawRight.set(ControlMode.PercentOutput, .5);
       break;
-    }*/
+    }
   }
   public static void stopClaw() {
-   // OI.cargoClawLeft.set(ControlMode.PercentOutput, 0);
-   // OI.cargoClawRight.set(ControlMode.PercentOutput, 0);
+    OI.cargoClawLeft.set(ControlMode.PercentOutput, 0);
+    OI.cargoClawRight.set(ControlMode.PercentOutput, 0);
   }
 }
