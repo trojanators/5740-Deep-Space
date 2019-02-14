@@ -6,6 +6,7 @@ import edu.wpi.first.wpilibj.shuffleboard.ComplexWidget;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import frc.robot.*;
+import frc.robot.subsystems.Drivetrain;
 
 public class SuperShuffle {
 
@@ -42,8 +43,18 @@ public class SuperShuffle {
     .withSize(3, 2)
     .withWidget(BuiltInWidgets.kGraph)
     .getEntry();
+    
+    private static NetworkTableEntry shiftEntry = 
+    tab.add ("Shifting", Drivetrain.state)
+    .withPosition(9,2)
+    .withSize(2,1)
+    .withWidget(BuiltInWidgets.kBooleanBox)
+    .getEntry();
+
 
     public static void Periodic() {
+
+        shiftEntry.setBoolean(Drivetrain.state);
         speedEntry.setDouble(OI.accelerometer.getZ());
         speedEntry.setDouble(OI.accelerometer.getY());
         speedEntry.setDouble(OI.accelerometer.getX());
