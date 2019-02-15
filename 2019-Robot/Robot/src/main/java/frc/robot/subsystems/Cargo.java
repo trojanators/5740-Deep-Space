@@ -6,24 +6,16 @@ import frc.robot.OI;
 
 public class Cargo {
   public Cargo() {}
-  public static void actuateArm(String direction, double speed) {
-  //TODO: Limit switches to stop arm at top and bottom
-    switch(direction) {
-      case "up":
-        OI.cargoArmActuate.setInverted(false);
-        OI.cargoArmActuate.set(ControlMode.PercentOutput, Math.abs(speed));
-      break;
-      case "down":
-        OI.cargoArmActuate.setInverted(true);
-        OI.cargoArmActuate.set(ControlMode.PercentOutput, Math.abs(speed));
-      break;
-    }
+  public static void actuateArm(double speed) {
+    OI.cargoArmActuateOne.set(speed);
+    OI.cargoArmActuateTwo.set(speed);
   }
   public static void stopArm() {
    // OI.cargoArmActuate.set(ControlMode.PercentOutput, 0);
   }
-  public static void actuateClaw(String direction) {
+  public static void actuateClaw(double speed) {
     //TODO: Limit switch to stop motors when ball is in the claw
+<<<<<<< HEAD
    /* switch(direction) {
       case "in":
         OI.cargoClawLeft.setInverted(false);
@@ -38,6 +30,10 @@ public class Cargo {
         OI.cargoClawRight.set(ControlMode.PercentOutput, 100);
       break;
     }*/
+=======
+        OI.cargoClawLeft.set(ControlMode.PercentOutput, speed);
+        OI.cargoClawRight.set(ControlMode.PercentOutput, speed);
+>>>>>>> 6f216bfb3d99f202ae1d5395d369a21a59a6e09e
   }
   public static void stopClaw() {
    // OI.cargoClawLeft.set(ControlMode.PercentOutput, 0);

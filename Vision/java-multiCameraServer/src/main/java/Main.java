@@ -25,8 +25,8 @@ import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.vision.VisionPipeline;
-import edu.wpi.first.vision.VisionThread;
-
+import edu.wpi.first.vision.VisionRunner;
+import edu.wpi.first.wpilibj.vision.VisionThread;
 import org.opencv.core.Mat;
 
 /*
@@ -226,6 +226,7 @@ public final class Main {
     for (CameraConfig cameraConfig : cameraConfigs) {
       cameras.add(startCamera(cameraConfig));
     }
+<<<<<<< HEAD
       VisionThread visionThread = new VisionThread(cameras.get(0),
         new GripPipeline(), pipeline -> {
           if(pipeline.filterContoursOutput().isEmpty()) {
@@ -235,6 +236,24 @@ public final class Main {
           }
       });
       visionThread.start();
+=======
+  /*  visionThread = new VisionThread(cameras.get(1), new GripPipeline(), pipeline -> {
+      if(pipeline.filterContoursOutput().isEmpty()) {
+        System.out.println("No Contours Found!");
+      } else {
+        System.out.println("Contours Found!");
+      }
+      });
+      visionThread.start();*/
+      VisionThread visionThread = new VisionThread(cameras.get(0),
+      new GripPipeline(), pipeline -> {
+
+      });
+      visionThread.start();
+      
+      //}
+    // loop forever
+>>>>>>> 6f216bfb3d99f202ae1d5395d369a21a59a6e09e
     for (;;) {
       try {
         Thread.sleep(10000);

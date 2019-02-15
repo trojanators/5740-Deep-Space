@@ -21,6 +21,7 @@ public class Teleop {
      
         Drivetrain.shift("down");
      }
+<<<<<<< HEAD
      if(OI.controller1.getRawButton(RobotMap.aButton) == true) { //shoot ball
          Cargo.actuateClaw("out");
      } else {
@@ -29,6 +30,15 @@ public class Teleop {
      if(OI.controller1.getRawButton(RobotMap.bButton) == true) { //intake ball
         Cargo.actuateClaw("in");
      } else {
+=======
+     if(OI.controller2.getRawButton(RobotMap.aButton) == true) { //shoot ball
+         Cargo.actuateClaw(.5);
+     }
+     if(OI.controller2.getRawButton(RobotMap.bButton) == true) { //intake ball
+        Cargo.actuateClaw(-.5);
+     } 
+     if(OI.controller2.getRawButton(RobotMap.aButton) == false && OI.controller2.getRawButton(RobotMap.bButton) == false) {
+>>>>>>> 6f216bfb3d99f202ae1d5395d369a21a59a6e09e
          Cargo.stopClaw();
      }
      if(OI.controller1.getRawAxis(RobotMap.leftTrigger) != 0) { //open hatch manipulator
@@ -37,11 +47,17 @@ public class Teleop {
      if(OI.controller1.getRawAxis(RobotMap.rightTrigger) != 0) { //close hatch manipulator
          Hatch.actuate("close");
      }
+<<<<<<< HEAD
      if(OI.controller1.getRawAxis(RobotMap.leftStickY) > 0) { //move cargo arm up and down
          Cargo.actuateArm("up", OI.controller2.getRawAxis(1));
      
      } 
      else {
+=======
+     if(OI.controller2.getRawAxis(RobotMap.leftStickY) != 0) { //move cargo arm up and down
+        Cargo.actuateArm(OI.controller2.getRawAxis(RobotMap.leftStickY));
+     } else {
+>>>>>>> 6f216bfb3d99f202ae1d5395d369a21a59a6e09e
         Cargo.stopArm();
      }
      if(OI.controller1.getRawButton(RobotMap.leftBumper) == true) { //tilt hatch manipulator out
