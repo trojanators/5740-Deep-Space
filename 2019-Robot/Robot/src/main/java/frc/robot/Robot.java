@@ -7,10 +7,12 @@
 
 package frc.robot;
 
+import java.util.Timer;
+
 import edu.wpi.first.wpilibj.TimedRobot;
 
-public class Robot extends TimedRobot {
 
+public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
   }
@@ -28,11 +30,20 @@ public class Robot extends TimedRobot {
   }
 
   @Override
+  public void teleopInit() {
+    
+
+  }
+  @Override
   public void teleopPeriodic() {
     Teleop.Periodic();
   }
 
   @Override
   public void testPeriodic() {
+  }
+  @Override
+  public void disabledInit() {
+
   }
 }

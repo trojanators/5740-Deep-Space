@@ -13,14 +13,16 @@ import edu.wpi.first.wpilibj.shuffleboard.SimpleWidget;
 import frc.robot.*;
 import frc.robot.OI;
 
-public abstract class SuperShuffle {
+public class SuperShuffle {
         public static ShuffleboardTab tab = Shuffleboard.getTab("Driver Info");
+
         public static NetworkTableEntry controller1XEntry = 
         tab.add("controller1 X value", OI.controller1.getRawAxis(1))
         .withWidget(BuiltInWidgets.kNumberBar)
         .withPosition(0, 0)
         .withSize(2, 1)
         .getEntry();
+
          public static NetworkTableEntry controller1YEntry = 
          tab.add("Controller 1 Y value", OI.controller1.getRawAxis(4))
         .withWidget(BuiltInWidgets.kNumberBar)
@@ -32,23 +34,29 @@ public abstract class SuperShuffle {
         tab.add("Power", OI.pdp)
         .withWidget(BuiltInWidgets.kPowerDistributionPanel)
         .withPosition(0, 2)
-         .withSize(3, 3);
+        .withSize(3, 3);
 
         public static NetworkTableEntry pressureEntry = 
-        tab.add("Compressor", OI.pressureSwitch.enabled())
-         .withPosition(9, 2)
+        tab.add("Compressor", true) //TODO: repalce w/ pressure switch value
+        .withPosition(9, 2)
         .withSize(2, 1)
         .withWidget(BuiltInWidgets.kBooleanBox)
         .getEntry();
 
         public static NetworkTableEntry speedEntry =
          tab.add("axis acc", OI.accelerometer.getX())
-         .withPosition(9, 3)
+        .withPosition(9, 3)
         .withSize(3, 2)
         .withWidget(BuiltInWidgets.kGraph)
         .getEntry();
+
+        public static SimpleWidget cameraEntry = 
+        tab.add("cam0", "mjpeg://frcvision.local:1181/?action=stream")
+        .withPosition(4,3)
+        .withSize(4,3)
+        .withWidget(BuiltInWidgets.kCameraStream);
+
         
-        publ
     public static void Periodic() {
         
         speedEntry.setDouble(OI.accelerometer.getX());

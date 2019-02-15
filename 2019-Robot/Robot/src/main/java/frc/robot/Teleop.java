@@ -45,5 +45,8 @@ public class Teleop {
      if(OI.controller2.getRawButton(RobotMap.rightBumper) == true) { //tilt hatch manipulator in
          Hatch.tilt("back");
      }
+     if(OI.controller2.getRawButton(RobotMap.aButton) == true) {
+         CalculateDistance.execute();
+     }
   }
 }
