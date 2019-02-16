@@ -11,7 +11,8 @@ public class Cargo {
     OI.cargoArmActuateTwo.set(speed);
   }
   public static void stopArm() {
-   // OI.cargoArmActuate.set(ControlMode.PercentOutput, 0);
+   OI.cargoArmActuateOne.set(0);
+   OI.cargoArmActuateTwo.set(0);
   }
   public static void actuateClaw(double speed) {
     //TODO: Limit switch to stop motors when ball is in the claw
