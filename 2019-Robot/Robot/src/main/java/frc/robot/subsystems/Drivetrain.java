@@ -4,7 +4,7 @@ import edu.wpi.first.wpilibj.DoubleSolenoid;
 import frc.robot.OI;
 
 public class Drivetrain {
-  public  static Boolean state = new Boolean(state);
+  public  static Boolean state = true;
   public Drivetrain() {}
   public static void shift(String direction) {
     switch(direction) {
