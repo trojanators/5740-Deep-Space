@@ -38,9 +38,10 @@ public class RobotMap {
   public static int stiltWheelsActuateRightCAN = 9;
  
   public static int cargoArmActuateOneCAN = 10;
-  public static int cargoArmActuateTwoCAN = 15;
   public static int cargoClawLeftRotateCAN = 11;
   public static int cargoClawRightRotateCAN = 12;
+
+  public static double cargoClawSpeed = .4; 
 
   public static int PCMOneCAN = 13;
   public static int PCMTwoCAN = 14;
@@ -64,7 +65,10 @@ public class RobotMap {
   public static int frontStiltUpTwo = 5;
   public static int frontStiltDownOne = 6;
   public static int frontStiltDownTwo = 7;
+  public static int balllimit = 0;
 
-public static int pressureSwitch = 0;
+ public static int pressureSwitch = 0;
+
+
 }
 

@@ -8,6 +8,7 @@
 package frc.robot;
 
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 /**
  * This class is the glue that binds the controls on the physical operator
  * interface to the commands and command groups that allow control of the robot.
@@ -18,6 +19,7 @@ import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import edu.wpi.first.wpilibj.BuiltInAccelerometer;
 import edu.wpi.first.wpilibj.Compressor;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.PowerDistributionPanel;
@@ -52,8 +54,7 @@ public class OI {
   public static SpeedControllerGroup stiltRotateGroup = new SpeedControllerGroup(leftStiltRotate, rightStiltRotate);
   public static SpeedControllerGroup stiltActuateGroup = new SpeedControllerGroup(leftStiltActuate, rightStiltActuate);
 
-  public static CANSparkMax cargoArmActuateOne = new CANSparkMax(RobotMap.cargoArmActuateOneCAN, MotorType.kBrushless);
-  public static CANSparkMax cargoArmActuateTwo = new CANSparkMax(RobotMap.cargoArmActuateTwoCAN, MotorType.kBrushless);
+  public static VictorSPX cargoArmActuateOne = new VictorSPX(RobotMap.cargoArmActuateOneCAN);
   public static TalonSRX cargoClawLeft = new TalonSRX(RobotMap.cargoClawLeftRotateCAN);
   public static TalonSRX cargoClawRight = new TalonSRX(RobotMap.cargoClawRightRotateCAN);
   
@@ -61,7 +62,7 @@ public class OI {
   public static DoubleSolenoid frontStiltUp = new DoubleSolenoid(RobotMap.PCMTwoCAN,RobotMap.frontStiltUpOne, RobotMap.frontStiltUpTwo);
   public static DoubleSolenoid backStiltDown = new DoubleSolenoid(RobotMap.PCMTwoCAN,RobotMap.backStiltDownOne, RobotMap.backStiltDownTwo);
   public static DoubleSolenoid backStiltUp = new DoubleSolenoid(RobotMap.PCMTwoCAN, RobotMap.backStiltUpOne, RobotMap.backStiltUpTwo);
-
+  public static DigitalInput limitInput = new DigitalInput(RobotMap.balllimit);
 
   public static Accelerometer accelerometer= new BuiltInAccelerometer(Accelerometer.Range.k4G);
   public static Compressor pressureSwitch = new Compressor();

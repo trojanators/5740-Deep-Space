@@ -29,13 +29,13 @@ public class SuperShuffle {
     .withWidget(BuiltInWidgets.kPowerDistributionPanel)
     .withPosition(0, 2)
     .withSize(3, 3);
-
+/*
     private static NetworkTableEntry pressureEntry =
     tab.add("pressure", OI.pressureSwitch.getPressureSwitchValue() )
-   .withPosition(9, 3)
+   .withPosition(9,2)
    .withSize(2, 1)
    .withWidget(BuiltInWidgets.kBooleanBox)
-   .getEntry();
+   .getEntry();*/
 
    private static NetworkTableEntry speedEntry = 
     tab.add("axis acc",OI.accelerometer.getX())
@@ -50,21 +50,24 @@ public class SuperShuffle {
     .withSize(2,1)
     .withWidget(BuiltInWidgets.kBooleanBox)
     .getEntry();
-
+   // private static 
+/*
      private static NetworkTableEntry cameraETableEntry=
      tab.add("LiveFeed",camera)
      .withPosition(3,6)
      .withSize(4,5)
      .withWidget(BuiltInWidgets.kcamera)
-     .getEntry();
+     .getEntry()
+     ;
 
-    public static void Periodic() {
+*/
+     public static void Periodic() {
 
         shiftEntry.setBoolean(Drivetrain.state);
         speedEntry.setDouble(OI.accelerometer.getZ());
         speedEntry.setDouble(OI.accelerometer.getY());
         speedEntry.setDouble(OI.accelerometer.getX());
-        pressureEntry.setBoolean(OI.pressureSwitch.getPressureSwitchValue());
+       // pressureEntry.setBoolean(OI.pressureSwitch.getPressureSwitchValue());
         controller1XEntry.setDouble(OI.controller1.getRawAxis(4));
         controller1YEntry.setDouble(OI.controller1.getRawAxis(5));
         

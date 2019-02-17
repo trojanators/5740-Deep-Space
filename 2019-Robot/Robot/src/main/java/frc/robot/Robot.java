@@ -11,6 +11,9 @@ import java.io.Console;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel.ConfigParameter;
+
 import frc.robot.subsystems.*;
 import frc.robot.*;
 import frc.robot.logging.SuperShuffle;
@@ -19,7 +22,7 @@ public class Robot extends IterativeRobot {
 
   @Override
   public void robotInit() {
-   
+    //OI.cargoArmActuateOne.setParameter(ConfigParameter.kCtrlType, 1);
   }
 
   @Override
@@ -37,13 +40,14 @@ public class Robot extends IterativeRobot {
   @Override
   public void teleopInit(){
    // ShuffleLayout.Init();
+   sparkmaxlog.logging();
 
   }
 
   @Override
   public void teleopPeriodic() {
     Teleop.Periodic();
-    SuperShuffle.Periodic();
+    //SuperShuffle.Periodic();
    // Shuffleboard.update();
 
   }
