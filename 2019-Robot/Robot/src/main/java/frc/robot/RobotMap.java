@@ -46,17 +46,6 @@ public class RobotMap {
   public static int PCMOneCAN = 13;
   public static int PCMTwoCAN = 14;
 
-  public static int rightStickX = 4;
-  public static int aButton = 1;
-  public static int bButton = 2;
-  public static int leftTrigger = 2;
-  public static int leftStickY = 1;
-  public static int rightTrigger = 3;
-  public static int leftBumper = 5;
-  public static int rightBumper = 6;
-  public static int xButton = 3;
-  public static int yButton = 4;
-
   public static int backStiltUpOne = 0;
   public static int backStiltUpTwo = 1;
   public static int backStiltDownOne = 2;
@@ -70,5 +59,21 @@ public class RobotMap {
  public static int pressureSwitch = 0;
 
 
+  public static int leftRampOne = 0;
+  public static int leftRampTwo = 1;
+  public static int rightRampOne = 2;
+  public static int rightRampTwo = 3;
+
+  public static int xButton = 3;
+  public static int yButton = 4;
+
+  public static int rightStickX = 4;
+  public static int aButton = 1;
+  public static int bButton = 2;
+  public static int leftTrigger = 2;
+  public static int leftStickY = 1;
+  public static int rightTrigger = 3;
+  public static int leftBumper = 5;
+  public static int rightBumper = 6;
 }
 

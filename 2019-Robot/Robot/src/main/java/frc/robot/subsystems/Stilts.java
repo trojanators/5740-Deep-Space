@@ -1,7 +1,7 @@
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.DoubleSolenoid;
 import frc.robot.OI;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 
 public class Stilts {
     public Stilts() {}
@@ -42,4 +42,5 @@ public class Stilts {
         OI.backStiltUp.set(DoubleSolenoid.Value.kReverse);
         OI.backStiltDown.set(DoubleSolenoid.Value.kReverse);
     }
+
 }

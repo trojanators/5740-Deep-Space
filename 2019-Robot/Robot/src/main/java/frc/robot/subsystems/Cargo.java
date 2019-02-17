@@ -24,7 +24,7 @@ public class Cargo {
         OI.cargoClawRight.set(ControlMode.PercentOutput, speed);
   }
   public static void stopClaw() {
-   // OI.cargoClawLeft.set(ControlMode.PercentOutput, 0);
-   // OI.cargoClawRight.set(ControlMode.PercentOutput, 0);
+    OI.cargoClawLeft.set(ControlMode.PercentOutput, 0);
+    OI.cargoClawRight.set(ControlMode.PercentOutput, 0);
   }
 }

@@ -57,14 +57,11 @@ public class SuperShuffle {
      .withPosition(3,6)
      .withSize(4,5)
      .withWidget(BuiltInWidgets.kcamera)
+
      .getEntry()
      ;
-
 */
      public static void Periodic() {
-
-        shiftEntry.setBoolean(Drivetrain.state);
-        speedEntry.setDouble(OI.accelerometer.getZ());
         speedEntry.setDouble(OI.accelerometer.getY());
         speedEntry.setDouble(OI.accelerometer.getX());
        // pressureEntry.setBoolean(OI.pressureSwitch.getPressureSwitchValue());
