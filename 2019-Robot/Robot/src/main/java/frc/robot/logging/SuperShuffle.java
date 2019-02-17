@@ -50,14 +50,14 @@ public class SuperShuffle {
     .withSize(2,1)
     .withWidget(BuiltInWidgets.kBooleanBox)
     .getEntry();
-
+/*
      private static NetworkTableEntry cameraETableEntry=
      tab.add("LiveFeed",camera)
      .withPosition(3,6)
      .withSize(4,5)
      .withWidget(BuiltInWidgets.kcamera)
      .getEntry();
-
+*/
     public static void Periodic() {
 
         shiftEntry.setBoolean(Drivetrain.state);
