@@ -68,11 +68,9 @@ public class OI {
   public static VictorSP cargoArmActuateOne = new VictorSP(RobotMap.cargoArmActuateOnePWM);
   public static VictorSP cargoClawLeft = new VictorSP(RobotMap.cargoClawLeftRotatePWM);
   public static VictorSP cargoClawRight = new VictorSP(RobotMap.cargoClawRightRotatePWM);
-  
-  //public static DoubleSolenoid frontStiltDown = new DoubleSolenoid(RobotMap.PCMTwoCAN, RobotMap.frontStiltDownOne, RobotMap.frontStiltDownTwo);
-  //public static DoubleSolenoid frontStiltUp = new DoubleSolenoid(RobotMap.PCMTwoCAN,RobotMap.frontStiltUpOne, RobotMap.frontStiltUpTwo);
-  //public static DoubleSolenoid backStiltDown = new DoubleSolenoid(RobotMap.PCMTwoCAN,RobotMap.backStiltDownOne, RobotMap.backStiltDownTwo);
-  //public static DoubleSolenoid backStiltUp = new DoubleSolenoid(RobotMap.PCMTwoCAN, RobotMap.backStiltUpOne, RobotMap.backStiltUpTwo);
+  public static SpeedControllerGroup cargoIntake = new SpeedControllerGroup(cargoClawLeft, cargoClawRight);
+
+
   public static DigitalInput ballLimit = new DigitalInput(RobotMap.ballLimitDIO);
   public static Accelerometer accelerometer= new BuiltInAccelerometer(Accelerometer.Range.k4G);
   public static Compressor pressureSwitch = new Compressor();

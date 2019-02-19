@@ -43,6 +43,7 @@ public class Robot extends IterativeRobot {
   @Override
   public void teleopPeriodic() {
     Teleop.Periodic();
+    Cargo.update();
     //SuperShuffle.Periodic();
    // Shuffleboard.update();
 
