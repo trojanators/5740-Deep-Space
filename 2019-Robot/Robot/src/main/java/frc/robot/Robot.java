@@ -21,6 +21,7 @@ public class Robot extends IterativeRobot {
   public static Boolean eNABLEDBoolean;
   @Override
   public void robotInit() {
+    eNABLEDBoolean= false;
     //OI.cargoArmActuateOne.setParameter(ConfigParameter.kCtrlType, 1);
   }
 
