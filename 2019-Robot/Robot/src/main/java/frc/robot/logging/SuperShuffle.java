@@ -60,23 +60,21 @@ public class SuperShuffle {
     
      private static NetworkTableEntry balllimitEnrty = 
      tab.add("Claw status", OI.ballLimit.get())
-     .withPosition(9,1)
+     .withPosition(9,0)
      .withSize(2,1)
      .withWidget(BuiltInWidgets.kBooleanBox)
      .getEntry();
-     /*
+     
      private static NetworkTableEntry cameraETableEntry=
-     tab.add("LiveFeed",camera)
+     tab.add("LiveFeed","CamraPublisher/cam1/mjpg:http://10.57.40.105:1181/?action=stream")
      .withPosition(3,6)
      .withSize(4,5)
-     .withWidget(BuiltInWidgets.kcamera)
-
-     .getEntry()
-     ;
-*/
+     .withWidget(BuiltInWidgets.kCameraStream)
+.getEntry();
      public static void Periodic() {
-        
-        balllimitEnrty.setBoolean(OI.ballLimit.get());
+        cameraETableEntry.setString("CamraPublisher/cam1/mjpg:http://10.57.40.105:1181/?action=stream");
+       balllimitEnrty.setBoolean(OI.ballLimit.get());
+      
         ShiftEntry.setBoolean(Drivetrain.state);
         speedEntry.setDouble(OI.accelerometer.getY());
         speedEntry.setDouble(OI.accelerometer.getX());
