@@ -32,8 +32,8 @@ public class RobotMap {
   public static int hatchTiltOne = 4;
   public static int hatchTiltTwo = 5;
 
-  public static int stiltWheelsRotateLeftCAN = 6; //rotate the wheels
-  public static int stiltWheelsRotateRightCAN = 8;
+  public static int stiltWheelsRotateLeftCAN = 7; //rotate the wheels
+  public static int stiltWheelsRotateRightCAN = 9;
   public static int stiltWheelsActuateLeftCAN = 7; //spin the wheels (drive forward)
   public static int stiltWheelsActuateRightCAN = 9;
  
@@ -48,10 +48,10 @@ public class RobotMap {
 
   public static int backStiltUpOne = 0;
   public static int backStiltUpTwo = 1;
-  public static int backStiltDownOne = 2;
-  public static int backStiltDownTwo = 3;
-  public static int frontStiltUpOne = 4;
-  public static int frontStiltUpTwo = 5;
+  public static int backStiltDownOne = 4;
+  public static int backStiltDownTwo = 5;
+  public static int frontStiltUpOne = 2;
+  public static int frontStiltUpTwo = 3;
   public static int frontStiltDownOne = 6;
   public static int frontStiltDownTwo = 7;
   public static int ballLimitDIO = 0;
