@@ -58,9 +58,9 @@ public class OI {
   public static DoubleSolenoid hatchActuateSolenoid = new DoubleSolenoid(RobotMap.PCMOneCAN, RobotMap.hatchActuateOne,  RobotMap.hatchActuateTwo);
   public static DoubleSolenoid hatchTiltSolenoid = new DoubleSolenoid(RobotMap.PCMOneCAN, RobotMap.hatchTiltOne, RobotMap.hatchTiltTwo);
 
-  public static WPI_VictorSPX leftStiltRotate = new WPI_VictorSPX(RobotMap.stiltWheelsRotateLeftCAN); //spin stilt wheels (drive forward)
+  public static WPI_TalonSRX leftStiltRotate = new WPI_TalonSRX(RobotMap.stiltWheelsRotateLeftCAN); //spin stilt wheels (drive forward)
   public static WPI_VictorSPX leftStiltActuate = new WPI_VictorSPX(RobotMap.stiltWheelsActuateLeftCAN);
-  public static WPI_TalonSRX rightStiltRotate = new WPI_TalonSRX(RobotMap.stiltWheelsRotateRightCAN);
+  public static WPI_VictorSPX rightStiltRotate = new WPI_VictorSPX(RobotMap.stiltWheelsRotateRightCAN);
   public static WPI_TalonSRX rightStiltActuate = new WPI_TalonSRX(RobotMap.stiltWheelsActuateRightCAN);
   public static SpeedControllerGroup stiltRotateGroup = new SpeedControllerGroup(leftStiltRotate, rightStiltRotate);
   public static SpeedControllerGroup stiltActuateGroup = new SpeedControllerGroup(leftStiltActuate, rightStiltActuate);

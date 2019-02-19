@@ -50,7 +50,7 @@ public class Cargo {
       stopClaw();
     }
     if(OI.controller2.getRawButton(RobotMap.rightBumper) && !intaking && !hasBall && !stowed) {
-      //run intake
+      //run intake if button is pressed and intake is in default position
       actuateClaw(0.5);
     }
   }

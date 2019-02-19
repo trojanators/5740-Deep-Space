@@ -49,5 +49,10 @@ public class Teleop {
     if(OI.controller1.getRawButton(RobotMap.bButton)) { //pull back stilts up
         Stilts.actuate("back", "down");
     }
+    if(OI.controller2.getRawButton(4)) {
+        Stilts.rotateFrontWheels(1);
+    } else {
+        Stilts.stopFrontWheelRotation();
+    }
   }
 }
