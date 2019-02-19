@@ -15,8 +15,10 @@ import com.revrobotics.CANSparkMaxLowLevel.ConfigParameter;
 import frc.robot.subsystems.*;
 import frc.robot.*;
 import frc.robot.logging.ShuffleDash;
+import frc.robot.logging.SuperShuffle;
+import frc.robot.logging.robotdect;
 public class Robot extends IterativeRobot {
-
+  public static Boolean eNABLEDBoolean;
   @Override
   public void robotInit() {
     //OI.cargoArmActuateOne.setParameter(ConfigParameter.kCtrlType, 1);
@@ -36,6 +38,7 @@ public class Robot extends IterativeRobot {
 
   @Override
   public void teleopInit(){
+    eNABLEDBoolean= true;
    // ShuffleLayout.Init();
 
   }
@@ -43,7 +46,8 @@ public class Robot extends IterativeRobot {
   @Override
   public void teleopPeriodic() {
     Teleop.Periodic();
-    //SuperShuffle.Periodic();
+    SuperShuffle.Periodic();
+   robotdect.perodic();
    // Shuffleboard.update();
 
   }

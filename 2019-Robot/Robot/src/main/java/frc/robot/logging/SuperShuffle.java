@@ -39,14 +39,21 @@ public class SuperShuffle {
 
    private static NetworkTableEntry speedEntry = 
     tab.add("axis acc",OI.accelerometer.getX())
-    .withPosition(9,3)
+    .withPosition(8,3)
     .withSize(3, 2)
     .withWidget(BuiltInWidgets.kGraph)
     .getEntry();
     
-    private static NetworkTableEntry shiftEntry = 
+    private static NetworkTableEntry ShiftEntry = 
     tab.add ("Shifting", Drivetrain.state)
     .withPosition(9,2)
+    .withSize(2,1)
+    .withWidget(BuiltInWidgets.kBooleanBox)
+    .getEntry();
+
+    private static NetworkTableEntry pressureEntry= 
+    tab.add ("CompressorStatus", OI.pressureSwitch.getPressureSwitchValue())
+    .withPosition(9,1)
     .withSize(2,1)
     .withWidget(BuiltInWidgets.kBooleanBox)
     .getEntry();
@@ -62,9 +69,11 @@ public class SuperShuffle {
      ;
 */
      public static void Periodic() {
+        
+        ShiftEntry.setBoolean(Drivetrain.state);
         speedEntry.setDouble(OI.accelerometer.getY());
         speedEntry.setDouble(OI.accelerometer.getX());
-       // pressureEntry.setBoolean(OI.pressureSwitch.getPressureSwitchValue());
+       pressureEntry.setBoolean(OI.pressureSwitch.getPressureSwitchValue());
         controller1XEntry.setDouble(OI.controller1.getRawAxis(4));
         controller1YEntry.setDouble(OI.controller1.getRawAxis(5));
         

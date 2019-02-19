@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.OI;
 
 public abstract class ShuffleDash {
+    /*
     static  ShuffleboardTab Driver1 = Shuffleboard.getTab("Driver1 info");
     static Boolean test= new Boolean(true);
     
@@ -41,5 +42,5 @@ public abstract class ShuffleDash {
         }
         Shuffleboard.update();
      //   NetworkTableEntry Driver = Shuffleboard.getTab("Driver1 info");
+     */
     }
-}
