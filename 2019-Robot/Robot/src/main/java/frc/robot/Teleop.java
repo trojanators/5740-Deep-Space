@@ -21,53 +21,33 @@ public class Teleop {
      
         Drivetrain.shift("down");
      }
-     if(OI.controller2.getRawButton(RobotMap.aButton) == true) { //shoot ball
+     if(OI.controller2.getRawButton(RobotMap.rightBumper) == true && OI.ballLimit.get() == false) { //intake ball
          Cargo.actuateClaw(.5);
-     }
-     if(OI.controller2.getRawButton(RobotMap.bButton) == true) { //intake ball
+     } else if(OI.controller2.getRawButton(RobotMap.leftBumper) == true) { //shoot ball
         Cargo.actuateClaw(-.5);
-     } 
-     if(OI.controller2.getRawButton(RobotMap.aButton) == false && OI.controller2.getRawButton(RobotMap.bButton) == false) {
-         Cargo.stopClaw();
-     }
-     if(OI.limitInput.get() && OI.controller2.getRawButton(RobotMap.bButton)){
-         Cargo.stopClaw();
-     }
-     if(OI.controller1.getRawAxis(RobotMap.leftTrigger) != 0) { //open hatch manipulator
-         Hatch.actuate("open");
-     }
-     if(OI.controller2.getRawAxis(RobotMap.rightTrigger) != 0) { //close hatch manipulator
-         Hatch.actuate("close");
-     }
-    /* if(OI.controller2.getRawAxis(RobotMap.leftStickY) != 0 && OI.cargoArmActuateOne.getAppliedOutput() == 0) { //move cargo arm up and down
-        OI.cargoArmActuateOne.set(-OI.controller2.getRawAxis(RobotMap.leftStickY));
-     } else if (OI.controller2.getRawAxis(RobotMap.leftStickY) == 0 && OI.cargoArmActuateOne.getAppliedOutput() != 0) {
-        OI.cargoArmActuateOne.set(0);
-     }*/
-     if(OI.controller2.getRawButton(RobotMap.xButton)){
-        Cargo.actuateArm(RobotMap.cargoClawSpeed);
      } else {
-            Cargo.stopArm();
-
+         Cargo.stopClaw();
      }
-     if(OI.controller2.getRawButton(RobotMap.yButton)) {
-         sparkmaxlog.logging();
+     if(OI.controller1.getRawAxis(RobotMap.rightTrigger) != 0) { //toggle hatch manipulator
+         Hatch.toggleActuation();
      }
-     if(OI.controller2.getRawButton(RobotMap.leftBumper) == true) { //tilt hatch manipulator out
-         Hatch.tilt("forward");
+     if(OI.controller2.getRawAxis(RobotMap.leftStickY) != 0) { //move cargo arm up and down
+        Cargo.actuateArm(-OI.controller2.getRawAxis(RobotMap.leftStickY) * .5);
+     } else if (OI.controller2.getRawAxis(RobotMap.leftStickY) == 0 && OI.controller2.getRawButton(RobotMap.xButton) == false) {
+        Cargo.stopArm();
      }
-     if(OI.controller2.getRawButton(RobotMap.rightBumper) == true) { //tilt hatch manipulator in
-         Hatch.tilt("back");
+     if(OI.controller1.getRawAxis(RobotMap.leftTrigger) != 0) { //tilt hatch manipulator out
+         Hatch.toggleTilt();
      }
-     if(OI.controller1.getRawButton(RobotMap.xButton) == true){ //deploy stilts
+     if(OI.controller1.getRawButton(RobotMap.startButton) == true){ //deploy stilts
         Stilts.actuate("front", "up");
         Stilts.actuate("back", "up");
-        System.out.println("up");
      }
-     if(OI.controller1.getRawButton(RobotMap.yButton) == true){ //retract pistons
+    if(OI.controller1.getRawButton(RobotMap.aButton)) { //pull front stilts up
         Stilts.actuate("front", "down");
+    }
+    if(OI.controller1.getRawButton(RobotMap.bButton)) { //pull back stilts up
         Stilts.actuate("back", "down");
-        System.out.println("down");
     }
   }
 }

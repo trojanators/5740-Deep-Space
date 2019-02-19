@@ -37,7 +37,6 @@ public class Robot extends IterativeRobot {
   @Override
   public void teleopInit(){
    // ShuffleLayout.Init();
-   sparkmaxlog.logging();
 
   }
 

@@ -15,6 +15,19 @@ public class Hatch {
       break;
     }
   }
+  public static void toggleTilt() {
+    switch(OI.hatchTiltSolenoid.get()) {
+      case kForward:
+        tilt("back");
+        break;
+      case kReverse:
+        tilt("forward");
+        break;
+      case kOff:
+        tilt("forward");
+        break;
+    }
+  }
   public static void actuate(String direction) {
     switch(direction) {
       case "open":
@@ -25,4 +38,17 @@ public class Hatch {
       break;
     }
   } 
+  public static void toggleActuation() {
+    switch(OI.hatchActuateSolenoid.get()) {
+      case kForward:
+        actuate("close");
+        break;
+      case kReverse:
+        actuate("open");
+        break;
+      case kOff:
+        actuate("close");
+        break;
+    }
+  }
 }

@@ -11,20 +11,20 @@ public class Cargo {
    
   public static void actuateArm(double speed) {
   
-    OI.cargoArmActuateOne.set(ControlMode.PercentOutput, speed);
+    OI.cargoArmActuateOne.set(speed);
   }
   public static void stopArm() {
     //OI.cargoArmActuateOne(ControlMode.PrecentOutput, 0);
-    OI.cargoArmActuateOne.set(ControlMode.PercentOutput, 0);
+    OI.cargoArmActuateOne.set(0);
 
   }
   public static void actuateClaw(double speed) {
     //TODO: Limit switch to stop motors when ball is in the claw
-        OI.cargoClawLeft.set(ControlMode.PercentOutput, speed);
-        OI.cargoClawRight.set(ControlMode.PercentOutput, speed);
+        OI.cargoClawLeft.set(speed);
+        OI.cargoClawRight.set(speed);
   }
   public static void stopClaw() {
-    OI.cargoClawLeft.set(ControlMode.PercentOutput, 0);
-    OI.cargoClawRight.set(ControlMode.PercentOutput, 0);
+    OI.cargoClawLeft.set(0);
+    OI.cargoClawRight.set(0);
   }
 }
