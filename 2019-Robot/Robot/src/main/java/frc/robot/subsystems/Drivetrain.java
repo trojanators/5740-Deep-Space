@@ -10,11 +10,11 @@ public class Drivetrain {
     switch(direction) {
       case "up":
       state = true;
-        OI.shiftSolenoid.set(DoubleSolenoid.Value.kForward);      
+        OI.shiftSolenoid.set(true);      
       break;
       case "down":
       state = false;
-        OI.shiftSolenoid.set(DoubleSolenoid.Value.kReverse);      
+        OI.shiftSolenoid.set(false);      
       break;
     }
   }

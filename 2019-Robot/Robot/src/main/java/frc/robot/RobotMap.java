@@ -25,15 +25,12 @@ public class RobotMap {
   public static int rightCenterDriveCAN = 4;
   public static int rightBackDriveCAN = 5;
 
-  public static int shiftSolenoidOne = 0;
-  public static int shiftSolenoidTwo = 1;
-  public static int hatchActuateOne = 2;
-  public static int hatchActuateTwo = 3;
-  public static int hatchTiltOne = 4;
-  public static int hatchTiltTwo = 5;
+  public static int shiftSolenoid = 0;
+  public static int hatchActuate = 1;
+  public static int hatchTilt = 2;
 
-  public static int stiltWheelsRotateLeftCAN = 7; //rotate the wheels
-  public static int stiltWheelsRotateRightCAN = 9;
+  public static int stiltWheelsRotateLeftCAN = 6; //rotate the wheels
+  public static int stiltWheelsRotateRightCAN = 8;
   public static int stiltWheelsActuateLeftCAN = 7; //spin the wheels (drive forward)
   public static int stiltWheelsActuateRightCAN = 9;
  
@@ -74,6 +71,7 @@ public class RobotMap {
   public static int rightTrigger = 3;
   public static int leftBumper = 5;
   public static int rightBumper = 6;
+  public static int selectButton = 7;
   public static int startButton = 8;
 }
 

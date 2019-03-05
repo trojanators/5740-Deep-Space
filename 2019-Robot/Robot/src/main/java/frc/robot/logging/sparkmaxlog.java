@@ -1,7 +1,5 @@
 package frc.robot.logging;
 
-import com.revrobotics.CANSparkMaxLowLevel.ConfigParameter;
-
 import frc.robot.OI;
 
 public class sparkmaxlog{

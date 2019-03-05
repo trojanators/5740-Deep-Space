@@ -21,23 +21,23 @@ public class Teleop {
      
         Drivetrain.shift("down");
      }
-     if(OI.controller2.getRawButton(RobotMap.rightBumper) == true && OI.ballLimit.get() == false) { //intake ball
-         Cargo.actuateClaw(.5);
-     } else if(OI.controller2.getRawButton(RobotMap.leftBumper) == true) { //shoot ball
+    if(OI.controller2.getRawButton(RobotMap.leftBumper) == true) { //shoot ball
         Cargo.actuateClaw(-.5);
+     } else if(OI.controller2.getRawButton(RobotMap.rightBumper)) {
+         Cargo.actuateClaw(.5);
      } else {
          Cargo.stopClaw();
      }
-     if(OI.controller1.getRawAxis(RobotMap.rightTrigger) != 0) { //toggle hatch manipulator
-         Hatch.toggleActuation();
+     if(OI.controller2.getRawAxis(RobotMap.rightTrigger) != 0) { //toggle hatch manipulator
+         Hatch.actuate("open");
      }
      if(OI.controller2.getRawAxis(RobotMap.leftStickY) != 0) { //move cargo arm up and down
         Cargo.actuateArm(-OI.controller2.getRawAxis(RobotMap.leftStickY) * .5);
      } else if (OI.controller2.getRawAxis(RobotMap.leftStickY) == 0 && OI.controller2.getRawButton(RobotMap.xButton) == false) {
         Cargo.stopArm();
      }
-     if(OI.controller1.getRawAxis(RobotMap.leftTrigger) != 0) { //tilt hatch manipulator out
-         Hatch.toggleTilt();
+     if(OI.controller2.getRawAxis(RobotMap.leftTrigger) != 0) { //tilt hatch manipulator out
+         Hatch.actuate("close");
      }
      if(OI.controller1.getRawButton(RobotMap.startButton) == true){ //deploy stilts
         Stilts.actuate("front", "up");
@@ -50,9 +50,23 @@ public class Teleop {
         Stilts.actuate("back", "down");
     }
     if(OI.controller2.getRawButton(4)) {
+        Stilts.actuateFrontWheels(1);
+    } else {
+        Stilts.stopFrontWheelActuation();
+    }
+    if(OI.controller2.getRawButton(RobotMap.bButton)) { //dog ears in/out
         Stilts.rotateFrontWheels(1);
+    } else if (OI.controller2.getRawButton(RobotMap.aButton)){
+        Stilts.rotateFrontWheels(-1);
+        Hatch.tilt("back");
     } else {
         Stilts.stopFrontWheelRotation();
+    }
+    if(OI.controller2.getRawButton(RobotMap.xButton)) {
+        Hatch.tilt("forward");
+    }
+    if(OI.ballLimit.get()) {
+        Cargo.actuateClaw(0.05);
     }
   }
 }

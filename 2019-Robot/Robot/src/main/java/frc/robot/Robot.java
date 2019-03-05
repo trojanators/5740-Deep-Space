@@ -9,8 +9,6 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
-import com.revrobotics.CANSparkMax;
-import com.revrobotics.CANSparkMaxLowLevel.ConfigParameter;
 
 import frc.robot.subsystems.*;
 import frc.robot.*;
@@ -28,6 +26,7 @@ public class Robot extends IterativeRobot {
 
   @Override
   public void autonomousInit() {
+    Cargo.cargoTimer.start();
   }
 
   @Override
@@ -37,19 +36,22 @@ public class Robot extends IterativeRobot {
   @Override
   public void teleopInit(){
    // ShuffleLayout.Init();
-
+   Cargo.cargoTimer.start();
   }
 
   @Override
   public void teleopPeriodic() {
     Teleop.Periodic();
-    Cargo.update();
+   // Cargo.update();
     //SuperShuffle.Periodic();
-   // Shuffleboard.update();
-
+    // Shuffleboard.update();
   }
 
   @Override
   public void testPeriodic() {
+  }
+  @Override
+  public void disabledInit() {
+    Cargo.cargoTimer.stop();
   }
 }
