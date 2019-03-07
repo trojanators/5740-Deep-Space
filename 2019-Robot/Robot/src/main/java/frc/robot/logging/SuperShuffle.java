@@ -17,9 +17,15 @@ import edu.wpi.first.wpilibj.shuffleboard.SimpleWidget;
 import frc.robot.*;
 import frc.robot.subsystems.Drivetrain;
 
+
 public class SuperShuffle {
-    private static String camserver = "mjpg:http://frcvision.local:1181/?action=stream*";
+    private static String camserver0 = "mjpg:http://frcvision.local:1181/?action=stream*";
+    private static String camserver2 = "mjpg:http://frcvision.local:1182/?action=stream";
+    private static String camserver3= "";
+    
+    private static ShuffleboardTab cam = Shuffleboard.getTab("Camera view");
     private static ShuffleboardTab tab = Shuffleboard.getTab("Driver Info");
+
     private static NetworkTableEntry controller1XEntry =
      tab.addPersistent("controller1 X value", OI.controller1.getRawAxis(1))
         .withWidget(BuiltInWidgets.kNumberBar).withPosition(0, 0).withSize(2, 1).getEntry();
@@ -50,15 +56,38 @@ public class SuperShuffle {
     private static NetworkTableEntry balllimitEnrty = tab.add("Claw status", OI.ballLimit.get()).withPosition(9, 0)
             .withSize(2, 1).withWidget(BuiltInWidgets.kBooleanBox).getEntry();
 
+
+    private static SimpleWidget cam0 = 
+	tab.add(camserver0,"camera")
+        .withPosition(3,1)
+        .withSize(5,5)
+        .withWidget(BuiltInWidgets.kCameraStream);
+
+    private static SimpleWidget cam2 =    
+         cam.add("camera1",camserver2)  
+        .withPosition(0,1)
+        .withSize(5,5)
+        .withWidget(BuiltInWidgets.kCameraStream);
+
+    private static SimpleWidget cam3 = 
+        cam.add("camrea2",camserver3)
+        .withPosition(6,1)
+        .withSize(5,5)
+        .withWidget(BuiltInWidgets.kCameraStream);
     
      public static void Periodic() {
 
-    
+        cam0.getEntry();
+        cam2.getEntry();
+        cam3.getEntry();
+
        balllimitEnrty.setBoolean(OI.ballLimit.get());
-        ShiftEntry.setBoolean(Drivetrain.state);
+        
+       ShiftEntry.setBoolean(Drivetrain.state);
         speedEntry.setDouble(OI.accelerometer.getY());
         speedEntry.setDouble(OI.accelerometer.getX());
-       pressureEntry.setBoolean(OI.pressureSwitch.getPressureSwitchValue());
+       
+        pressureEntry.setBoolean(OI.pressureSwitch.getPressureSwitchValue());
         controller1XEntry.setDouble(OI.controller1.getRawAxis(4));
         controller1YEntry.setDouble(OI.controller1.getRawAxis(5));
         

@@ -8,6 +8,7 @@
 package frc.robot;
 
 import edu.wpi.cscore.MjpegServer;
+import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import com.revrobotics.CANSparkMax;
@@ -23,7 +24,7 @@ public class Robot extends IterativeRobot {
   @Override
   public void robotInit() {
     eNABLEDBoolean= false;
-    CameraServer.getInstance().startAutomaticCapture();
+
 
     //OI.cargoArmActuateOne.setParameter(ConfigParameter.kCtrlType, 1);
   }
