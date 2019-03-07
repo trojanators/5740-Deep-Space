@@ -26,11 +26,12 @@ public class Robot extends IterativeRobot {
 
   @Override
   public void autonomousInit() {
-    Cargo.cargoTimer.start();
   }
 
   @Override
   public void autonomousPeriodic() {
+    Teleop.Periodic();
+
   }
 
   @Override

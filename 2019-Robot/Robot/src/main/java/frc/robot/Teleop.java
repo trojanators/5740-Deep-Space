@@ -23,7 +23,7 @@ public class Teleop {
      }
     if(OI.controller2.getRawButton(RobotMap.leftBumper) == true) { //shoot ball
         Cargo.actuateClaw(-.5);
-     } else if(OI.controller2.getRawButton(RobotMap.rightBumper)) {
+     } else if(OI.controller2.getRawButton(RobotMap.rightBumper) && !OI.ballLimit.get()) {
          Cargo.actuateClaw(.5);
      } else {
          Cargo.stopClaw();
@@ -64,9 +64,6 @@ public class Teleop {
     }
     if(OI.controller2.getRawButton(RobotMap.xButton)) {
         Hatch.tilt("forward");
-    }
-    if(OI.ballLimit.get()) {
-        Cargo.actuateClaw(0.05);
     }
   }
 }
