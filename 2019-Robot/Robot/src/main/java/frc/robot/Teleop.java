@@ -64,6 +64,11 @@ public class Teleop {
     }
     if(OI.controller2.getRawButton(RobotMap.xButton)) {
         Hatch.tilt("forward");
+    } else if (OI.controller2.getRawButton(RobotMap.yButton)) {
+        Hatch.tilt("back");
+    }
+    if(OI.ballLimit.get()) {
+        OI.cargoIntake.set(0.05);
     }
   }
 }

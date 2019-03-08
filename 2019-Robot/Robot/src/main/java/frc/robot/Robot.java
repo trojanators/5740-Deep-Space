@@ -7,16 +7,31 @@
 
 package frc.robot;
 
+import edu.wpi.cscore.UsbCamera;
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 
 import frc.robot.subsystems.*;
 import frc.robot.*;
 import frc.robot.logging.ShuffleDash;
+
 public class Robot extends IterativeRobot {
 
   @Override
   public void robotInit() {
+
+    UsbCamera Cam0 = CameraServer.getInstance().startAutomaticCapture(0);
+   UsbCamera Cam1  = CameraServer.getInstance().startAutomaticCapture(1);
+  
+  Cam0.setBrightness(10);
+  Cam0.setFPS(15);
+  Cam0.setExposureAuto();
+
+  Cam1.setBrightness(10);
+  Cam1.setFPS(15);
+  Cam1.setExposureAuto();
+  
     //OI.cargoArmActuateOne.setParameter(ConfigParameter.kCtrlType, 1);
   }
 
@@ -31,6 +46,7 @@ public class Robot extends IterativeRobot {
   @Override
   public void autonomousPeriodic() {
     Teleop.Periodic();
+    ShuffleDash.perodic();
 
   }
 
@@ -43,6 +59,8 @@ public class Robot extends IterativeRobot {
   @Override
   public void teleopPeriodic() {
     Teleop.Periodic();
+    ShuffleDash.perodic();
+
    // Cargo.update();
     //SuperShuffle.Periodic();
     // Shuffleboard.update();
