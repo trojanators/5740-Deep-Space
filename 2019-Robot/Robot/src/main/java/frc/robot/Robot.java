@@ -60,8 +60,7 @@ public class Robot extends IterativeRobot {
   public void teleopPeriodic() {
     Teleop.Periodic();
     ShuffleDash.perodic();
-
-   // Cargo.update();
+    PressureSen.Periodic();   // Cargo.update();
     //SuperShuffle.Periodic();
     // Shuffleboard.update();
   }
