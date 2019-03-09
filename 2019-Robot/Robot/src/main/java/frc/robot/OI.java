@@ -73,5 +73,8 @@ public class OI {
   public static DigitalInput ballLimit = new DigitalInput(RobotMap.ballLimitDIO);
   public static Accelerometer accelerometer= new BuiltInAccelerometer(Accelerometer.Range.k4G);
   public static Compressor pressureSwitch = new Compressor();
+
+  public static AnalogInput Pressureread= new AnalogInput(RobotMap.Pressure_read);
+  
 }
 

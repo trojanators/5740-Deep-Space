@@ -54,6 +54,7 @@ public class RobotMap {
   public static int ballLimitDIO = 0;
 
  public static int pressureSwitch = 0;
+  public static int Pressure_read = 0; 
 
   public static int leftRampOne = 0;
   public static int leftRampTwo = 1;
