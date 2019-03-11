@@ -3,6 +3,8 @@ package frc.robot.logging;
 import edu.wpi.cscore.CameraServerJNI;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.wpilibj.CameraServer;
+
+import edu.wpi.first.wpilibj.shuffleboard.BuiltInLayouts;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInLayouts;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
 import edu.wpi.first.wpilibj.shuffleboard.ComplexWidget;
@@ -55,16 +57,9 @@ public class SuperShuffle {
     .withSize(2,1)
     .withWidget(BuiltInWidgets.kBooleanBox)
     .getEntry();
-/*
-     private static NetworkTableEntry cameraETableEntry=
-     tab.add("LiveFeed",)
-     .withPosition(3,6)
-     .withSize(4,5)
-     .withWidget(BuiltInWidgets.kCameraStream)
-     .getEntry("/CameraPublisher/PiCamera/streams")
-     .setStringArray(new String["mjpeg:http://" + PI_ADDRESS + ":" + PORT + "/?action=stream"]);
-*/
-    public static void Periodic() {
+
+    
+     public static void Periodic() {
         speedEntry.setDouble(OI.accelerometer.getY());
         speedEntry.setDouble(OI.accelerometer.getX());
        // pressureEntry.setBoolean(OI.pressureSwitch.getPressureSwitchValue());

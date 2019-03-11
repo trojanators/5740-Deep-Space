@@ -66,16 +66,10 @@ public class OI {
   public static SpeedControllerGroup stiltRotateGroup = new SpeedControllerGroup(leftStiltRotate, rightStiltRotate);
   public static SpeedControllerGroup stiltActuateGroup = new SpeedControllerGroup(leftStiltActuate, rightStiltActuate);
 
-  public static CANSparkMax cargoArmActuateOne = new CANSparkMax(RobotMap.cargoArmActuateOneCAN, MotorType.kBrushless);
-  public static CANSparkMax cargoArmActuateTwo = new CANSparkMax(RobotMap.cargoArmActuateTwoCAN, MotorType.kBrushless);
-  public static TalonSRX cargoClawLeft = new TalonSRX(RobotMap.cargoClawLeftRotateCAN);
-  public static TalonSRX cargoClawRight = new TalonSRX(RobotMap.cargoClawRightRotateCAN);
-  public static DigitalInput cargoBallDigitalInput = new DigitalInput(RobotMap.CargoClawLimit);
-
-  public static DoubleSolenoid frontStiltDown = new DoubleSolenoid(RobotMap.PCMTwoCAN, RobotMap.frontStiltDownOne, RobotMap.frontStiltDownTwo);
-  public static DoubleSolenoid frontStiltUp = new DoubleSolenoid(RobotMap.PCMTwoCAN,RobotMap.frontStiltUpOne, RobotMap.frontStiltUpTwo);
-  public static DoubleSolenoid backStiltDown = new DoubleSolenoid(RobotMap.PCMTwoCAN,RobotMap.backStiltDownOne, RobotMap.backStiltDownTwo);
-  public static DoubleSolenoid backStiltUp = new DoubleSolenoid(RobotMap.PCMTwoCAN, RobotMap.backStiltUpOne, RobotMap.backStiltUpTwo);
+  public static VictorSP cargoArmActuateOne = new VictorSP(RobotMap.cargoArmActuateOnePWM);
+  public static VictorSP cargoClawLeft = new VictorSP(RobotMap.cargoClawLeftRotatePWM);
+  public static VictorSP cargoClawRight = new VictorSP(RobotMap.cargoClawRightRotatePWM);
+  public static SpeedControllerGroup cargoIntake = new SpeedControllerGroup(cargoClawLeft, cargoClawRight);
 
 
   public static DigitalInput ballLimit = new DigitalInput(RobotMap.ballLimitDIO);
