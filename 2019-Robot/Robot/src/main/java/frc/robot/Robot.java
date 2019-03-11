@@ -7,20 +7,33 @@
 
 package frc.robot;
 
-import java.io.Console;
-
+import edu.wpi.cscore.UsbCamera;
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
+
 import frc.robot.subsystems.*;
 import frc.robot.*;
-import frc.robot.logging.SuperShuffle;
-import frc.robot.logging.*;
+import frc.robot.logging.ShuffleDash;
+
 public class Robot extends IterativeRobot {
 
 public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
-   
+
+    UsbCamera Cam0 = CameraServer.getInstance().startAutomaticCapture(0);
+   UsbCamera Cam1  = CameraServer.getInstance().startAutomaticCapture(1);
+  
+  Cam0.setBrightness(10);
+  Cam0.setFPS(15);
+  Cam0.setExposureAuto();
+
+  Cam1.setBrightness(10);
+  Cam1.setFPS(15);
+  Cam1.setExposureAuto();
+  
+    //OI.cargoArmActuateOne.setParameter(ConfigParameter.kCtrlType, 1);
   }
 
   @Override
@@ -33,20 +46,24 @@ public class Robot extends TimedRobot {
 
   @Override
   public void autonomousPeriodic() {
+    Teleop.Periodic();
+    ShuffleDash.perodic();
+
   }
 
   @Override
   public void teleopInit(){
    // ShuffleLayout.Init();
-
+   Cargo.cargoTimer.start();
   }
 
   @Override
   public void teleopPeriodic() {
     Teleop.Periodic();
-    SuperShuffle.Periodic();
-   // Shuffleboard.update();
-
+    ShuffleDash.perodic();
+    PressureSen.Periodic();   // Cargo.update();
+    //SuperShuffle.Periodic();
+    // Shuffleboard.update();
   }
 
   @Override
@@ -54,6 +71,10 @@ public class Robot extends TimedRobot {
   }
   @Override
   public void disabledInit() {
+<<<<<<< HEAD
 
+=======
+    Cargo.cargoTimer.stop();
+>>>>>>> master
   }
 }
