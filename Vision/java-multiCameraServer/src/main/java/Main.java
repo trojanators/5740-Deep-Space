@@ -28,6 +28,7 @@ import edu.wpi.first.vision.VisionPipeline;
 import edu.wpi.first.vision.VisionRunner;
 import edu.wpi.first.wpilibj.vision.VisionThread;
 import org.opencv.core.Mat;
+import org.opencv.core.MatOfPoint;
 
 /*
    JSON format:

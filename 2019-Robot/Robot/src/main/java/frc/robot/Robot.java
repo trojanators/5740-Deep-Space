@@ -17,6 +17,7 @@ import frc.robot.logging.SuperShuffle;
 import frc.robot.logging.*;
 public class Robot extends IterativeRobot {
 
+public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
    
@@ -50,5 +51,9 @@ public class Robot extends IterativeRobot {
 
   @Override
   public void testPeriodic() {
+  }
+  @Override
+  public void disabledInit() {
+
   }
 }

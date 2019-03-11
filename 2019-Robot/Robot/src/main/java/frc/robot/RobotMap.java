@@ -36,7 +36,8 @@ public class RobotMap {
   public static int stiltWheelsRotateRightCAN = 7;
   public static int stiltWheelsActuateLeftCAN = 8; //spin the wheels (drive forward)
   public static int stiltWheelsActuateRightCAN = 9;
- 
+  
+  public static int CargoClawLimit = 0;
   public static int cargoArmActuateOneCAN = 10;
   public static int cargoArmActuateTwoCAN = 15;
   public static int cargoClawLeftRotateCAN = 11;
