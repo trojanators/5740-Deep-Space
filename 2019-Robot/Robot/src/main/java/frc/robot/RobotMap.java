@@ -33,21 +33,12 @@ public class RobotMap {
   public static int stiltWheelsRotateRightCAN = 8;
   public static int stiltWheelsActuateLeftCAN = 7; //spin the wheels (drive forward)
   public static int stiltWheelsActuateRightCAN = 9;
-<<<<<<< HEAD
   
   public static int CargoClawLimit = 0;
   public static int cargoArmActuateOneCAN = 10;
   public static int cargoArmActuateTwoCAN = 15;
   public static int cargoClawLeftRotateCAN = 11;
   public static int cargoClawRightRotateCAN = 12;
-=======
- 
-  public static int cargoArmActuateOnePWM = 9;
-  public static int cargoClawLeftRotatePWM = 8;
-  public static int cargoClawRightRotatePWM = 0;
-
-  public static double cargoClawSpeed = .4; 
->>>>>>> master
 
   public static int PCMOneCAN = 13;
   public static int PCMTwoCAN = 14;

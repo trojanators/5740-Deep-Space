@@ -71,10 +71,6 @@ public class Robot extends TimedRobot {
   }
   @Override
   public void disabledInit() {
-<<<<<<< HEAD
-
-=======
-    Cargo.cargoTimer.stop();
->>>>>>> master
+    }
   }
 }
