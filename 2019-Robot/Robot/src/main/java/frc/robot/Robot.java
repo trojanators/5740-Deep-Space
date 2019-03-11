@@ -10,15 +10,12 @@ package frc.robot;
 import edu.wpi.cscore.UsbCamera;
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
+
 
 import frc.robot.subsystems.*;
 import frc.robot.*;
-import frc.robot.logging.ShuffleDash;
-
+import frc.robot.logging.SuperShuffle;
 public class Robot extends IterativeRobot {
-
-public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
 
@@ -32,10 +29,9 @@ public class Robot extends TimedRobot {
   Cam1.setBrightness(10);
   Cam1.setFPS(15);
   Cam1.setExposureAuto();
-  
     //OI.cargoArmActuateOne.setParameter(ConfigParameter.kCtrlType, 1);
   }
-
+  
   @Override
   public void robotPeriodic() {
   }
@@ -47,7 +43,7 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousPeriodic() {
     Teleop.Periodic();
-    ShuffleDash.perodic();
+   SuperShuffle.Periodic();
 
   }
 
@@ -60,7 +56,7 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
     Teleop.Periodic();
-    ShuffleDash.perodic();
+    SuperShuffle.Periodic();
     PressureSen.Periodic();   // Cargo.update();
     //SuperShuffle.Periodic();
     // Shuffleboard.update();
@@ -71,6 +67,6 @@ public class Robot extends TimedRobot {
   }
   @Override
   public void disabledInit() {
+    Cargo.cargoTimer.stop();
     }
   }
-}

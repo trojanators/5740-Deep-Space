@@ -2,6 +2,7 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.AnalogInput;
 import frc.robot.OI;
+import frc.robot.logging.SuperShuffle;
 public class PressureSen {
 
    public static int raw =  OI.Pressureread.getValue();
