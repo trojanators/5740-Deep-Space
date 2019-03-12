@@ -49,7 +49,6 @@ public class Robot extends TimedRobot {
 
   @Override
   public void teleopInit(){
-   // ShuffleLayout.Init();
    Cargo.cargoTimer.start();
   }
 
@@ -57,8 +56,6 @@ public class Robot extends TimedRobot {
   public void teleopPeriodic() {
     Teleop.Periodic();
     SuperShuffle.Periodic();
-    //SuperShuffle.Periodic();
-    // Shuffleboard.update();
   }
 
   @Override
