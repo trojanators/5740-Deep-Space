@@ -10,17 +10,17 @@ package frc.robot;
 import edu.wpi.cscore.UsbCamera;
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
-
-
+import edu.wpi.first.wpilibj.TimedRobot;
 import frc.robot.subsystems.*;
 import frc.robot.*;
 import frc.robot.logging.SuperShuffle;
-public class Robot extends IterativeRobot {
+
+public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
 
-    UsbCamera Cam0 = CameraServer.getInstance().startAutomaticCapture(0);
-   UsbCamera Cam1  = CameraServer.getInstance().startAutomaticCapture(1);
+  UsbCamera Cam0 = CameraServer.getInstance().startAutomaticCapture(0);
+  UsbCamera Cam1  = CameraServer.getInstance().startAutomaticCapture(1);
   
   Cam0.setBrightness(10);
   Cam0.setFPS(15);
