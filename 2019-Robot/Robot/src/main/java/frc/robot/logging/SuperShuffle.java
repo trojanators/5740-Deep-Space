@@ -16,31 +16,38 @@ import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.PressureSen;
 
 public class SuperShuffle {
+    // created driver info tab - grid layout 
     public  static ShuffleboardTab tab = Shuffleboard.getTab("Driver Info");
-    public static ShuffleboardLayout lay = tab.getLayout("My Layout", BuiltInLayouts.kGrid);
+    public static ShuffleboardLayout lay = tab.getLayout("Driver Info", BuiltInLayouts.kGrid);
+    
+    // analog pressure sensor
+   public  double averageVolts = OI.Pressureread.getAverageVoltage();
+   public  double pressure = (250*(averageVolts/5.0))-25;
 
-    private static NetworkTableEntry controller1XEntry = tab.add("controller1 X value", OI.controller1.getRawAxis(1))
+    // Data  displayed on Shuffleborard
+    private static NetworkTableEntry controller1XEntry = 
+    lay.add("controller1 X value", OI.controller1.getRawAxis(1))
             .withWidget(BuiltInWidgets.kNumberBar)
             .withPosition(0, 0)
             .withSize(2, 1)
             .getEntry();
 
     private static NetworkTableEntry controller1YEntry = 
-    tab.add("Controller 1 Y value", OI.controller1.getRawAxis(4))
+    lay.add("Controller 1 Y value", OI.controller1.getRawAxis(4))
             .withWidget(BuiltInWidgets.kNumberBar)
             .withPosition(0, 1)
             .withSize(2, 1)
             .getEntry();
 
     private static ComplexWidget pdp = 
-    tab.add("Power",OI.pdp)
+    lay.add("Power",OI.pdp)
     .withWidget(BuiltInWidgets.kPowerDistributionPanel)
     .withPosition(0, 2)
     .withSize(3, 3);
 
 
    private static NetworkTableEntry speedEntry = 
-    tab.add("axis acc",OI.accelerometer.getX())
+    lay.add("axis acc",OI.accelerometer.getX())
     .withPosition(9,3)
     .withSize(3, 2)
     .withWidget(BuiltInWidgets.kGraph)
@@ -53,11 +60,20 @@ public class SuperShuffle {
     .withWidget(BuiltInWidgets.kBooleanBox)
     .getEntry();
 
-    
+     private static NetworkTableEntry pressureStatusEntry = 
+    lay.add ("Pressure",pressure)
+    .withPosition(9,1)
+    .withSize(2,2)
+    .withWidget(BuiltInWidgets.kDial)
+    .getEntry();
      public static void Periodic() {
+        double averageVolts = OI.Pressureread.getAverageVoltage();
+        double pressure = (250*(averageVolts/5.0))-25;
+
         speedEntry.setDouble(OI.accelerometer.getY());
         speedEntry.setDouble(OI.accelerometer.getX());
-       // pressureEntry.setBoolean(OI.pressureSwitch.getPressureSwitchValue());
+        shiftEntry.setBoolean(Drivetrain.state);
+        pressureStatusEntry.setDouble(pressure);
         controller1XEntry.setDouble(OI.controller1.getRawAxis(4));
         controller1YEntry.setDouble(OI.controller1.getRawAxis(5));
         

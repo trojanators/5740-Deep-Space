@@ -57,7 +57,6 @@ public class Robot extends TimedRobot {
   public void teleopPeriodic() {
     Teleop.Periodic();
     SuperShuffle.Periodic();
-    PressureSen.Periodic();   // Cargo.update();
     //SuperShuffle.Periodic();
     // Shuffleboard.update();
   }
