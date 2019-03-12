@@ -13,7 +13,6 @@ import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardLayout;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import frc.robot.*;
 import frc.robot.subsystems.Drivetrain;
-import frc.robot.subsystems.PressureSen;
 
 public class SuperShuffle {
     // created driver info tab - grid layout 
@@ -21,9 +20,8 @@ public class SuperShuffle {
     public static ShuffleboardLayout lay = tab.getLayout("Driver Info", BuiltInLayouts.kGrid);
     
     // analog pressure sensor
-   public  double averageVolts = OI.Pressureread.getAverageVoltage();
-   public  double pressure = (250*(averageVolts/5.0))-25;
-
+   static double text ;
+       
     // Data  displayed on Shuffleborard
     private static NetworkTableEntry controller1XEntry = 
     lay.add("controller1 X value", OI.controller1.getRawAxis(1))
@@ -61,7 +59,7 @@ public class SuperShuffle {
     .getEntry();
 
      private static NetworkTableEntry pressureStatusEntry = 
-    lay.add ("Pressure",pressure)
+    lay.add ("Pressure",text)
     .withPosition(9,1)
     .withSize(2,2)
     .withWidget(BuiltInWidgets.kDial)
