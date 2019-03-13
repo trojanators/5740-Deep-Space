@@ -3,10 +3,10 @@
  */
 package com.DsClient;
 
-import com.DsClient.Overlay;
+import main.java.com.DsClient.overlay.*;
 public class Main {
  
     public static void main(String[] args) {
-        Overlay.main();
+        Overlay.main(args);
     }
 }
