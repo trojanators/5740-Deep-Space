@@ -64,6 +64,8 @@ public class SuperShuffle {
     .withSize(2,2)
     .withWidget(BuiltInWidgets.kDial)
     .getEntry();
+
+    // updates every 5 ms
      public static void Periodic() {
         double averageVolts = OI.Pressureread.getAverageVoltage();
         double pressure = (250*(averageVolts/5.0))-25;
