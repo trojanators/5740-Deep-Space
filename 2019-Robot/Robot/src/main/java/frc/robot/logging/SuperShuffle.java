@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardLayout;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
 import frc.robot.*;
 import frc.robot.subsystems.Drivetrain;
+import frc.robot.subsystems.Pressuresen;
 
 public class SuperShuffle {
     // created driver info tab - grid layout 
@@ -54,7 +55,7 @@ public class SuperShuffle {
     .getEntry();
     
     private static NetworkTableEntry shiftEntry = 
-    tab.add ("Shifting", Drivetrain.state)
+    lay.add ("Shifting", Drivetrain.state)
     .withPosition(9,2)
     .withSize(2,1)
     .withWidget(BuiltInWidgets.kBooleanBox)
@@ -75,8 +76,10 @@ public class SuperShuffle {
 
         speedEntry.setDouble(OI.accelerometer.getY());
         speedEntry.setDouble(OI.accelerometer.getX());
+
         shiftEntry.setBoolean(Drivetrain.state);
         pressureStatusEntry.setDouble(pressure);
+        
         controller1XEntry.setDouble(OI.controller1.getRawAxis(4));
         controller1YEntry.setDouble(OI.controller1.getRawAxis(5));
         

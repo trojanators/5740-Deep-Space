@@ -16,7 +16,7 @@ import frc.robot.*;
 import frc.robot.logging.SuperShuffle;
 
 public class Robot extends TimedRobot {
-  @Override
+@Override
   public void robotInit() {
 
   UsbCamera Cam0 = CameraServer.getInstance().startAutomaticCapture(0);
@@ -34,6 +34,8 @@ public class Robot extends TimedRobot {
   
   @Override
   public void robotPeriodic() {
+    double averageVolts = OI.Pressureread.getAverageVoltage();
+    double pressure = (250*(averageVolts/5.0))-25;
   }
 
   @Override
