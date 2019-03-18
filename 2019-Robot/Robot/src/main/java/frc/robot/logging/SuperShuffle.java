@@ -1,5 +1,7 @@
 package frc.robot.logging;
 
+import java.util.Map;
+
 import edu.wpi.cscore.CameraServerJNI;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.wpilibj.CameraServer;
@@ -63,6 +65,7 @@ public class SuperShuffle {
     .withPosition(9,1)
     .withSize(2,2)
     .withWidget(BuiltInWidgets.kDial)
+    .withProperties(Map.of("Min", "0", "Max", "125"))
     .getEntry();
 
     // updates every 5 ms
