@@ -12,7 +12,7 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import frc.robot.subsystems.*;
 import frc.robot.*;
-import frc.robot.logging.SuperShuffle;
+import frc.robot.logging.DataShuffle;
 
 public class Robot extends TimedRobot {
 @Override
@@ -22,7 +22,7 @@ public class Robot extends TimedRobot {
   
   @Override
   public void robotPeriodic() {
-    SuperShuffle.Periodic();
+    DataShuffle.Periodic();
   }
 
   @Override

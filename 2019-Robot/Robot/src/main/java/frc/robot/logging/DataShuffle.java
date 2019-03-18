@@ -17,9 +17,9 @@ import frc.robot.*;
 import frc.robot.subsystems.Drivetrain;
 
 
-public class SuperShuffle {
+public class DataShuffle {
     // created driver info tab - grid layout 
-    public  static ShuffleboardTab tab = Shuffleboard.getTab("Driver Info");
+    public static ShuffleboardTab tab = Shuffleboard.getTab("Driver Info");
     public static ShuffleboardLayout lay = tab.getLayout("Driver Info", BuiltInLayouts.kGrid);
     
     // analog pressure sensor
