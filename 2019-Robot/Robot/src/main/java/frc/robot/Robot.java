@@ -34,8 +34,7 @@ public class Robot extends TimedRobot {
   
   @Override
   public void robotPeriodic() {
-    double averageVolts = OI.Pressureread.getAverageVoltage();
-    double pressure = (250*(averageVolts/5.0))-25;
+    SuperShuffle.Periodic();
   }
 
   @Override
@@ -45,7 +44,6 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousPeriodic() {
     Teleop.Periodic();
-   SuperShuffle.Periodic();
 
   }
 
@@ -57,7 +55,6 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
     Teleop.Periodic();
-    SuperShuffle.Periodic();
   }
 
   @Override
