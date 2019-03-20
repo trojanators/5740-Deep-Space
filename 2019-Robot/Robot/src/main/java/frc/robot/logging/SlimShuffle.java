@@ -53,12 +53,6 @@ public class SlimShuffle {
             double averageVolts = OI.Pressureread.getAverageVoltage();
             double pressure = (250*(averageVolts/5.0))-25;
 
-           if (pressure < 100){
-            Exeleant = true;
-           }
-           if(pressure > 60){
-            half = true;
-           }
 
             pressureStatusEntry.setDouble(pressure);
 
