@@ -7,12 +7,12 @@
 
 package frc.robot;
 
-
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import frc.robot.subsystems.*;
 import frc.robot.*;
 import frc.robot.logging.DataShuffle;
+import frc.robot.logging.SlimShuffle;
 
 public class Robot extends TimedRobot {
 @Override
@@ -22,6 +22,7 @@ public class Robot extends TimedRobot {
   
   @Override
   public void robotPeriodic() {
+    SlimShuffle.Periodic();
     DataShuffle.Periodic();
   }
 
