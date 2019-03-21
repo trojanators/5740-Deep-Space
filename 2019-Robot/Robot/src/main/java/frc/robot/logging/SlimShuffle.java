@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.shuffleboard.ComplexWidget;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardLayout;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
+import frc.robot.OI;
 import frc.robot.subsystems.CamerConfig;
 
 public class SlimShuffle {
@@ -18,10 +19,6 @@ public class SlimShuffle {
           public static ShuffleboardLayout lay = tab.getLayout("SlimShuffle", BuiltInLayouts.kGrid);
 
         static  double text ;
-        
-        public Boolean Exeleant = new Boolean(false);
-        public Boolean half = new Boolean(false);
-        public Boolean Nogo = new Boolean(false);
 
       private static ComplexWidget backCameraWidget = 
       lay.add("Back_Camera",CamerConfig.Cam0)
@@ -34,10 +31,6 @@ public class SlimShuffle {
           .withPosition(7,0)
           .withSize(3,4)
           .withWidget(BuiltInWidgets.kCameraStream);
-
-
-    private static NetworkTableEntry above100psiEntry = 
-    lay.add("Clime",)
 
     
     private static NetworkTableEntry pressureStatusEntry = 
@@ -55,7 +48,7 @@ public class SlimShuffle {
 
 
             pressureStatusEntry.setDouble(pressure);
-
+            
           }
 
          
