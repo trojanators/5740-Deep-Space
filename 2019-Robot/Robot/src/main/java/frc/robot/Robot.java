@@ -22,7 +22,7 @@ public class Robot extends TimedRobot {
   
   @Override
   public void robotPeriodic() {
-    SlimShuffle.Periodic();
+    //SlimShuffle.Periodic();
     DataShuffle.Periodic();
   }
 
