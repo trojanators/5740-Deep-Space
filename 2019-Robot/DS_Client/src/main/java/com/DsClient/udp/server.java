@@ -31,7 +31,7 @@ public class server{
         }
     }
     
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws IOException {
         server client = new server(Integer.parseInt(args[0]));
         
         client.listen();

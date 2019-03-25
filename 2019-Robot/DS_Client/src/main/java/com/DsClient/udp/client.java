@@ -1,19 +1,25 @@
 package main.java.com.DsClient.udp;
+import java.io.IOException;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+import java.util.Scanner;
 
 public class client{
-    
+
     private DatagramSocket udpSocket;
     private InetAddress serverAddress;
-    private int port;
+    private int port = 5100;
     private Scanner scanner;
-    private UDPClient(String destinationAddr, int port) throws IOException {
+
+    private client(String destinationAddr, int port) throws IOException {
         this.serverAddress = InetAddress.getByName(destinationAddr);
         this.port = port;
         udpSocket = new DatagramSocket(this.port);
         scanner = new Scanner(System.in);
     }
     public static void main(String[] args) throws NumberFormatException, IOException {        
-        UDPClient sender = new UDPClient(args[0], Integer.parseInt(args[1]));
+        client sender = new client(args[0], Integer.parseInt(args[1]));
         System.out.println("-- Running UDP Client at " + InetAddress.getLocalHost() + " --");
         sender.start();
     }
@@ -28,5 +34,4 @@ public class client{
             this.udpSocket.send(p);                    
         }
     }
-}
 }

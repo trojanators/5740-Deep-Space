@@ -33,31 +33,6 @@ public class GripPipeline implements VisionPipeline {
 	/**
 	 * This is the primary method that runs the entire pipeline and updates the outputs.
 	 */
-<<<<<<< HEAD
-	public void process(Mat source0) {
-		// Step Resize_Image0:
-		Mat resizeImageInput = source0;
-		double resizeImageWidth = 160.0;
-		double resizeImageHeight = 120.0;
-		int resizeImageInterpolation = Imgproc.INTER_LINEAR;
-		resizeImage(resizeImageInput, resizeImageWidth, resizeImageHeight, resizeImageInterpolation, resizeImageOutput);
-
-		// Step HSV_Threshold0:
-		Mat hsvThresholdInput = resizeImageOutput;
-		double[] hsvThresholdHue = {36.15819478439072, 180.0};
-		double[] hsvThresholdSaturation = {0.0, 29.24242929978806};
-		double[] hsvThresholdValue = {187.28812986848044, 255.0};
-		hsvThreshold(hsvThresholdInput, hsvThresholdHue, hsvThresholdSaturation, hsvThresholdValue, hsvThresholdOutput);
-
-		// Step CV_erode0:
-		Mat cvErodeSrc = hsvThresholdOutput;
-		Mat cvErodeKernel = new Mat();
-		Point cvErodeAnchor = new Point(-1, -1);
-		double cvErodeIterations = 1.0;
-		int cvErodeBordertype = Core.BORDER_CONSTANT;
-		Scalar cvErodeBordervalue = new Scalar(-1);
-		cvErode(cvErodeSrc, cvErodeKernel, cvErodeAnchor, cvErodeIterations, cvErodeBordertype, cvErodeBordervalue, cvErodeOutput);
-=======
 	@Override	public void process(Mat source0) {
 		// Step RGB_Threshold0:
 		Mat rgbThresholdInput = source0;
@@ -65,45 +40,16 @@ public class GripPipeline implements VisionPipeline {
 		double[] rgbThresholdGreen = {62.124195892733404, 255.0};
 		double[] rgbThresholdBlue = {0.0, 99.90898026097386};
 		rgbThreshold(rgbThresholdInput, rgbThresholdRed, rgbThresholdGreen, rgbThresholdBlue, rgbThresholdOutput);
->>>>>>> 6f216bfb3d99f202ae1d5395d369a21a59a6e09e
 
 		// Step Find_Contours0:
 		Mat findContoursInput = rgbThresholdOutput;
 		boolean findContoursExternalOnly = false;
 		findContours(findContoursInput, findContoursExternalOnly, findContoursOutput);
-
-<<<<<<< HEAD
-		// Step Filter_Contours0:
-		ArrayList<MatOfPoint> filterContoursContours = findContoursOutput;
-		double filterContoursMinArea = 50.0;
-		double filterContoursMinPerimeter = 0.0;
-		double filterContoursMinWidth = 0.0;
-		double filterContoursMaxWidth = 1000.0;
-		double filterContoursMinHeight = 0.0;
-		double filterContoursMaxHeight = 1000.0;
-		double[] filterContoursSolidity = {79.09604295274407, 100};
-		double filterContoursMaxVertices = 20.0;
-		double filterContoursMinVertices = 0.0;
-		double filterContoursMinRatio = 0.0;
-		double filterContoursMaxRatio = 1000.0;
-		filterContours(filterContoursContours, filterContoursMinArea, filterContoursMinPerimeter, filterContoursMinWidth, filterContoursMaxWidth, filterContoursMinHeight, filterContoursMaxHeight, filterContoursSolidity, filterContoursMaxVertices, filterContoursMinVertices, filterContoursMinRatio, filterContoursMaxRatio, filterContoursOutput);
-
-=======
->>>>>>> 6f216bfb3d99f202ae1d5395d369a21a59a6e09e
 	}
-
-	/**
-	 * This method is a generated getter for the output of a RGB_Threshold.
-	 * @return Mat output from RGB_Threshold.
-	 */
 	public Mat rgbThresholdOutput() {
 		return rgbThresholdOutput;
 	}
 
-	/**
-	 * This method is a generated getter for the output of a Find_Contours.
-	 * @return ArrayList<MatOfPoint> output from Find_Contours.
-	 */
 	public ArrayList<MatOfPoint> findContoursOutput() {
 		return findContoursOutput;
 	}
