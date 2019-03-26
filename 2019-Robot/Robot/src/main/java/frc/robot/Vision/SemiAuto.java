@@ -4,11 +4,12 @@
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
-package frc.robot;
+package frc.robot.Vision;
 
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.networktables.NetworkTableValue;
 import frc.robot.OI;
+import frc.robot.subsystems.Hatch;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.networktables.NetworkTableEntry;
@@ -33,8 +34,12 @@ public class SemiAuto {
       while(distance < TARGET_DISTANCE) {
         OI.drive.arcadeDrive(0.5, 0);
       }
+      
       OI.drive.arcadeDrive(0, 0);
-      //**DUMP BALL OR RELEASE HATCH**
+     
+     Hatch.tilt("forward");
+     Hatch.actuate("close");
+
     }
   }
 }

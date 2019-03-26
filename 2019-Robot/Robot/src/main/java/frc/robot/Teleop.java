@@ -39,12 +39,12 @@ public class Teleop {
      if(OI.controller2.getRawAxis(RobotMap.leftTrigger) != 0) { //tilt hatch manipulator out
          Hatch.actuate("close");
      }
-     if(OI.controller1.getRawButton(RobotMap.startButton) == true){ //deploy stilts
+  /*  if(OI.controller1.getRawButton(RobotMap.startButton) == true){ //deploy stilts
         Stilts.actuate("front", "up");
         Stilts.actuate("back", "up");
-     }
-    if(OI.controller1.getRawButton(RobotMap.aButton)) { //pull front stilts up
-        Stilts.actuate("front", "down");
+     }*/
+    if(OI.controller1.getRawButton(RobotMap.aButton)) { //starts ball semi
+        
     }
     if(OI.controller1.getRawButton(RobotMap.bButton)) { //pull back stilts up
         Stilts.actuate("back", "down");
@@ -70,5 +70,6 @@ public class Teleop {
     if(OI.ballLimit.get() && !OI.controller2.getRawButton(RobotMap.leftBumper)) {
         OI.cargoIntake.set(0.05);
     }
+    if(OI.)
   }
 }

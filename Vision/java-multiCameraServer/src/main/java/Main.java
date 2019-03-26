@@ -227,17 +227,6 @@ public final class Main {
     for (CameraConfig cameraConfig : cameraConfigs) {
       cameras.add(startCamera(cameraConfig));
     }
-<<<<<<< HEAD
-      VisionThread visionThread = new VisionThread(cameras.get(0),
-        new GripPipeline(), pipeline -> {
-          if(pipeline.filterContoursOutput().isEmpty()) {
-            System.out.println("No Contours Found!");
-          } else {
-            System.out.println("Contours Found!");
-          }
-      });
-      visionThread.start();
-=======
   /*  visionThread = new VisionThread(cameras.get(1), new GripPipeline(), pipeline -> {
       if(pipeline.filterContoursOutput().isEmpty()) {
         System.out.println("No Contours Found!");
@@ -254,7 +243,6 @@ public final class Main {
       
       //}
     // loop forever
->>>>>>> 6f216bfb3d99f202ae1d5395d369a21a59a6e09e
     for (;;) {
       try {
         Thread.sleep(10000);
