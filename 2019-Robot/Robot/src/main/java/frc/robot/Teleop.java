@@ -10,6 +10,7 @@ package frc.robot;
 import frc.robot.OI;
 import frc.robot.subsystems.*;
 import frc.robot.RobotMap;
+import frc.robot.Vision.SemiAuto;
 import frc.robot.logging.sparkmaxlog;
 
 public class Teleop {
@@ -44,7 +45,7 @@ public class Teleop {
         Stilts.actuate("back", "up");
      }*/
     if(OI.controller1.getRawButton(RobotMap.aButton)) { //starts ball semi
-        
+        SemiAuto.main(args);
     }
     if(OI.controller1.getRawButton(RobotMap.bButton)) { //pull back stilts up
         Stilts.actuate("back", "down");

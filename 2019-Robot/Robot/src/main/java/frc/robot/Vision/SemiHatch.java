@@ -18,11 +18,8 @@ import edu.wpi.first.networktables.NetworkTableEntry;
  * Add your docs here.
  * SemiAuto is Great
  */
-public class SemiAuto {
+public class SemiHatch {
   public static Integer TARGET_DISTANCE = 1000;
-  public SemiAuto() {
-  }
-
   public static void main(String[] args) {
     NetworkTable table = NetworkTableInstance.getDefault().getTable("GRIP/myContoursReport");
     double[] xValues = table.getEntry("centerX").getValue().getDoubleArray(); 

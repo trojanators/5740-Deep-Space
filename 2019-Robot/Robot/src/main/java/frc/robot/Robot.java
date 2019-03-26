@@ -17,13 +17,14 @@ import frc.robot.logging.SlimShuffle;
 public class Robot extends TimedRobot {
 @Override
   public void robotInit() {
-    CamerConfig.Config();  
+    CamerConfig.Config(); 
+    Hatch.actuate("open"); 
   }
   
   @Override
   public void robotPeriodic() {
     //SlimShuffle.Periodic();
-    DataShuffle.Periodic();
+    SlimShuffle.Periodic();
   }
 
   @Override
