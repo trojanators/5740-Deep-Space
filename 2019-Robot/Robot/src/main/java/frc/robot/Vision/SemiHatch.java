@@ -20,23 +20,23 @@ import edu.wpi.first.networktables.NetworkTableEntry;
  */
 public class SemiHatch {
   public static Integer TARGET_DISTANCE = 1000;
-  public void hatch() {
+
+   public static void Perodic(){}
     NetworkTable table = NetworkTableInstance.getDefault().getTable("GRIP/myContoursReport");
     double[] xValues = table.getEntry("centerX").getValue().getDoubleArray(); 
     double[] yValues = table.getEntry("centerY").getValue().getDoubleArray();
     double distance = xValues[1] - xValues[0];
-    if(xValues.length > 2 || yValues.length > 2) {
-      System.out.println("Too many targets detected!");
-    } else {
+    if(xValues.length < 2 || yValues.length < 2) {
       while(distance < TARGET_DISTANCE) {
         OI.drive.arcadeDrive(0.5, 0);
       }
-      
       OI.drive.arcadeDrive(0, 0);
      
      Hatch.tilt("forward");
      Hatch.actuate("close");
+     Hatch.tilt("back");
 
     }
+    
   }
 }

@@ -9,6 +9,7 @@ package frc.robot.Vision;
 import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.networktables.NetworkTableValue;
 import frc.robot.OI;
+import frc.robot.subsystems.Cargo;
 import frc.robot.subsystems.Hatch;
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;
@@ -20,24 +21,30 @@ import edu.wpi.first.networktables.NetworkTableEntry;
  */
 public class SemiCargo {
   public static Integer TARGET_DISTANCE = 1000;
- 
-  public void Perodic(){
-    
+  
+  public static void Perodic() throws InterruptedException {
     NetworkTable table = NetworkTableInstance.getDefault().getTable("GRIP/myContoursReport");
-    public double[] xValues = table.getEntry("centerX").getValue().getDoubleArray(); 
-    public double[] yValues = table.getEntry("centerY").getValue().getDoubleArray();
+    double[] xValues = table.getEntry("centerX").getValue().getDoubleArray(); 
+    double[] yValues = table.getEntry("centerY").getValue().getDoubleArray();
     double distance = xValues[1] - xValues[0];
-    if(xValues.length > 2 || yValues.length > 2) {
+    if(xValues.length < 2 || yValues.length < 2) {
       System.out.println("Too many targets detected!");
-    } else {
       while(distance < TARGET_DISTANCE) {
         OI.drive.arcadeDrive(0.5, 0);
+        Cargo.actuateArm(1);
       }
-      
       OI.drive.arcadeDrive(0, 0);
      
+     if(OI.ballLimit.get() == true){
+      Cargo.actuateClaw(1);
+     }
+     
+     OI.ballLimit.wait(1000);
+     
+     if(OI.ballLimit.get() == false){
+      Cargo.stopClaw();
+     }
     
-
     }
-  }
+  }   
 }

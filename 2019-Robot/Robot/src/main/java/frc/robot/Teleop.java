@@ -41,15 +41,17 @@ public class Teleop {
      if(OI.controller2.getRawAxis(RobotMap.leftTrigger) != 0) { //tilt hatch manipulator out
          Hatch.actuate("close");
      }
- 
-    if(OI.controller1.getRawButton(RobotMap.aButton)) { //starts semiHatch
-        SemiHatch.hatch();
+
+        if (OI.controller1.getRawButton(RobotMap.aButton)) { // starts semiHatch       
+        SemiHatch.Perodic();
     }
+
     if(OI.controller1.getRawButton(RobotMap.bButton)) { //starts SemiCargo
          SemiCargo.Perodic();
-       }
+
     if(OI.controller2.getRawButton(4)) {
         Stilts.actuateFrontWheels(1);
+        
     } else {
         Stilts.stopFrontWheelActuation();
     }
