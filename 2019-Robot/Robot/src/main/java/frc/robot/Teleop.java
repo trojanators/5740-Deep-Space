@@ -14,44 +14,55 @@ import frc.robot.Vision.SemiCargo;
 import frc.robot.Vision.SemiHatch;
 
 public class Teleop {
-    
-    public static void Periodic(){
-      Drivetrain.periodic();
-      if(OI.controller1.getRawAxis(RobotMap.rightTrigger) != 0) { // shift up and down
-        Drivetrain.shift("up");
-      } else {
-     
-        Drivetrain.shift("down");
-     }
-    if(OI.controller2.getRawButton(RobotMap.leftBumper) == true) { //shoot ball
-        Cargo.actuateClaw(-.5);
-     } else if(OI.controller2.getRawButton(RobotMap.rightBumper) && !OI.ballLimit.get()) {
-         Cargo.actuateClaw(.5);
-     } else {
-         Cargo.stopClaw();
-     }
-     if(OI.controller2.getRawAxis(RobotMap.rightTrigger) != 0) { //toggle hatch manipulator
-         Hatch.actuate("open");
-     }
-     if(OI.controller2.getRawAxis(RobotMap.leftStickY) != 0) { //move cargo arm up and down
-        Cargo.actuateArm(-OI.controller2.getRawAxis(RobotMap.leftStickY) * .5);
-     } else if (OI.controller2.getRawAxis(RobotMap.leftStickY) == 0 && OI.controller2.getRawButton(RobotMap.xButton) == false) {
-        Cargo.stopArm();
-     }
-     if(OI.controller2.getRawAxis(RobotMap.leftTrigger) != 0) { //tilt hatch manipulator out
-         Hatch.actuate("close");
-     }
 
-        if (OI.controller1.getRawButton(RobotMap.aButton)) { // starts semiHatch       
-        SemiHatch.Perodic();
-    }
+    public static void Periodic() {
+        Drivetrain.periodic();
+        if (OI.controller1.getRawAxis(RobotMap.rightTrigger) != 0) { // shift up and down
+            Drivetrain.shift("up");
+        } else {
 
-    if(OI.controller1.getRawButton(RobotMap.bButton)) { //starts SemiCargo
-         SemiCargo.Perodic();
+            Drivetrain.shift("down");
+        }
+        if (OI.controller2.getRawButton(RobotMap.leftBumper) == true) { // shoot ball
+            Cargo.actuateClaw(-.5);
+        } else if (OI.controller2.getRawButton(RobotMap.rightBumper) && !OI.ballLimit.get()) {
+            Cargo.actuateClaw(.5);
+        } else {
+            Cargo.stopClaw();
+        }
+        if (OI.controller2.getRawAxis(RobotMap.rightTrigger) != 0) { // toggle hatch manipulator
+            Hatch.actuate("open");
+        }
+        if (OI.controller2.getRawAxis(RobotMap.leftStickY) != 0) { // move cargo arm up and down
+            Cargo.actuateArm(-OI.controller2.getRawAxis(RobotMap.leftStickY) * .5);
+        } else if (OI.controller2.getRawAxis(RobotMap.leftStickY) == 0
+                && OI.controller2.getRawButton(RobotMap.xButton) == false) {
+            Cargo.stopArm();
+        }
+        if (OI.controller2.getRawAxis(RobotMap.leftTrigger) != 0) { // tilt hatch manipulator out
+            Hatch.actuate("close");
+        }
+
+        if (OI.controller1.getRawButton(RobotMap.aButton)) { // starts semiHatch
+            try {
+                SemiHatch.Perodic();
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+
+        if (OI.controller1.getRawButton(RobotMap.bButton)) { // starts SemiCargo
+            try {
+                SemiCargo.Perodic();
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
 
     if(OI.controller2.getRawButton(4)) {
         Stilts.actuateFrontWheels(1);
-        
+
     } else {
         Stilts.stopFrontWheelActuation();
     }
@@ -70,7 +81,7 @@ public class Teleop {
     }
     if(OI.ballLimit.get() && !OI.controller2.getRawButton(RobotMap.leftBumper)) {
         OI.cargoIntake.set(0.05);
-    }
-   
-  }
+       }
+      }
+    } 
 }

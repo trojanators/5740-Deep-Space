@@ -28,7 +28,6 @@ public class SemiCargo {
     double[] yValues = table.getEntry("centerY").getValue().getDoubleArray();
     double distance = xValues[1] - xValues[0];
     if(xValues.length < 2 || yValues.length < 2) {
-      System.out.println("Too many targets detected!");
       while(distance < TARGET_DISTANCE) {
         OI.drive.arcadeDrive(0.5, 0);
         Cargo.actuateArm(1);
