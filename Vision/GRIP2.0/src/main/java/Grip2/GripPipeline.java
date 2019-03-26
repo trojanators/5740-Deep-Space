@@ -1,4 +1,4 @@
-package grip2;
+package Grip2;
 
 import java.io.File;
 import java.io.FileWriter;
