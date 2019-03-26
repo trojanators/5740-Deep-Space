@@ -20,13 +20,12 @@ import edu.wpi.first.networktables.NetworkTableEntry;
  */
 public class SemiCargo {
   public static Integer TARGET_DISTANCE = 1000;
-  public SemiAuto() {
-  }
-
-  public static void main(String[] args) {
+ 
+  public void Perodic(){
+    
     NetworkTable table = NetworkTableInstance.getDefault().getTable("GRIP/myContoursReport");
-    double[] xValues = table.getEntry("centerX").getValue().getDoubleArray(); 
-    double[] yValues = table.getEntry("centerY").getValue().getDoubleArray();
+    public double[] xValues = table.getEntry("centerX").getValue().getDoubleArray(); 
+    public double[] yValues = table.getEntry("centerY").getValue().getDoubleArray();
     double distance = xValues[1] - xValues[0];
     if(xValues.length > 2 || yValues.length > 2) {
       System.out.println("Too many targets detected!");
@@ -37,8 +36,7 @@ public class SemiCargo {
       
       OI.drive.arcadeDrive(0, 0);
      
-     Hatch.tilt("forward");
-     Hatch.actuate("close");
+    
 
     }
   }

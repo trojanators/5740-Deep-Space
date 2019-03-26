@@ -20,7 +20,7 @@ import edu.wpi.first.networktables.NetworkTableEntry;
  */
 public class SemiHatch {
   public static Integer TARGET_DISTANCE = 1000;
-  public static void main(String[] args) {
+  public void hatch() {
     NetworkTable table = NetworkTableInstance.getDefault().getTable("GRIP/myContoursReport");
     double[] xValues = table.getEntry("centerX").getValue().getDoubleArray(); 
     double[] yValues = table.getEntry("centerY").getValue().getDoubleArray();

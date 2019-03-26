@@ -10,10 +10,11 @@ package frc.robot;
 import frc.robot.OI;
 import frc.robot.subsystems.*;
 import frc.robot.RobotMap;
-import frc.robot.Vision.SemiAuto;
-import frc.robot.logging.sparkmaxlog;
+import frc.robot.Vision.SemiCargo;
+import frc.robot.Vision.SemiHatch;
 
 public class Teleop {
+    
     public static void Periodic(){
       Drivetrain.periodic();
       if(OI.controller1.getRawAxis(RobotMap.rightTrigger) != 0) { // shift up and down
@@ -40,16 +41,13 @@ public class Teleop {
      if(OI.controller2.getRawAxis(RobotMap.leftTrigger) != 0) { //tilt hatch manipulator out
          Hatch.actuate("close");
      }
-  /*  if(OI.controller1.getRawButton(RobotMap.startButton) == true){ //deploy stilts
-        Stilts.actuate("front", "up");
-        Stilts.actuate("back", "up");
-     }*/
-    if(OI.controller1.getRawButton(RobotMap.aButton)) { //starts ball semi
-        SemiAuto.main(args);
+ 
+    if(OI.controller1.getRawButton(RobotMap.aButton)) { //starts semiHatch
+        SemiHatch.hatch();
     }
-    if(OI.controller1.getRawButton(RobotMap.bButton)) { //pull back stilts up
-        Stilts.actuate("back", "down");
-    }
+    if(OI.controller1.getRawButton(RobotMap.bButton)) { //starts SemiCargo
+         SemiCargo.Perodic();
+       }
     if(OI.controller2.getRawButton(4)) {
         Stilts.actuateFrontWheels(1);
     } else {
@@ -71,6 +69,6 @@ public class Teleop {
     if(OI.ballLimit.get() && !OI.controller2.getRawButton(RobotMap.leftBumper)) {
         OI.cargoIntake.set(0.05);
     }
-    if(OI.)
+   
   }
 }
