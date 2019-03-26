@@ -1,4 +1,4 @@
-package grip2;
+package Grip2;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -25,7 +25,7 @@ import org.opencv.objdetect.*;
 *
 * @author GRIP
 */
-public class GripPipeline implements VisionPipeline {
+public class Vision implements VisionPipeline {
 
 	//Outputs
 	private Mat hsvThresholdOutput = new Mat();
