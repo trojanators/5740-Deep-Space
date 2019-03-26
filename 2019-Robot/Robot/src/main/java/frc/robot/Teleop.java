@@ -23,6 +23,7 @@ public class Teleop {
 
             Drivetrain.shift("down");
         }
+        
         if (OI.controller2.getRawButton(RobotMap.leftBumper) == true) { // shoot ball
             Cargo.actuateClaw(-.5);
         } else if (OI.controller2.getRawButton(RobotMap.rightBumper) && !OI.ballLimit.get()) {
@@ -30,11 +31,14 @@ public class Teleop {
         } else {
             Cargo.stopClaw();
         }
+        
         if (OI.controller2.getRawAxis(RobotMap.rightTrigger) != 0) { // toggle hatch manipulator
             Hatch.actuate("open");
         }
+        
         if (OI.controller2.getRawAxis(RobotMap.leftStickY) != 0) { // move cargo arm up and down
             Cargo.actuateArm(-OI.controller2.getRawAxis(RobotMap.leftStickY) * .5);
+        
         } else if (OI.controller2.getRawAxis(RobotMap.leftStickY) == 0
                 && OI.controller2.getRawButton(RobotMap.xButton) == false) {
             Cargo.stopArm();

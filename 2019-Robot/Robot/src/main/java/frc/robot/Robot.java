@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import frc.robot.subsystems.*;
 import frc.robot.*;
+import frc.robot.Vision.CalculateDistance;
 import frc.robot.logging.DataShuffle;
 import frc.robot.logging.SlimShuffle;
 
@@ -25,6 +26,7 @@ public class Robot extends TimedRobot {
   public void robotPeriodic() {
     //SlimShuffle.Periodic();
     SlimShuffle.Periodic();
+    CalculateDistance.execute();
   }
 
   @Override
