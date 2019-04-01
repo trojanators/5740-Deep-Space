@@ -32,11 +32,14 @@ tput setaf 7 ;
 echo "installing pip package's"
 tput setaf 3 ;
 sudo pip install opencv-contrib-python-headless
-sudo pip install networktables
+sudo pip install pynetworktables
 sudo pip install numpy
-sudo pip install math
-clear 
-tput setaf 2; 
+sudo pip install pymath
+sudo pip install time 
+sudo pip install argparse
+sudo pip install pysocket
+
+tput setaf 7; 
 cat <<"EOF"
 
  __/\\\\\\\\\\\\\\\_________________________________________/\\\________________________________/\\\________                                        
