@@ -1,9 +1,11 @@
 import numpy as np
 import cv2
 
-cap = cv2.VideoCapture(0)
-cap.set(cv2.CAP_PROP_EXPOSURE,-4)
-cap.set 
+
+cap = cv2.VideoCapture(1)
+cap.set(cv2.CAP_PROP_EXPOSURE,100)
+cap.set(cv2.CAP_PROP_BRIGHTNESS,50)
+
 while(1):
 
     # Take each frame
@@ -12,13 +14,20 @@ while(1):
   
 
     _, frame = cap.read()
+     
 
     # Convert BGR to HSV
+    gray = cv2.cvtColor( frame, cv2.COLOR_BGR2GRAY )
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+    img = cv.imread('star.jpg',0)
+    ret,thresh = cv.threshold(img,127,255,0)
+im2,contours,hierarchy = cv.findContours(thresh, 1, 2)
+cnt = contours[0]
+M = cv.moments(cnt) 
 
     # define range of blue color in HSV
     lower_blue = np.array([0,0,100])
-    upper_blue = np.array([100,100,100])
+    upper_blue = np.array([170,170,170])
 
     # Threshold the HSV image to get only blue colors
     mask = cv2.inRange(hsv, lower_blue, upper_blue)
@@ -26,7 +35,7 @@ while(1):
     # Bitwise-AND mask and original image
     res = cv2.bitwise_and(frame,frame, mask= mask)
 
-    cv2.imshow('frame',frame)
+    cv2.imshow('frame',gray)
     cv2.imshow('mask',mask)
     cv2.imshow('res',res)
     k = cv2.waitKey(5) & 0xFF
