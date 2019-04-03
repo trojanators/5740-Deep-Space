@@ -110,38 +110,53 @@
     <grip:Step name="Publish Video">
       <grip:Input step="6" socket="0"/>
       <grip:Input step="6" socket="1">
-        <value>48.86792452830189</value>
+        <value>27.358490566037734</value>
+      </grip:Input>
+    </grip:Step>
+    <grip:Step name="HTTP Publish BlobsReport">
+      <grip:Input step="7" socket="0"/>
+      <grip:Input step="7" socket="1">
+        <value>myBlobsReport</value>
+      </grip:Input>
+      <grip:Input step="7" socket="2">
+        <value>true</value>
+      </grip:Input>
+      <grip:Input step="7" socket="3">
+        <value>true</value>
+      </grip:Input>
+      <grip:Input step="7" socket="4">
+        <value>true</value>
       </grip:Input>
     </grip:Step>
   </steps>
   <connections>
     <grip:Connection>
-      <grip:Output step="1" socket="0" previewed="true"/>
-      <grip:Input step="2" socket="0"/>
+      <grip:Output step="0" socket="0" previewed="true"/>
+      <grip:Input step="1" socket="0"/>
     </grip:Connection>
     <grip:Connection>
       <grip:Output step="0" socket="0" previewed="true"/>
-      <grip:Input step="6" socket="0"/>
+      <grip:Input step="3" socket="0"/>
+    </grip:Connection>
+    <grip:Connection>
+      <grip:Output step="1" socket="0" previewed="true"/>
+      <grip:Input step="2" socket="0"/>
     </grip:Connection>
     <grip:Connection>
       <grip:Output step="3" socket="0" previewed="true"/>
       <grip:Input step="4" socket="0"/>
     </grip:Connection>
     <grip:Connection>
-      <grip:Output step="0" socket="0" previewed="true"/>
-      <grip:Input step="1" socket="0"/>
+      <grip:Output step="4" socket="0" previewed="true"/>
+      <grip:Input step="5" socket="0"/>
     </grip:Connection>
     <grip:Connection>
       <grip:Output source="1" socket="0" previewed="true"/>
       <grip:Input step="0" socket="0"/>
     </grip:Connection>
     <grip:Connection>
-      <grip:Output step="4" socket="0" previewed="true"/>
-      <grip:Input step="5" socket="0"/>
-    </grip:Connection>
-    <grip:Connection>
       <grip:Output step="0" socket="0" previewed="true"/>
-      <grip:Input step="3" socket="0"/>
+      <grip:Input step="6" socket="0"/>
     </grip:Connection>
   </connections>
   <settings>

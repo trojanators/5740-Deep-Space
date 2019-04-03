@@ -18,6 +18,14 @@ tput setaf 3 ;
 sudo apt update 
 sudo apt install python
 sudo apt install python-pip
+sudo apt-get install cmake
+sudo apt-get install python-devel numpy
+sudo apt-get install gcc gcc-c++
+sudo apt-get install gtk2-devel
+sudo apt-get install libv4l-devel
+sudo apt-get install ffmpeg-devel
+sudo apt-get install gstreamer-plugins-base-devel
+
 clear 
 tput setaf 3; 
 cat <<"EOF"
@@ -31,15 +39,25 @@ tput setaf 6 ;
 echo ==================================================================================================================================================
 echo 
 tput setaf 7 ;
-echo "installing pip package's"
+echo "installing open cv"
 tput setaf 3 ;
-sudo pip install opencv-contrib-python-headless
+sudo pip install pip --upgrade 
 sudo pip install pynetworktables
-sudo pip install numpy
-sudo pip install argparse
-sudo pip install pysocket
+sudo apt-get install libpng-devel
+sudo apt-get install libjpeg-turbo-devel
+sudo apt-get install jasper-devel
+sudo apt-get install openexr-devel
+sudo apt-get install libtiff-devel
+sudo apt-get install libwebp-devel
+sudo apt install git 
 
-
+git clone git clone https://github.com/opencv/opencv.git
+cd ~/opencv
+mkdir build 
+cd build 
+cmake ../
+make 
+sudo make install
 tput setaf 7; 
 cat <<"EOF"
 
