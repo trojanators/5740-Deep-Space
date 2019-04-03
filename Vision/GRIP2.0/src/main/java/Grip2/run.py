@@ -1,16 +1,15 @@
 import grip 
-
+import visioncheck
+from networktables import NetworkTables
 class main:
-   
+        grip.grip.__init__
+        grip.grip.process
+        NetworkTables.initialize(server='localhost')
+        vision = NetworkTables.getTable("Root/Vision")
+        
 
-    grip.grip.__init__
 
-
-    grip.grip.process.source0 = ("http://frcvision.local:1181.mjpeg")
-    grip.grip.process.__globals__.
-
-    grip.grip.process
-
+  
 
 
 

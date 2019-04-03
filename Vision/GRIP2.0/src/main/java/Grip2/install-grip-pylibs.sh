@@ -42,7 +42,7 @@ tput setaf 7 ;
 echo "installing open cv"
 tput setaf 3 ;
 sudo pip install pip --upgrade 
-
+sudo pip install pynetworktables
 sudo apt-get install libpng-devel
 sudo apt-get install libjpeg-turbo-devel
 sudo apt-get install jasper-devel
