@@ -1,3 +1,5 @@
 
 2019-Robot/DS_Client/libs/kryonet-2\.22\.0-RC1\.jar
 *.class 
+*.pyc
+*.kotlin-for-frc
