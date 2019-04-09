@@ -18,6 +18,7 @@ tput setaf 3 ;
 sudo apt update 
 sudo apt install python
 sudo apt install python-pip
+sudo apt install python3=pip
 sudo apt-get install cmake
 sudo apt-get install python-devel numpy
 sudo apt-get install gcc gcc-c++
@@ -43,12 +44,14 @@ echo "installing open cv"
 tput setaf 3 ;
 sudo pip install pip --upgrade 
 sudo pip install pynetworktables
+sudo pip3 install --no-build-isolation robotpy-cscore
 sudo apt-get install libpng-devel
 sudo apt-get install libjpeg-turbo-devel
 sudo apt-get install jasper-devel
 sudo apt-get install openexr-devel
 sudo apt-get install libtiff-devel
 sudo apt-get install libwebp-devel
+sudo apt install gstreamer1.0* libgstreamer-plugins-bad1.0-0 libgstreamer-plugins-base1.0-0 libgstreamer-plugins-base1.0-dev libgstreamer1.0 libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libgtk-3-dev
 sudo apt install git 
 
 git clone git clone https://github.com/opencv/opencv.git
@@ -58,6 +61,7 @@ cd build
 cmake ../
 make 
 sudo make install
+pip install --upgrade imutils
 tput setaf 7; 
 cat <<"EOF"
 

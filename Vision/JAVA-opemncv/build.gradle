@@ -19,17 +19,12 @@ repositories {
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
     mavenCentral()
-    maven{
-          url 'http://first.wpi.edu/FRC/roborio/maven/release/'
-    }
 }
 
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
     implementation 'com.google.guava:guava:27.0.1-jre'
     compile group: 'org.openpnp', name: 'opencv', version: '3.4.2-1'
-    compile group: 'edu.wpi.first.ntcore',name:'ntcore-java',version:'2019.4.1'
-    compile group: 'edu.wpi.first.wpilibj',name:'wpilibj-java',version:'2019.4.1'
 
 
     // Use JUnit test framework
@@ -37,4 +32,4 @@ dependencies {
 }
 
 // Define the main class for the application
-mainClassName = 'Grip2.Vision'
+mainClassName = 'com.javavision..App'
