@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/nicktheacker/5740-Deep-Space/Vision/GRIP2.0/VISION/main.cpp
+/home/nicktheacker/5740-Deep-Space/Vision/GRIP2.0/opencv/main.cpp
 opencv2/core.hpp
 -
 opencv2/videoio.hpp

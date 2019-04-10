@@ -1,27 +1,35 @@
-#include "opencv4/opencv2/core/hal/interface.h"
-#include "opencv4/opencv2/core/cvdef.h"
-#include <opencv4/opencv2/core.hpp>
-#include <opencv4/opencv2/videoio.hpp>
-#include <opencv4/opencv2/highgui.hpp>
+
+#include <opencv2/core.hpp>
+#include <opencv2/videoio.hpp>
+#include <opencv2/highgui.hpp>
 #include <iostream>
 #include <stdio.h>
+
 using namespace cv;
 using namespace std;
 
-int main(int, char**) {
-
+int main(int, char**)
+{
     Mat frame;
     //--- INITIALIZE VIDEOCAPTURE
-    cv::VideoCapture cap;
+    VideoCapture cap;
+    // open the default camera using default API
+    // cap.open(0);
+    // OR advance usage: select any API backend
+    int deviceID = 0;             // 0 = open default camera;      // 0 = autodetect default API
+    // open selected camera using selected API
+    cap.open(deviceID);
     // check if we succeeded
     if (!cap.isOpened()) {
         cerr << "ERROR! Unable to open camera\n";
-        return 1;
+        return -1;
     }
+
     //--- GRAB AND WRITE LOOP
     cout << "Start grabbing" << endl
          << "Press any key to terminate" << endl;
-    for (;;) {
+    for (;;)
+    {
         // wait for a new frame from camera and store it into 'frame'
         cap.read(frame);
         // check if we succeeded

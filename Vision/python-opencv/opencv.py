@@ -6,7 +6,7 @@ import sys
 
 # inits open cv and nettableG) 
 cv2.ocl.setUseOpenCL(True)
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 cap.set(cv2.CAP_PROP_BRIGHTNESS, 0.2)
 cap.set(cv2.CAP_PROP_CONTRAST, 0)
 centers=[] 
