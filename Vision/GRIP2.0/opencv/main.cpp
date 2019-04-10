@@ -1,15 +1,13 @@
-
-#include <opencv2/core.hpp>
-#include <opencv2/videoio.hpp>
-#include <opencv2/highgui.hpp>
 #include <iostream>
 #include <stdio.h>
+#include "opencv2/core.hpp"
+#include"opencv2/videoio/videoio.hpp"
+#include "opencv2/highgui/highgui.hpp"
 
-using namespace cv;
 using namespace std;
-
+using namespace cv;
 int main(int, char**)
 {
-   VideoCapture cap;
-   cap.open(0);
+  std::cout << "V: " << CV_VERSION << endl;
+Mat frame;
 }
