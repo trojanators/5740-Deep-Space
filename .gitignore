@@ -5,3 +5,4 @@
 *.kotlin-for-frc
 *.cmake
 *.sh
+*.make
