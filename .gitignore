@@ -10,3 +10,4 @@
 *.make
 Vision/GRIP2.0/*.make
 5740-DEEP-SPACE/Vision/GRIP2/*.cmakes
+*.cxx
