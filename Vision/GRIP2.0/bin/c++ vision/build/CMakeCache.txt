@@ -190,6 +190,12 @@ DisplayImage_SOURCE_DIR:STATIC=/home/nicktheacker/5740-Deep-Space/Vision/GRIP2.0
 //The directory containing a CMake configuration file for OpenCV.
 OpenCV_DIR:PATH=/usr/local/lib/cmake/opencv4
 
+//Value Computed by CMake
+V_BINARY_DIR:STATIC=/home/nicktheacker/5740-Deep-Space/Vision/GRIP2.0/c++ vision/build
+
+//Value Computed by CMake
+V_SOURCE_DIR:STATIC=/home/nicktheacker/5740-Deep-Space/Vision/GRIP2.0/c++ vision
+
 
 ########################
 # INTERNAL cache entries

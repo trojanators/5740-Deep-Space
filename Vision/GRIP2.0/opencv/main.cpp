@@ -6,8 +6,10 @@
 
 using namespace std;
 using namespace cv;
-int main(int, char**)
+
+int main(int argc, char** argv )
 {
-  std::cout << "V: " << CV_VERSION << endl;
-Mat frame;
+    
+    waitKey(0);
+    return 0;
 }
