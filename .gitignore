@@ -9,3 +9,4 @@
 *.txt
 *.make
 Vision/GRIP2.0/*.make
+Vision/GRIP2/*.cmake
