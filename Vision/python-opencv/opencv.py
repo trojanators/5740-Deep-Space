@@ -5,8 +5,7 @@ import logging
 import sys
 
 # inits open cv and nettableG) 
-cv2.ocl.setUseOpenCL(True)
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 cap.set(cv2.CAP_PROP_BRIGHTNESS, 0.2)
 cap.set(cv2.CAP_PROP_CONTRAST, 0)
 centers=[] 
@@ -21,7 +20,7 @@ while(1):
      
 
     # Convert BGR to HSV
-    gray = cv2.cvtColor( frame, cv2.COLOR_BGR2GRAY )
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY )
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     
     blur = cv2.GaussianBlur(gray,(5,5),0)

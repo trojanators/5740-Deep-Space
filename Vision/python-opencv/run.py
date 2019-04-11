@@ -28,4 +28,4 @@ sd.addEntryListener(valueChanged)
 
 while True:
       sd.setnum(opencv.dist)
-      opencv.start
+      

@@ -1,3 +1,0 @@
-/home/nicktheacker/5740-Deep-Space/Vision/GRIP2.0/c++ vision/build/CMakeFiles/rebuild_cache.dir
-/home/nicktheacker/5740-Deep-Space/Vision/GRIP2.0/c++ vision/build/CMakeFiles/DisplayImage.dir
-/home/nicktheacker/5740-Deep-Space/Vision/GRIP2.0/c++ vision/build/CMakeFiles/edit_cache.dir

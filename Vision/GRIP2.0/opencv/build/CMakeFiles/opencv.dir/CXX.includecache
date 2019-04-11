@@ -11,10 +11,10 @@ iostream
 -
 stdio.h
 -
-opencv2/core.hpp
-/home/nicktheacker/5740-Deep-Space/Vision/GRIP2.0/opencv/opencv2/core.hpp
-opencv2/videoio/videoio.hpp
-/home/nicktheacker/5740-Deep-Space/Vision/GRIP2.0/opencv/opencv2/videoio/videoio.hpp
-opencv2/highgui/highgui.hpp
-/home/nicktheacker/5740-Deep-Space/Vision/GRIP2.0/opencv/opencv2/highgui/highgui.hpp
+opencv/core.hpp
+/home/nicktheacker/5740-Deep-Space/Vision/GRIP2.0/opencv/opencv/core.hpp
+opencv/videoio/videoio.hpp
+/home/nicktheacker/5740-Deep-Space/Vision/GRIP2.0/opencv/opencv/videoio/videoio.hpp
+opencv/highgui/highgui.hpp
+/home/nicktheacker/5740-Deep-Space/Vision/GRIP2.0/opencv/opencv/highgui/highgui.hpp
 

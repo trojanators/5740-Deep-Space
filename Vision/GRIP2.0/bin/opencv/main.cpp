@@ -1,28 +1,18 @@
 #include <iostream>
 #include <stdio.h>
 #include "opencv2/core.hpp"
-#include"opencv2/videoio/videoio.hpp"
-#include "opencv2/highgui/highgui.hpp"
+#include "opencv2/videoio/videoio.hpp"
+#include "opencv3/opencv2/highgui/highgui.hpp"
 
 using namespace std;
 using namespace cv;
 
 int main(int argc, char** argv )
 {
-    if ( argc != 2 )
-    {
-        printf("usage: DisplayImage.out <Image_Path>\n");
-        return -1;
-    }
-    Mat image;
-    image = imread( argv[1], 1 );
-    if ( !image.data )
-    {
-        printf("No image data \n");
-        return -1;
-    }
-    namedWindow("Display Image", WINDOW_AUTOSIZE );
-    imshow("Display Image", image);
+    VideoCapture cap;
+
+    cap.open(0);
+
     waitKey(0);
     return 0;
 }
