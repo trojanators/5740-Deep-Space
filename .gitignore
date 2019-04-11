@@ -7,3 +7,5 @@
 *.sh
 *.make
 *.txt
+*.make
+Vision/GRIP2.0/*.make
