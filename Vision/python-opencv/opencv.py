@@ -1,11 +1,9 @@
 import numpy as np
-import cv2
+import cv2 
 import math
-import logging
-import sys
 
 # inits open cv and nettableG) 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 cap.set(cv2.CAP_PROP_BRIGHTNESS, 0.2)
 cap.set(cv2.CAP_PROP_CONTRAST, 0)
 centers=[] 

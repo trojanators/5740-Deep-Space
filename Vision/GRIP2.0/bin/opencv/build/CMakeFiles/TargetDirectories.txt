@@ -1,3 +1,0 @@
-/home/nicktheacker/5740-Deep-Space/Vision/GRIP2.0/opencv/build/CMakeFiles/rebuild_cache.dir
-/home/nicktheacker/5740-Deep-Space/Vision/GRIP2.0/opencv/build/CMakeFiles/opencv.dir
-/home/nicktheacker/5740-Deep-Space/Vision/GRIP2.0/opencv/build/CMakeFiles/edit_cache.dir
