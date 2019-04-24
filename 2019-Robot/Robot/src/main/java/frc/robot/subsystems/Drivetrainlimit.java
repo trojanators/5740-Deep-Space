@@ -3,14 +3,35 @@ import frc.robot.OI;
 public class Drivetrainlimit{
 
 public static void Limit(){
+  
+    OI.leftCenterDriveMotor.enableCurrentLimit(true);
+    OI.leftCenterDriveMotor.configContinuousCurrentLimit(40);
+    OI.leftCenterDriveMotor.configPeakCurrentDuration(50);
+    OI.leftCenterDriveMotor.configPeakCurrentLimit(60);
 
-OI.leftCenterDriveMotor.configPeakCurrentLimit(55, 10); /* 55 A */
-OI.leftCenterDriveMotor.configPeakCurrentDuration(200, 10); /* 200ms */
-OI.leftCenterDriveMotor.configContinuousCurrentLimit(50);
+    OI.rightCenterDriveMotor.enableCurrentLimit(true);
+    OI.rightCenterDriveMotor.configContinuousCurrentLimit(40);
+    OI.rightCenterDriveMotor.configPeakCurrentDuration(50);
+    OI.rightCenterDriveMotor.configPeakCurrentLimit(60);
 
-OI.rightCenterDriveMotor.configPeakCurrentLimit(55, 10);
-OI.rightCenterDriveMotor.configPeakCurrentDuration(200, 10);
-OI.rightCenterDriveMotor.configContinuousCurrentLimit(50);
+    OI.leftBackDriveMotor.enableCurrentLimit(true);
+    OI.leftBackDriveMotor.configContinuousCurrentLimit(40);
+    OI.leftBackDriveMotor.configPeakCurrentDuration(50);
+    OI.leftBackDriveMotor.configPeakCurrentLimit(60);
 
+    OI.rightBackDriveMotor.enableCurrentLimit(true);
+    OI.rightBackDriveMotor.configContinuousCurrentLimit(40);
+    OI.rightBackDriveMotor.configPeakCurrentDuration(50);
+    OI.rightBackDriveMotor.configPeakCurrentLimit(60);
+
+    OI.rightFrontDriveMotor.enableCurrentLimit(true);
+    OI.rightFrontDriveMotor.configContinuousCurrentLimit(40);
+    OI.rightFrontDriveMotor.configPeakCurrentDuration(50);
+    OI.rightFrontDriveMotor.configPeakCurrentLimit(60);
+
+    OI.leftFrontDriveMotor.enableCurrentLimit(true);
+    OI.leftFrontDriveMotor.configContinuousCurrentLimit(40);
+    OI.leftFrontDriveMotor.configPeakCurrentDuration(50);
+    OI.leftFrontDriveMotor.configPeakCurrentLimit(60);
     }
-}
+} 

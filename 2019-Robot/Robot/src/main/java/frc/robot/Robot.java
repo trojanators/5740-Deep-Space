@@ -7,8 +7,11 @@
 
 package frc.robot;
 
+import static frc.robot.Teleop.Periodic;
+
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.VictorSP;
 import frc.robot.subsystems.*;
 import frc.robot.*;
 import frc.robot.Vision.CalculateDistance;
@@ -16,17 +19,17 @@ import frc.robot.logging.DataShuffle;
 import frc.robot.logging.SlimShuffle;
 
 public class Robot extends TimedRobot {
-@Override
+  @Override
   public void robotInit() {
-    CamerConfig.Config(); 
-    Hatch.actuate("open"); 
+    CamerConfig.Config();
+    Drivetrainlimit.Limit();
+
   }
-  
+
   @Override
   public void robotPeriodic() {
-    //SlimShuffle.Periodic();
+
     SlimShuffle.Periodic();
-    CalculateDistance.execute();
   }
 
   @Override
@@ -35,18 +38,18 @@ public class Robot extends TimedRobot {
 
   @Override
   public void autonomousPeriodic() {
-    Teleop.Periodic();
+    Periodic();
 
   }
 
   @Override
-  public void teleopInit(){
-   Cargo.cargoTimer.start();
+  public void teleopInit() {
+    Cargo.cargoTimer.start();
   }
 
   @Override
   public void teleopPeriodic() {
-    Teleop.Periodic();
+    Periodic();
   }
 
   @Override

@@ -48,21 +48,17 @@ public class Teleop {
         }
 
         if (OI.controller1.getRawButton(RobotMap.aButton)) { // starts semiHatch
-            try {
-                SemiHatch.Perodic();
-            } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
+                Stilts.actuate("back", "down");
+                Stilts.actuate("Front", "up"); 
         }
 
-        if (OI.controller1.getRawButton(RobotMap.bButton)) { // starts SemiCargo
-            try {
-                SemiCargo.Perodic();
-            } catch (InterruptedException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
+        if (OI.controller1.getRawButton(RobotMap.bButton)) { // back stillts raise robot the front falls
+             Stilts.actuate("back", "up");
+             Stilts.actuate("front", "down");
             }
+        if (OI.controller1.getRawButton(RobotMap.startButton)){
+            Stilts.actuate("back", "down");
+        }
 
     if(OI.controller2.getRawButton(4)) {
         Stilts.actuateFrontWheels(1);
@@ -87,5 +83,4 @@ public class Teleop {
         OI.cargoIntake.set(0.05);
        }
       }
-    } 
-}
+    }

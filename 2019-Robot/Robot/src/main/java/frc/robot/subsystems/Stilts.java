@@ -14,33 +14,33 @@ public class Stilts {
                 switch(direction) {
                     case "up": //make robot rise
                         OI.frontStiltUp.set(DoubleSolenoid.Value.kForward);
-                        OI.frontStiltDown.set(DoubleSolenoid.Value.kReverse);
+                        OI.frontStiltretract.set(DoubleSolenoid.Value.kReverse);
                     break;
-                    case "down": //make robot lower
+                    case "retract": //make robot lower
                         OI.frontStiltUp.set(DoubleSolenoid.Value.kReverse);
-                        OI.frontStiltDown.set(DoubleSolenoid.Value.kForward);
+                        OI.frontStiltretract.set(DoubleSolenoid.Value.kForward);
                     break;
                 }
             break;
-            case "back": //back pair of stilts
+            case "retract": //retract pair of stilts
                 switch(direction) {
                     case "up": //make robot rise
-                        OI.backStiltUp.set(DoubleSolenoid.Value.kForward);
-                        OI.backStiltDown.set(DoubleSolenoid.Value.kReverse);
+                        OI.retractStiltUp.set(DoubleSolenoid.Value.kForward);
+                        OI.retractStiltretract.set(DoubleSolenoid.Value.kReverse);
                     break;
-                    case "down": //make robot lower
-                        OI.backStiltUp.set(DoubleSolenoid.Value.kReverse);
-                        OI.backStiltDown.set(DoubleSolenoid.Value.kForward);
+                    case "retract": //make robot lower
+                        OI.retractStiltUp.set(DoubleSolenoid.Value.kReverse);
+                        OI.retractStiltretract.set(DoubleSolenoid.Value.kForward);
                     break;
                 }
             break;
         }
     }
     public static void setDefault() {
-        OI.frontStiltUp.set(DoubleSolenoid.Value.kReverse);
-        OI.frontStiltDown.set(DoubleSolenoid.Value.kReverse);
-        OI.backStiltUp.set(DoubleSolenoid.Value.kReverse);
-        OI.backStiltDown.set(DoubleSolenoid.Value.kReverse);
+        OI.frontStiltExtend.set(DoubleSolenoid.Value.kReverse);
+        OI.frontStiltRetract.set(DoubleSolenoid.Value.kReverse);
+        OI.backStiltExtend.set(DoubleSolenoid.Value.kReverse);
+        OI.backStiltRetract.set(DoubleSolenoid.Value.kReverse);
     }
     public static void actuateFrontWheels(double speed) {
         OI.stiltActuateGroup.set(speed);
