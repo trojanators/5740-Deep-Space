@@ -10,27 +10,27 @@ public class Stilts {
     }
     public static void actuate(String pair, String direction) {
         switch(pair) {
-            case "front": //front pair of stilts
+            case "Front": //front pair of stilts
                 switch(direction) {
-                    case "up": //make robot rise
-                        OI.frontStiltUp.set(DoubleSolenoid.Value.kForward);
-                        OI.frontStiltretract.set(DoubleSolenoid.Value.kReverse);
+                    case "Extend": //make robot rise
+                        OI.frontStiltExtend.set(DoubleSolenoid.Value.kForward);
+                        OI.frontStiltRetract.set(DoubleSolenoid.Value.kReverse);
                     break;
-                    case "retract": //make robot lower
-                        OI.frontStiltUp.set(DoubleSolenoid.Value.kReverse);
-                        OI.frontStiltretract.set(DoubleSolenoid.Value.kForward);
+                    case "Retract": //make robot lower
+                        OI.frontStiltRetract.set(DoubleSolenoid.Value.kReverse);
+                        OI.frontStiltRetract.set(DoubleSolenoid.Value.kForward);
                     break;
                 }
             break;
-            case "retract": //retract pair of stilts
+            case "Back": //retract pair of stilts
                 switch(direction) {
-                    case "up": //make robot rise
-                        OI.retractStiltUp.set(DoubleSolenoid.Value.kForward);
-                        OI.retractStiltretract.set(DoubleSolenoid.Value.kReverse);
+                    case "Extend": //make robot rise
+                        OI.backStiltExtend.set(DoubleSolenoid.Value.kForward);
+                        OI.backStiltRetract.set(DoubleSolenoid.Value.kReverse);
                     break;
-                    case "retract": //make robot lower
-                        OI.retractStiltUp.set(DoubleSolenoid.Value.kReverse);
-                        OI.retractStiltretract.set(DoubleSolenoid.Value.kForward);
+                    case "Retract": //make robot lower
+                        OI.backStiltRetract.set(DoubleSolenoid.Value.kReverse);
+                        OI.backStiltExtend.set(DoubleSolenoid.Value.kForward);
                     break;
                 }
             break;

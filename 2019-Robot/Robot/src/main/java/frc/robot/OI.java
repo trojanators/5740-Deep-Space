@@ -49,10 +49,10 @@ public class OI {
    // public static DoubleSolenoid leftRamp = new DoubleSolenoid(RobotMap.PCMTwoCAN, RobotMap.leftRampOne, RobotMap.leftRampTwo);
  // public static DoubleSolenoid rightRamp = new DoubleSolenoid(RobotMap.PCMTwoCAN, RobotMap.rightRampOne, RobotMap.rightRampTwo);
  
- public static DoubleSolenoid frontStiltRetract = new DoubleSolenoid(RobotMap.PCMTwoCAN, RobotMap.frontStiltDownOne, RobotMap.frontStiltDownTwo);
- public static DoubleSolenoid frontStiltExtend = new DoubleSolenoid(RobotMap.PCMTwoCAN,RobotMap.frontStiltUpOne, RobotMap.frontStiltUpTwo);
- public static DoubleSolenoid backStiltRetract = new DoubleSolenoid(RobotMap.PCMTwoCAN,RobotMap.backStiltDownOne, RobotMap.backStiltDownTwo);
- public static DoubleSolenoid backStiltExtend = new DoubleSolenoid(RobotMap.PCMTwoCAN, RobotMap.backStiltUpOne, RobotMap.backStiltUpTwo);
+ public static DoubleSolenoid frontStiltRetract = new DoubleSolenoid(RobotMap.PCMTwoCAN, RobotMap.frontStiltRetractOne, RobotMap.frontStiltRetractTwo);
+ public static DoubleSolenoid frontStiltExtend = new DoubleSolenoid(RobotMap.PCMTwoCAN,RobotMap.frontStiltExtendOne, RobotMap.frontStiltExtendTwo);
+ public static DoubleSolenoid backStiltRetract = new DoubleSolenoid(RobotMap.PCMTwoCAN,RobotMap.backStiltRetractOne, RobotMap.backStiltRetractTwo);
+ public static DoubleSolenoid backStiltExtend = new DoubleSolenoid(RobotMap.PCMTwoCAN, RobotMap.backStiltExtendOne, RobotMap.backStiltExtendTwo);
  
 
   public static SpeedControllerGroup leftDriveGroup = new SpeedControllerGroup( leftCenterDriveMotor, leftBackDriveMotor, leftFrontDriveMotor);

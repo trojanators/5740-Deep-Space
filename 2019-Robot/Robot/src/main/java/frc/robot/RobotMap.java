@@ -42,14 +42,14 @@ public class RobotMap {
   public static int PCMOneCAN = 13;
   public static int PCMTwoCAN = 14;
 
-  public static int backStiltUpOne = 0;
-  public static int backStiltUpTwo = 1;
-  public static int backStiltDownOne = 4;
-  public static int backStiltDownTwo = 5;
-  public static int frontStiltUpOne = 2;
-  public static int frontStiltUpTwo = 3;
-  public static int frontStiltDownOne = 6;
-  public static int frontStiltDownTwo = 7;
+  public static int backStiltExtendOne = 0;
+  public static int backStiltExtendTwo = 1;
+  public static int backStiltRetractOne = 4;
+  public static int backStiltRetractTwo = 5;
+  public static int frontStiltExtendOne = 2;
+  public static int frontStiltExtendTwo = 3;
+  public static int frontStiltRetractOne = 6;
+  public static int frontStiltRetractTwo = 7;
   public static int ballLimitDIO = 0;
 
  public static int pressureSwitch = 0;

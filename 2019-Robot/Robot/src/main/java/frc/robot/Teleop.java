@@ -48,16 +48,16 @@ public class Teleop {
         }
 
         if (OI.controller1.getRawButton(RobotMap.aButton)) { // starts semiHatch
-                Stilts.actuate("back", "down");
-                Stilts.actuate("Front", "up"); 
+                Stilts.actuate("Back", "Retract");
+                Stilts.actuate("Front", "Extend"); 
         }
 
         if (OI.controller1.getRawButton(RobotMap.bButton)) { // back stillts raise robot the front falls
-             Stilts.actuate("back", "up");
-             Stilts.actuate("front", "down");
+             Stilts.actuate("Back", "Extend");
+             Stilts.actuate("Front", "Retract");
             }
         if (OI.controller1.getRawButton(RobotMap.startButton)){
-            Stilts.actuate("back", "down");
+            Stilts.actuate("Back", "Retract");
         }
 
     if(OI.controller2.getRawButton(4)) {
