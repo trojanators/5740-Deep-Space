@@ -15,6 +15,8 @@ import com.ctre.phoenix.motorcontrol.can.VictorSPX;
  */
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+
 
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.AnalogGyro;
@@ -48,12 +50,14 @@ public class OI {
 
    // public static DoubleSolenoid leftRamp = new DoubleSolenoid(RobotMap.PCMTwoCAN, RobotMap.leftRampOne, RobotMap.leftRampTwo);
  // public static DoubleSolenoid rightRamp = new DoubleSolenoid(RobotMap.PCMTwoCAN, RobotMap.rightRampOne, RobotMap.rightRampTwo);
- 
+ /*
  public static DoubleSolenoid frontStiltRetract = new DoubleSolenoid(RobotMap.PCMTwoCAN, RobotMap.frontStiltRetractOne, RobotMap.frontStiltRetractTwo);
  public static DoubleSolenoid frontStiltExtend = new DoubleSolenoid(RobotMap.PCMTwoCAN,RobotMap.frontStiltExtendOne, RobotMap.frontStiltExtendTwo);
  public static DoubleSolenoid backStiltRetract = new DoubleSolenoid(RobotMap.PCMTwoCAN,RobotMap.backStiltRetractOne, RobotMap.backStiltRetractTwo);
  public static DoubleSolenoid backStiltExtend = new DoubleSolenoid(RobotMap.PCMTwoCAN, RobotMap.backStiltExtendOne, RobotMap.backStiltExtendTwo);
- 
+ */
+public static DoubleSolenoid frontStilt = new DoubleSolenoid(14, 2, 3);
+public static DoubleSolenoid backStilt = new DoubleSolenoid(14, 6, 7);
 
   public static SpeedControllerGroup leftDriveGroup = new SpeedControllerGroup( leftCenterDriveMotor, leftBackDriveMotor, leftFrontDriveMotor);
   public static SpeedControllerGroup rightDriveGroup = new SpeedControllerGroup(rightFrontDriveMotor, rightCenterDriveMotor, rightBackDriveMotor);
@@ -62,14 +66,14 @@ public class OI {
   public static Solenoid hatchActuateSolenoid = new Solenoid(RobotMap.PCMOneCAN, RobotMap.hatchActuate);
   public static Solenoid hatchTiltSolenoid = new Solenoid(RobotMap.PCMOneCAN, RobotMap.hatchTilt);
 
-  public static WPI_TalonSRX leftStiltRotate = new WPI_TalonSRX(RobotMap.stiltWheelsRotateLeftCAN); //spin stilt wheels (drive forward)
-  public static WPI_TalonSRX leftStiltActuate = new WPI_TalonSRX(RobotMap.stiltWheelsActuateLeftCAN);
-  public static WPI_TalonSRX rightStiltRotate = new WPI_TalonSRX(RobotMap.stiltWheelsRotateRightCAN);
-  public static WPI_TalonSRX rightStiltActuate = new WPI_TalonSRX(RobotMap.stiltWheelsActuateRightCAN);
-  public static SpeedControllerGroup stiltRotateGroup = new SpeedControllerGroup(leftStiltRotate, rightStiltRotate);
-  public static SpeedControllerGroup stiltActuateGroup = new SpeedControllerGroup(leftStiltActuate, rightStiltActuate);
+  //public static WPI_TalonSRX leftStiltRotate = new WPI_TalonSRX(RobotMap.stiltWheelsRotateLeftCAN);
+  //spin stilt wheels (drive forward)
+  //public static WPI_TalonSRX rightStiltRotate = new WPI_TalonSRX(RobotMap.stiltWheelsRotateRightCAN);
+  //public static WPI_TalonSRX rightStiltActuate = new WPI_TalonSRX(RobotMap.stiltWheelsActuateRightCAN);
+  //public static SpeedControllerGroup stiltRotateGroup = new SpeedControllerGroup(leftStiltRotate, rightStiltRotate);
+  //public static SpeedControllerGroup stiltActuateGroup = new SpeedControllerGroup(leftStiltActuate, rightStiltActuate);
 
-  
+  public static VictorSP cargoArmActuateOne = new VictorSP(RobotMap.cargoArmActuateOnePWM);
   public static VictorSP cargoClawLeft = new VictorSP(RobotMap.cargoClawLeftRotatePWM);
   public static VictorSP cargoClawRight = new VictorSP(RobotMap.cargoClawRightRotatePWM);
   public static SpeedControllerGroup cargoIntake = new SpeedControllerGroup(cargoClawLeft, cargoClawRight);

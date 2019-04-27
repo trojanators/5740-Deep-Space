@@ -18,12 +18,12 @@ public class RobotMap {
   public static int controllerOnePort = 0;
   public static int controllerTwoPort = 1;
 
-  public static int leftFrontDriveCAN = 0; 
-  public static int leftCenterDriveCAN = 1;
-  public static int leftBackDriveCAN = 2;
-  public static int rightFrontDriveCAN = 3;
-  public static int rightCenterDriveCAN = 4;
-  public static int rightBackDriveCAN = 5;
+  public static int leftFrontDriveCAN = 15; 
+  public static int leftCenterDriveCAN = 11;
+  public static int leftBackDriveCAN = 12;
+  public static int rightFrontDriveCAN = 4;
+  public static int rightCenterDriveCAN = 13;
+  public static int rightBackDriveCAN = 14;
 
   public static int shiftSolenoid = 0;
   public static int hatchActuate = 1;

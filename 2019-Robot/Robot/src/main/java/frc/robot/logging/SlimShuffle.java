@@ -2,6 +2,7 @@ package frc.robot.logging;
 
 import java.util.Map;
 
+import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableEntry;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInLayouts;
 import edu.wpi.first.wpilibj.shuffleboard.BuiltInWidgets;
@@ -9,7 +10,9 @@ import edu.wpi.first.wpilibj.shuffleboard.ComplexWidget;
 import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardLayout;
 import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
+import edu.wpi.first.wpilibj.shuffleboard.SimpleWidget;
 import frc.robot.OI;
+import frc.robot.Teleop;
 import frc.robot.subsystems.CamerConfig;
 
 public class SlimShuffle {
@@ -41,11 +44,18 @@ public class SlimShuffle {
           .withProperties(Map.of("Min", "0", "Max", "125"))
           .getEntry();
          
+     private static SimpleWidget shift= 
+          lay.add("shift mode",Teleop.shift)
+          .withPosition(4,6)
+          .withSize(3,3)
+          .withWidget(BuiltInWidgets.kBooleanBox);
+
+
           public static void Periodic()  {
             
             double averageVolts = OI.Pressureread.getAverageVoltage();
             double pressure = (250*(averageVolts/5.0))-25;
-
+        
 
             pressureStatusEntry.setDouble(pressure);
             

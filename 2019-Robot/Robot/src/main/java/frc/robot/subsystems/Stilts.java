@@ -9,7 +9,7 @@ public class Stilts {
         //TODO: Code to pressurize the stilt cylinders
     }
     public static void actuate(String pair, String direction) {
-        switch(pair) {
+        /*switch(pair) {
             case "Front": //front pair of stilts
                 switch(direction) {
                     case "Extend": //make robot rise
@@ -43,15 +43,17 @@ public class Stilts {
         OI.backStiltRetract.set(DoubleSolenoid.Value.kReverse);
     }
     public static void actuateFrontWheels(double speed) {
-        OI.stiltActuateGroup.set(speed);
+       // OI.stiltActuateGroup.set(speed);
     }
     public static void rotateFrontWheels(double speed) {
         OI.stiltRotateGroup.set(speed);
     }
     public static void stopFrontWheelActuation() {
-        OI.stiltActuateGroup.set(0);
+       // OI.stiltActuateGroup.set(0);
     }
     public static void stopFrontWheelRotation() {
         OI.stiltRotateGroup.set(0);
+    }
+    */
     }
 }

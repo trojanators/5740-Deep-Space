@@ -7,25 +7,31 @@
 
 package frc.robot;
 
+
 import frc.robot.OI;
 import frc.robot.subsystems.*;
 import frc.robot.RobotMap;
 import frc.robot.Vision.SemiCargo;
 import frc.robot.Vision.SemiHatch;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
+
 
 public class Teleop {
-
+    public static Boolean shift = new Boolean(false);
     public static void Periodic() {
         Drivetrain.periodic();
         if (OI.controller1.getRawAxis(RobotMap.rightTrigger) != 0) { // shift up and down
+            
             Drivetrain.shift("up");
+            shift = true;
         } else {
 
             Drivetrain.shift("down");
+            shift = false;
         }
         
         if (OI.controller2.getRawButton(RobotMap.leftBumper) == true) { // shoot ball
-            Cargo.actuateClaw(-.5);
+            Cargo.actuateClaw(-.35);
         } else if (OI.controller2.getRawButton(RobotMap.rightBumper) && !OI.ballLimit.get()) {
             Cargo.actuateClaw(.5);
         } else {
@@ -48,18 +54,27 @@ public class Teleop {
         }
 
         if (OI.controller1.getRawButton(RobotMap.aButton)) { // starts semiHatch
-                Stilts.actuate("Back", "Retract");
-                Stilts.actuate("Front", "Extend"); 
+              //  Stilts.actuate("Back", "Retract");
+              //  Stilts.actuate("Front", "Extend"); 
+              OI.frontStilt.set(DoubleSolenoid.Value.kForward);
+             // OI.backStilt.set(DoubleSolenoid.Value.kReverse);
         }
 
         if (OI.controller1.getRawButton(RobotMap.bButton)) { // back stillts raise robot the front falls
-             Stilts.actuate("Back", "Extend");
-             Stilts.actuate("Front", "Retract");
+           //  Stilts.actuate("Back", "Extend");
+           //  Stilts.actuate("Front", "Retract");
+           OI.frontStilt.set(DoubleSolenoid.Value.kReverse);
+           //OI.backStilt.set(DoubleSolenoid.Value.kForward);
             }
-        if (OI.controller1.getRawButton(RobotMap.startButton)){
-            Stilts.actuate("Back", "Retract");
+        if(OI.controller1.getRawButton(RobotMap.xButton)) {
+            OI.backStilt.set(DoubleSolenoid.Value.kForward);
         }
-
+        if (OI.controller1.getRawButton(RobotMap.yButton)){
+           // Stilts.actuate("Back", "Retract");
+          // OI.frontStilt.set(DoubleSolenoid.Value.kReverse);
+           OI.backStilt.set(DoubleSolenoid.Value.kReverse);
+        }
+/*
     if(OI.controller2.getRawButton(4)) {
         Stilts.actuateFrontWheels(1);
 
@@ -74,6 +89,7 @@ public class Teleop {
     } else {
         Stilts.stopFrontWheelRotation();
     }
+    */
     if(OI.controller2.getRawButton(RobotMap.xButton)) {
         Hatch.tilt("forward");
     } else if (OI.controller2.getRawButton(RobotMap.yButton)) {

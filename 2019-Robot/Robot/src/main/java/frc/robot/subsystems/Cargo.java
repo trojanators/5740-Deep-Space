@@ -12,10 +12,10 @@ public class Cargo {
   private static boolean intaking = false;
   public Cargo() {}
   public static void actuateArm(double speed) {
-  //  OI.cargoArmActuateOne.set(speed);
+    OI.cargoArmActuateOne.set(speed);
   }
   public static void stopArm() {
-   // OI.cargoArmActuateOne.set(0);
+    OI.cargoArmActuateOne.set(0);
   }
   public static void actuateClaw(double speed) {
     OI.cargoIntake.set(speed);
